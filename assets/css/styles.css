@@ -1,0 +1,175 @@
+/* Reset CSS Essentiel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    color: #053f5f;
+    font-size: clamp(1.125rem, calc(1.125rem + ((1.25 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
+    height: 100%;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit; /* Utilise la même police que le parent */
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Hérite de la couleur du parent */
+}
+
+ul, ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of the reset */
+/* Header */
+.header-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo-container h2 {
+    color: #053f5f;
+    font-size: 14px;
+}
+.logo-container h3 {
+    color: #b8cfda;
+    font-size: 12px;
+}
+
+/* Burger menu */
+.menu {
+    position: relative;
+}
+.burger-wave {
+    width: 100%; /* Adapte la largeur au conteneur parent */
+    height: 100%; /* Modifie la hauteur selon tes besoins */
+}
+.dropdown-menu {
+    /*display:none;*/
+    position: absolute;
+    top: 110%;
+    width: 13rem;
+    right: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Effet au clic */
+    visibility: hidden; /* Masqué par défaut */
+    opacity: 0; /* Opacité initiale */
+    transform: translateY(-10px); /* Déplacement vers le haut */
+    transition: visibility 0s linear 0.3s, opacity 0.3s ease, transform 0.3s ease; /* Transition fluide */
+}
+.dropdown-menu.active {
+    visibility: visible; /* Rendre visible */
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Réinitialiser la position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition fluide sans délai */
+}
+.dropdown-nav {
+    padding: 1rem 1rem 1rem 0;
+    background-color: #fff;
+}
+.dropdown-buttons-container {
+    padding: 1rem;
+    background-color: #f6f4f3;
+    a {
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        display: flex;
+        font-size: 14px;
+        font-weight: 700;
+        gap: 12px;
+        align-items: center;
+        border-radius: 5px;
+        padding: 0.8rem;
+        background-color: #ffec2d;
+    }
+}
+.burger-wave-container {
+    width: 33%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+.burger-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffec2d;
+    padding: 0.7rem;
+    border-radius: 50%;
+}
+.burger-menu {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.burger-menu > svg {
+    /*transform: translateY(0);*/
+    transition: all 0.5s ease; /* Transition pour l'animation */
+
+    /* Sélecteur pour les rectangles dans le SVG */
+    [class^="rect"] {
+        transition: all 0.5s ease; /* Transition pour chaque rectangle */
+        transform-origin: 50% 50%; /* Origine de transformation au centre */
+        opacity: 1; /* Opacité par défaut */
+    }
+
+    width: auto;
+    overflow: visible !important; /* Forcer le débordement visible */
+}
+
+.burger-menu.active > svg {
+    transform: translateX(-30%); /* Ajuste cette valeur si nécessaire */
+
+    /* Appliquer les transformations aux rectangles */
+    [class^="rect"] {
+        transform: translateY(0) rotate(0); /* Réinitialiser les transformations */
+    }
+
+    .rect1 {
+        transform: translate(-2%, 30%) rotate(45deg); /* Ligne du haut devient diagonale */
+    }
+
+    .rect0 {
+        opacity: 0; /* Disparition de la ligne du milieu */
+        transform: translateY(10%); /* Déplacement vers le haut pour masquer */
+    }
+
+    .rect2 {
+        transform: translate(2%, -27%) rotate(-45deg); /* Ligne du bas devient diagonale */
+    }
+}
+
+
+/* MAIN */
+.purple-warning {
+
+}
