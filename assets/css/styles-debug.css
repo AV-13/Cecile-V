@@ -1,4 +1,8 @@
 /* Reset CSS Essentiel */
+@font-face {
+    font-family: 'Nunito';
+    src: url('./../fonts/Nunito-VariableFont_wght.ttf') format('truetype')
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +12,7 @@
 html, body {
     color: #053f5f;
     height: 100%;
-    font-family: sans-serif;
+    font-family: 'Nunito', Arial, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -157,26 +161,44 @@ table {
 }
 
 .burger-menu > svg {
-    transition: all 0.5s ease;
-    overflow: visible !important;
+    transition: all 0.5s ease; /* Transition pour l'animation */
+    width: auto;
+    overflow: visible !important; /* Forcer le débordement visible */
 }
 
 .burger-menu.active > svg {
-    transform: translateX(-30%);
+    transform: translateX(-4px)
+}
+.burger-menu > svg .rect {
+    transition: all 0.5s ease; /* Transition pour chaque rectangle */
+    transform-origin: 50% 50%; /* Origine de transformation au centre */
+    opacity: 1; /* Opacité par défaut */
 }
 
-.burger-menu.active > svg .rect1 {
-    transform: translate(-2%, 30%) rotate(45deg);
+.burger-menu.active > svg .rect {
+    transform: translateY(0) rotate(0); /* Réinitialiser les transformations */
 }
+
+.burger-menu.active svg > .rect1 {
+    transform: translateY(4px) rotate(45deg); /* Monte la ligne du haut et la fait pivoter */
+    transform-origin: center;
+}
+
+.burger-menu.active svg > .rect2 {
+    transform: translateY(-5px) rotate(-45deg); /* Descend la ligne du bas et la fait pivoter */
+    transform-origin: center;
+}
+
+.burger-menu.active .rect0 {
+    opacity: 0; /* Cache la ligne du milieu */
+}
+
 
 .burger-menu.active > svg .rect0 {
-    opacity: 0;
-    transform: translateY(10%);
+    opacity: 0; /* Disparition de la ligne du milieu */
+    transform: translateY(10%); /* Déplacement vers le haut pour masquer */
 }
 
-.burger-menu.active > svg .rect2 {
-    transform: translate(2%, -27%) rotate(-45deg);
-}
 
 /* MAIN */
 .purple-warning {
