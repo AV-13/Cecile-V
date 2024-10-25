@@ -380,3 +380,11 @@ table {
 .last-footer-container a:hover::after {
     width: 100%;
 }
+/* SVG FIX */
+
+.svg-container-wave-up {
+    margin-bottom: -3px;
+}
+.svg-container-wave-down {
+    margin-bottom: 3px;
+}
