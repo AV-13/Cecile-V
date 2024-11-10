@@ -216,7 +216,7 @@ table {
 }
 
 .presentation-container h1 {
-    font-size: 28px;
+    font-size: 35px;
     padding: 35px 0 0 10px;
     font-weight: 800;
 }
@@ -229,7 +229,7 @@ table {
 }
 
 .presentation-container p {
-    padding: 20px 20px 30px 10px;
+    padding: 30px;
     text-align: justify;
 }
 
@@ -381,7 +381,14 @@ table {
     width: 100%;
 }
 
-
 /* END OF MINIMAL DEVICE WIDTH */
 
 /* TABLETS */
+/* SVG FIX */
+
+.svg-container-wave-up {
+    margin-bottom: -3px;
+}
+.svg-container-wave-down {
+    margin-bottom: 3px;
+}
