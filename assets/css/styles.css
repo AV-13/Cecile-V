@@ -52,7 +52,27 @@ table {
     justify-content: space-between;
     padding: 1rem;
 }
-
+.dropdown-plus-menu {
+    display: none;
+}
+.arrow-bottom {
+    height: 0;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #333;
+}
+.dropdown-plus-menu.active {
+    display: flex;
+    flex-direction: column;
+}
+.logo-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1.2;
+}
 .logo-container h2 {
     color: #053f5f;
     font-size: 22px;
@@ -61,10 +81,67 @@ table {
     color: #b8cfda;
     font-size: 16px;
 }
+.telephone-header-button {
+    display: none;
+}
+.plus-item {
+    position: relative;
+}
+.dropdown-plus-menu {
+    position: absolute;
+    top: 100%; /* aligne le menu sous l'élément 'Plus' */
+    left: 0;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+.dropdown-plus-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-plus-menu ul {
+    padding: 10px 0;
+}
+.dropdown-plus-menu ul li a {
+    display: block;
+    padding: 10px 15px;
+}
+.arrow {
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
 
+.arrow.active {
+    transform: rotate(180deg);
+}
 /* Burger menu */
 .menu {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.navbar-normal-width {
+    display: none;
+}
+.navbar-normal-width li {
+    font-size: 18px;
+    font-weight: 700;
 }
 .burger-wave {
     width: 100%;
@@ -116,9 +193,11 @@ table {
     font-weight: 700;
 }
 
+.dropdown-menu-background {
+    background-color: #f6f4f3;
+}
 .dropdown-buttons-container {
     padding: 1rem;
-    background-color: #f6f4f3;
 }
 
 .dropdown-buttons-container a {
@@ -216,16 +295,16 @@ table {
 }
 
 .presentation-container h1 {
-    font-size: 35px;
-    padding: 35px 0 0 10px;
+    font-size: 7vw;
+    padding: 35px 4rem 0 10px;
     font-weight: 800;
 }
 
 .presentation-container .portrait {
     margin: 20px 0;
     width: 70%;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .presentation-container p {
@@ -384,6 +463,121 @@ table {
 /* END OF MINIMAL DEVICE WIDTH */
 
 /* TABLETS */
+@media (min-width: 640px) {
+    body {
+        font-size: 18px;
+    }
+    /* HEADER */
+    .header-container {
+        padding: 2rem 4rem;
+    }
+    .telephone-header-button {
+        display: block;
+    }
+    .burger-wave-container {
+        width: 55%;
+        height: 150px;
+    }
+    .purple-warning {
+        margin: 2rem 4rem;
+    }
+
+    /* Presentation container */
+    .presentation-container h1 {
+        font-size: 7vw;
+        font-weight: 800;
+        text-align: center;
+        padding: 30px 0;
+        line-height: 1.3;
+    }
+    .presentation-container .portrait {
+        width: 77%;
+        margin: auto;
+        border-radius: 15px;
+    }
+    /* Appointment */
+    .take-appointment h2 {
+        font-size: 35px;
+    }
+}
+/* Small laptops */
+@media (min-width: 1024px) {
+    /* General */
+    body {
+        line-height: 2;
+    }
+    /* Header */
+    .logo-container h2 {
+        font-size: 27px;
+    }
+    .logo-container h3 {
+        font-size: 20px;
+    }
+    .menu {
+        flex: 1;
+        padding-left: 3rem;
+        justify-content: space-between;
+    }
+    .burger-menu-container {
+        display: none;
+    }
+    .dropdown-menu {
+        display: none;
+    }
+    .navbar-normal-width {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+    .dropdown-buttons-container a {
+        font-size: 18px;
+    }
+    .dropdown-buttons-container a img {
+        width: 20px;
+        height: 20px;
+    }
+    /* Presentation container */
+    .purple-warning {
+        margin: 2rem 4rem 6rem 4rem;
+    }
+    .presentation-container {
+        position: relative;
+    }
+    .presentation-container h1 {
+        text-align: start;
+        font-size: 8vw;
+        z-index: 20;
+        position: relative;
+        margin: 0 0 0 300px;
+        padding: unset;
+    }
+    .presentation-container .portrait {
+        width: 33%;
+        margin: auto;
+        border-radius: 0 10px 10px 0;
+        position: absolute;
+        top: -110px;
+        left: 0;
+    }
+    .presentation-container p {
+        padding: 110px 50px;
+    }
+
+    /* Appointment */
+
+    .take-appointment p {
+        padding: 0 4rem;
+    }
+    .take-appointment-button {
+        font-size: 18px;
+        margin: 60px auto;
+    }
+    .take-appointment-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 /* SVG FIX */
 
 .svg-container-wave-up {

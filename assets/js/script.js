@@ -4,6 +4,13 @@ function toggleMenu() {
     burgerMenu.classList.toggle('active');
     dropdownMenu.classList.toggle('active');
 }
+function togglePlusMenu() {
+    const arrow = document.getElementById('arrow');
+    const plusMenu = document.getElementById('dropdown-plus-menu');
+
+    arrow.classList.toggle('active');
+    plusMenu.classList.toggle('active');
+}
 // Effects management.
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('.fade-in-section');

@@ -16,6 +16,22 @@
         <h3>Psychologue Psychothérapeute</h3>
       </div>
       <div class="menu">
+        <ul class="navbar-normal-width">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="pages/article.html">Articles</a></li>
+          <li><a href="#">Infos</a></li>
+          <li class="plus-item" onclick="togglePlusMenu()"><a href="#">Plus<span id="arrow" class="arrow"></span></a>
+            <div id="dropdown-plus-menu" class="dropdown-plus-menu">
+              <ul>
+                <li><a href="pages/about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+                <li><a href="pages/why-consult.html">Pourquoi consulter ?</a></li>
+                <li><a href="pages/psychoanalysis.html">La psychanalyse</a></li>
+                <li><a href="pages/about-me.html">Mon parcours</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="telephone-header-button dropdown-buttons-container"> <a href="tel:6177787312"><img width="15px" height="15px" src="assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a></div>
         <div class="burger-menu-container">
           <a class="burger-menu" id="burger-menu" onclick="toggleMenu()">
     <!--            <img src="./assets/images/hamburger.svg" alt="menu hamburger" style="width: 40px; height: 40px;">-->
@@ -38,7 +54,7 @@
               <li><a href="#">Infos</a></li>
             </ul>
           </nav>
-            <div class="dropdown-buttons-container">
+            <div class="dropdown-buttons-container dropdown-menu-background">
               <a href="tel:6177787312"><img width="15px" height="15px" src="assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a>
             </div>
         </div>

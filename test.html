@@ -16,12 +16,27 @@
     }
     h1 {
         font-size: 40px;
-        box-shadow: 0 -10px black;
+    }
+    .effect-container {
+      display: flex;
+    }
+    .portrait {
+      width: 40%;
+    }
+    .arrow {
+      height: 0;
+      width: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #333;
     }
   </style>
 </head>
 <body>
-<h1>Test box-shadow</h1>
+<div class="effect-container">
+  <img class="portrait" src="assets/images/cecile-vathonne-portrait.png"  alt="portrait"/>
+  <h1>Essai de mon effet superposé <span class="arrow"></span></h1>
+</div>
 </body>
 </html>
 
