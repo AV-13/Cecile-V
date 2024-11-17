@@ -12,10 +12,26 @@
 <header>
   <div class="header-container">
     <div class="logo-container">
-      <h2>Cécile Vathonne</h2>
+      <h2>CÉCILE VATHONNE</h2>
       <h3>Psychologue Psychothérapeute</h3>
     </div>
     <div class="menu">
+      <ul class="navbar-normal-width">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="article.html">Articles</a></li>
+        <li><a href="#">Infos</a></li>
+        <li class="plus-item" onclick="togglePlusMenu()"><a href="#">Plus<span id="arrow" class="arrow"></span></a>
+          <div id="dropdown-plus-menu" class="dropdown-plus-menu">
+            <ul>
+              <li><a href="about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+              <li><a href="why-consult.html">Pourquoi consulter ?</a></li>
+              <li><a href="psychoanalysis.html">La psychanalyse</a></li>
+              <li><a href="about-me.html">Mon parcours</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div class="telephone-header-button dropdown-buttons-container"> <a href="tel:6177787312"><img width="15px" height="15px" src="../assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a></div>
       <div class="burger-menu-container">
         <a class="burger-menu" id="burger-menu" onclick="toggleMenu()">
           <!--            <img src="./assets/images/hamburger.svg" alt="menu hamburger" style="width: 40px; height: 40px;">-->
@@ -29,7 +45,7 @@
       <div id="dropdown-menu" class="dropdown-menu">
         <nav class="dropdown-nav">
           <ul>
-            <li><a href="./../index.html">Accueil</a></li>
+            <li><a href="../index.html">Accueil</a></li>
             <li><a href="about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
             <li><a href="about-me.html">Mon parcours</a></li>
             <li><a href="why-consult.html">Pourquoi consulter ?</a></li>
@@ -38,8 +54,8 @@
             <li><a href="#">Infos</a></li>
           </ul>
         </nav>
-        <div class="dropdown-buttons-container">
-          <a href="tel:6177787312"><img src="../assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a>
+        <div class="dropdown-buttons-container dropdown-menu-background">
+          <a href="tel:6177787312"><img width="15px" height="15px" src="../assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a>
         </div>
       </div>
     </div>
@@ -47,16 +63,28 @@
   <div class="purple-warning"><b>Psychologue clinicienne</b> et <b>psychothérapeute</b>, je reçois à ma consultation du lundi au samedi toute personne en <b>souffrance psychique, corporelle ou organique</b>.</div>
 </header>
 <main>
-  <p>
-    "Comment trouver un psychologue à Paris ?", "Est-ce que la psychothérapie ça marche ?", "C'est quoi, un bon psy ?"
-    Ces questions, fréquentes, expriment déjà qu'un désir s'est éveillé pour aller à la rencontre d'un "psy", c'est-à-dire d'un professionnel : psychiatre, psychologue, psychothérapeute ou psychanalyste.
-    Rencontrer un "psy" n'est parfois pas une démarche évidente, mais cela indique qu'un pas a été fait pour ne pas rester dans une situation qui provoque douleur, angoisse et inquiétude.
+  <img class="svg-wave" src="../assets/images/waves/before-presentation-wave.svg" alt="Présentation">
+  <div class="psychoanalysis-freud-container">
+  <h1 class="page-title">La psychanalyse</h1>
+  <div class="freud-container">
+    <div class="freud-illustration-container">
+      <img class="freud-illustration" src="../assets/images/freud.jpg" alt="Illustration de Sigmund Freud, père de la psychanalyse." />
+      <span>Sigmund Freud - Père de la psychanalyse</span>
+    </div>
+  </div>
+  <p class="psychology-explanation first-p">"Comment trouver un psychologue à Paris ?", "Est-ce que la psychothérapie ça marche ?", "C'est quoi, un bon psy ?"
+      Ces questions, fréquentes, expriment déjà qu'un désir s'est éveillé pour aller à la rencontre d'un "psy", c'est-à-dire d'un professionnel : psychiatre, psychologue, psychothérapeute ou psychanalyste.
+      Rencontrer un "psy" n'est parfois pas une démarche évidente, mais cela indique qu'un pas a été fait pour ne pas rester dans une situation qui provoque douleur, angoisse et inquiétude.</p>
+  <p class="psychology-explanation">
 
-    Aussi, cette rubrique a été créée pour donner un aperçu de ce en quoi la psychanalyse consiste et des effets qu'elle amène, concrètement, dans la vie des patients et des psychanalysants. Il y est également question de la psychanalyse dans le rapport qu'elle peut avoir avec la médecine, avec la société ou encore avec le politique.
-
-    Se trouvent donc ici les échos de la clinique psychanalytique que pratique Cécile Vathonne, dans sa consultation de psychothérapie et de psychanalyse, au 93, rue de Maubeuge, 75010 Paris, tout proche de la gare du Nord.
-    Pour la contacter et obtenir un premier rendez-vous, vous pouvez appeler au 06.32.24.89.50.
+    Aussi, cette rubrique a été créée pour donner un aperçu de ce en quoi la psychanalyse consiste et des effets qu'elle amène, concrètement, dans la vie des patients et des psychanalysants.
   </p>
+    <img class="svg-wave" src="../assets/images/waves/before-take-appointment-wave.svg" alt="Prendre rendez-vous">
+  </div>
+    <img class="psychoanalysis-illustration" src="../assets/images/psychoanalysis-art.jpg" alt="Illustration d'une psychanalyse">
+    <p style="padding: 50px 40px; text-align: justify;">Il y est également question de la psychanalyse dans le rapport qu'elle peut avoir avec la médecine, avec la société ou encore avec le politique.
+      Se trouvent donc ici les échos de la clinique psychanalytique que pratique Cécile Vathonne, dans sa consultation de psychothérapie et de psychanalyse, au 93, rue de Maubeuge, 75010 Paris, tout proche de la gare du Nord.
+      Pour la contacter et obtenir un premier rendez-vous, vous pouvez appeler au 06.32.24.89.50.</p>
 </main>
 <footer>
   <svg height="50px" width="100%"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
