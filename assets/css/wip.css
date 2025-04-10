@@ -1,0 +1,46 @@
+/*.parent */
+/*    display: grid;*/
+/*    grid-template-columns: repeat(2, 1fr); !* Deux colonnes de largeur égale *!*/
+/*    grid-template-rows: repeat(11, 1fr);  !* Onze lignes de hauteur égale *!*/
+/*    gap: 0; !* Aucun espacement entre les colonnes/lignes *!*/
+/*    grid-gap: 0 10%;*/
+/*    width: 80%;*/
+/*    margin: auto;*/
+/*    max-width: 1200px; !* Ajustez selon vos besoins *!*/
+/*}*/
+
+/*.card {*/
+/*    position: relative;*/
+/*    padding: 10px 30px;*/
+/*    box-shadow:*/
+/*            0 1px 2px 0 rgba(0, 0, 0, 0.05),*/
+/*            0 2px 4px 0 rgba(0, 0, 0, 0.1),*/
+/*            0 4px 6px -1px rgba(0, 0, 0, 0.1),*/
+/*            0 10px 15px -3px rgba(0, 0, 0, 0.1),*/
+/*            0 20px 25px -5px rgba(0, 0, 0, 0.05);*/
+/*    background-color: white;*/
+/*    width: 100%; !* Important : Remplir la largeur de sa colonne *!*/
+/*    margin: 0;   !* Aucune marge *!*/
+/*}*/
+
+/*.icon-badge {*/
+/*    position: absolute;*/
+/*    top: 30px; !* Ajustez la position verticale *!*/
+/*    right: -30px; !* Ajustez la position horizontale *!*/
+/*    width: 60px; !* Diamètre du cercle *!*/
+/*    height: 60px;*/
+/*    background-color: #ffec2d;*/
+/*    border-radius: 50%; !* Rend le div complètement rond *!*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center; !* Centre l'icône à l'intérieur du rond *!*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); !* Ajoute une ombre *!*/
+/*}*/
+/*.icon {*/
+/*    width: 28px; !* Taille de l'icône *!*/
+/*    height: 28px;*/
+/*    color: black; !* Couleur de l'icône *!*/
+/*}*/
+/*.div1 { grid-area: 1 / 1 / 5 / 2; }*/
+/*.div2 { grid-area: 4 / 2 / 8 / 3; } !* Assure qu’elle occupe toute la colonne 2 *!*/
+/*.div3 { grid-area: 7 / 1 / 11 / 2; }

@@ -11,21 +11,23 @@
 <body>
   <header>
     <div class="header-container">
-      <div class="logo-container">
-        <h2>CÉCILE VATHONNE</h2>
-        <h3>Psychologue Psychothérapeute</h3>
-      </div>
+      <a href="index.html">
+        <div class="logo-container">
+          <h2>CÉCILE VATHONNE</h2>
+          <h3>Psychologue Psychothérapeute</h3>
+        </div>
+      </a>
       <div class="menu">
         <ul class="navbar-normal-width">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="pages/article.html">Articles</a></li>
-          <li><a href="#">Infos</a></li>
+          <li><a href="index.html#takeAppointment">Prendre rendez-vous</a></li>
+          <li><a href="index.html#price">Combien ça coûte ? </a></li>
           <li class="plus-item" onclick="togglePlusMenu()"><a href="#">Plus<span id="arrow" class="arrow"></span></a>
             <div id="dropdown-plus-menu" class="dropdown-plus-menu">
               <ul>
-                <li><a href="pages/about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+                <li><a href="pages/article.html">Articles</a></li>
                 <li><a href="pages/why-consult.html">Pourquoi consulter ?</a></li>
-                <li><a href="pages/psychoanalysis.html">La psychanalyse</a></li>
+                <li><a href="pages/psychoanalysis.html">Psychanalyse et psychothérapie</a></li>
                 <li><a href="pages/about-me.html">Mon parcours</a></li>
               </ul>
             </div>
@@ -35,7 +37,7 @@
         <div class="burger-menu-container">
           <a class="burger-menu" id="burger-menu" onclick="toggleMenu()">
     <!--            <img src="./assets/images/hamburger.svg" alt="menu hamburger" style="width: 40px; height: 40px;">-->
-            <svg width="18px" height="18px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
               <rect fill="#053f5f" class="rect rect0" x="0" y="8" width="100%" height="2" /><!-- milieu -->
               <rect fill="#053f5f" class="rect rect1" x="0" y="2" width="100%" height="2" /><!-- haut -->
               <rect fill="#053f5f" class="rect rect2" x="0" y="14" width="100%" height="2" /><!-- bas -->
@@ -46,12 +48,12 @@
           <nav class="dropdown-nav">
             <ul>
               <li><a href="index.html">Accueil</a></li>
-              <li><a href="pages/about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+              <li><a href="index.html#takeAppointment">Prendre rendez-vous</a></li>
+              <li><a href="index.html#price">Combien ça coûte ? </a></li>
               <li><a href="pages/about-me.html">Mon parcours</a></li>
               <li><a href="pages/why-consult.html">Pourquoi consulter ?</a></li>
-              <li><a href="pages/psychoanalysis.html">La psychanalyse</a></li>
+              <li><a href="pages/psychoanalysis.html">Psychanalyse et psychothérapie</a></li>
               <li><a href="pages/article.html">Articles</a></li>
-              <li><a href="#">Infos</a></li>
             </ul>
           </nav>
             <div class="dropdown-buttons-container dropdown-menu-background">
@@ -60,17 +62,24 @@
         </div>
       </div>
     </div>
-    <div class="purple-warning"><b>Psychologue clinicienne</b> et <b>psychothérapeute</b>, je reçois à ma consultation du lundi au samedi toute personne en <b>souffrance psychique, corporelle ou organique</b>.</div>
+    <div class="purple-warning">
+      Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>, voire de <strong>souffrance</strong>. Laisser cette souffrance s’installer, ce n’est <strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une <strong>écoute sérieuse</strong>.
+      Prendre <strong>rendez-vous</strong>, c’est facile et rapide.
+    </div>
   </header>
   <main>
     <img class="svg-wave" src="assets/images/waves/before-presentation-wave.svg" alt="Présentation">
     <div class="presentation-container">
       <h1>Psychologue Psychothérapeute</h1>
       <img class="portrait" src="assets/images/cecile-vathonne-portrait.png" alt="portrait" />
-      <p class="psychology-explanation">La <b>psychothérapie</b> et la <b>psychanalyse</b> s’adressent à celles et ceux qui <b>souffrent</b>, quelle que soit la forme que prend cette souffrance. Il n'y a pas de mauvaises raisons de consulter, il n'y a pas de souffrance qui ne mérite que nous n'y prêtions attention. S'il y a un <b>malaise</b>, sous forme de symptôme, de comportement, de répétition, de passage à l'acte, c'est qu'il y a quelque chose qui cherche à <b>s'exprimer</b>, qui nécessite d'être dit. Si vous souhaitez vous en sortir, sortir d'une façon de vivre qui ne vous convient plus, vous êtes le bienvenu en consultation. Le <b>traitement</b> qui s'y déploie, un traitement qui se fait par la parole, vise d'une part à <b>apaiser</b> et à régler ce qui fait <b>souffrir</b>, et d'autre part à construire une manière de mener votre existence qui vous convienne véritablement.</p>
+      <p class="psychology-explanation">
+        Je propose de recevoir toute personne qui souffre.
+        Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d’être écoutée.
+        Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au 07 62 80 25 77.
+      </p>
     </div>
     <img class="svg-wave" src="assets/images/waves/before-take-appointment-wave.svg" alt="Prendre rendez-vous">
-    <div class="take-appointment">
+    <div id="takeAppointment" class="take-appointment">
       <h2>Prendre rendez-vous</h2>
       <div class="take-appointment-subcontainer">
         <p class="psychology-explanation">Les prises de rendez-vous se font exclusivement <b>par téléphone</b>. Je suis à votre disposition pour toute demande aux horaires indiqués en bas de la page.</p>
@@ -79,6 +88,10 @@
           <img class="phone-illustration-blob" src="assets/images/blob/telephone-blob.svg" alt="Blob" />
         </div>
         <a class="take-appointment-button" href="tel:6177787312"><img width="15px" height="15px" src="assets/images/telephone.svg" alt="telephone" /> 06 05 04 03 02</a>
+      </div>
+      <div id="price">
+        <h2>Combien ça coûte ? </h2>
+        <div class="purple-warning">Je pratique le principe de <strong>Consultation Publique de Psychanalyse</strong> (CPP). Vous êtes invités à régler vos séances <strong>en fonction de vos moyens</strong>. Nous pouvons donc discuter ensemble du prix des séances <strong>selon vos possibilités</strong>.</div>
       </div>
     </div>
 

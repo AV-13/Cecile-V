@@ -11,21 +11,23 @@
 <body>
 <header>
   <div class="header-container">
-    <div class="logo-container">
-      <h2>CÉCILE VATHONNE</h2>
-      <h3>Psychologue Psychothérapeute</h3>
-    </div>
+    <a href="../index.html">
+      <div class="logo-container">
+        <h2>CÉCILE VATHONNE</h2>
+        <h3>Psychologue Psychothérapeute</h3>
+      </div>
+    </a>
     <div class="menu">
       <ul class="navbar-normal-width">
         <li><a href="../index.html">Accueil</a></li>
-        <li><a href="article.html">Articles</a></li>
-        <li><a href="#">Infos</a></li>
+        <li><a href="../index.html#takeAppointment">Prendre rendez-vous</a></li>
+        <li><a href="../index.html#price">Tarifs</a></li>
         <li class="plus-item" onclick="togglePlusMenu()"><a href="#">Plus<span id="arrow" class="arrow"></span></a>
           <div id="dropdown-plus-menu" class="dropdown-plus-menu">
             <ul>
-              <li><a href="about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+              <li><a href="article.html">Articles</a></li>
               <li><a href="why-consult.html">Pourquoi consulter ?</a></li>
-              <li><a href="psychoanalysis.html">La psychanalyse</a></li>
+              <li><a href="psychoanalysis.html">Psychanalyse et psychothérapie</a></li>
               <li><a href="about-me.html">Mon parcours</a></li>
             </ul>
           </div>
@@ -35,7 +37,7 @@
       <div class="burger-menu-container">
         <a class="burger-menu" id="burger-menu" onclick="toggleMenu()">
           <!--            <img src="./assets/images/hamburger.svg" alt="menu hamburger" style="width: 40px; height: 40px;">-->
-          <svg width="18px" height="18px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+          <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
             <rect fill="#053f5f" class="rect rect0" x="0" y="8" width="100%" height="2" /><!-- milieu -->
             <rect fill="#053f5f" class="rect rect1" x="0" y="2" width="100%" height="2" /><!-- haut -->
             <rect fill="#053f5f" class="rect rect2" x="0" y="14" width="100%" height="2" /><!-- bas -->
@@ -46,12 +48,12 @@
         <nav class="dropdown-nav">
           <ul>
             <li><a href="../index.html">Accueil</a></li>
-            <li><a href="about-psychology.html">Qu'est-ce qu'un psychologue ?</a></li>
+            <li><a href="../index.html#takeAppointment">Prendre rendez-vous</a></li>
+            <li><a href="../index.html#price">Tarifs</a></li>
             <li><a href="about-me.html">Mon parcours</a></li>
             <li><a href="why-consult.html">Pourquoi consulter ?</a></li>
-            <li><a href="psychoanalysis.html">La psychanalyse</a></li>
+            <li><a href="psychoanalysis.html">Psychanalyse et psychothérapie</a></li>
             <li><a href="article.html">Articles</a></li>
-            <li><a href="#">Infos</a></li>
           </ul>
         </nav>
         <div class="dropdown-buttons-container dropdown-menu-background">
@@ -60,8 +62,12 @@
       </div>
     </div>
   </div>
-  <div class="purple-warning"><b>Psychologue clinicienne</b> et <b>psychothérapeute</b>, je reçois à ma consultation du lundi au samedi toute personne en <b>souffrance psychique, corporelle ou organique</b>.</div>
+  <div class="purple-warning">
+    Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>, voire de <strong>souffrance</strong>. Laisser cette souffrance s’installer, ce n’est <strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une <strong>écoute sérieuse</strong>.
+    Prendre <strong>rendez-vous</strong>, c’est facile et rapide.
+  </div>
 </header>
+<main>
 <h2>La psychothérapie</h2>
 
 <p>La psychothérapie se déroule en face à face, le patient étant installé sur le fauteuil. Lorsqu'un être entre en psychothérapie, c'est parce qu'il y a un ou plusieurs symptôme(s) qui engendre une souffrance.
@@ -80,67 +86,76 @@ La psychothérapie est donc souvent une première étape avant l'entrée en psyc
 En psychanalyse, il s'agit d'une vraie construction de son existence de manière toute autre, un vrai changement de soi. Le cheminement en profondeur dans l'inconscient dévoilera les conflits psychiques qui s'apaiseront naturellement. La traversée d'une psychanalyse ne se fait pas sans tempête, car elle invite le psychanalysant à prendre conscience de pensées inconscientes jusqu'ici inavouables. Cela demande du courage, mais est indispensable pour dénouer les noeuds psychiques.
 
 À la sortie d'une psychanalyse, l'être devenu sujet, c'est-à-dire adulte responsable de son existence, pourra vivre une vie plus légère et plus joyeuse.</p>
+</main>
 <footer>
-  <svg height="50px" width="100%"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#002748" fill-opacity="1" d="M0,320L34.3,282.7C68.6,245,137,171,206,165.3C274.3,160,343,224,411,240C480,256,549,224,617,229.3C685.7,235,754,277,823,256C891.4,235,960,149,1029,133.3C1097.1,117,1166,171,1234,192C1302.9,213,1371,203,1406,197.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
-    </path>
-  </svg>
+  <img class="svg-wave svg-container-wave-up" src="../assets/images/waves/before-footer-wave.svg" alt="vague" />
   <div class="footer-container">
-    <h3 class="footer-title">Contact</h3>
-    <h4>Cécile Vathonne - Cabinet de psychologie</h4>
-    <h5>13 rue des fleurs</h5>
-    <h5>75000 Paris</h5>
-    <br />
-    <h5>Téléphone : <span class="disable-bold">06 05 04 03 02</span></h5>
-    <h5>E-mail : <span class="disable-bold">cecile.vathonne@psy.com</span></h5>
-    <h3 class="footer-title">Horaires</h3>
-    <div class="planning">
-      <span class="days">Lundi et mardi</span>
-      <div class="hourly-container">
-        <span class="hourly">8h - 12h30</span>
-        <span class="hourly">13h30-18h00</span>
+    <div class="contact">
+      <h3 class="footer-title">Contact</h3>
+      <span class="information">
+        <img class="footer-icon" src="../assets/images/icons/work.svg" alt="Travail : ">
+        <span>Cécile Vathonne - Cabinet de psychologie</span></span>
+      <span class="information">
+        <img class="footer-icon" src="../assets/images/icons/localisation.svg" alt="Localisation : ">
+        <span>13 rue des fleurs - 75000 Paris</span></span>
+      <span class="information">
+        <img class="footer-icon" src="../assets/images/icons/telephone-empty.svg" alt="Numéro de téléphone : ">
+        <span class="disable-bold">06 05 04 03 02</span>
+      </span>
+      <span class="information">
+        <img class="footer-icon" src="../assets/images/icons/enveloppe-empty.svg" alt="Mail : ">
+        <span class="disable-bold">cecile.vathonne@psy.com</span>
+      </span>
+    </div>
+    <div class="hourly">
+      <h3 class="footer-title">Horaires</h3>
+      <div class="planning">
+        <span class="days">Lundi & Mardi</span>
+        <div class="hourly-container">
+          <span class="hourly">8h - 12h30</span>
+          <span class="hourly">13h30 - 18h00</span>
+        </div>
+      </div>
+      <br />
+      <div class="planning">
+        <span class="days">Mercredi</span>
+        <div class="hourly-container">
+          <span class="hourly">7h - 12h00</span>
+        </div>
+      </div>
+      <br />
+      <div class="planning">
+        <span class="days">Jeudi</span>
+        <div class="hourly-container">
+          <span class="hourly">8h00 - 12h30</span>
+          <span class="hourly">14h30 - 20h00</span>
+        </div>
+      </div>
+      <br />
+      <div class="planning">
+        <span class="days">Vendredi</span>
+        <div class="hourly-container">
+          <span class="hourly">7h00 - 12h00</span>
+        </div>
       </div>
     </div>
-    <br />
-    <div class="planning">
-      <span class="days">Mercredi</span>
-      <div class="hourly-container">
-        <span class="hourly">7h - 12h00</span>
+    <div class="localisation">
+      <h3 class="footer-title">Localisation</h3>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10502.740676673904!2d2.3494517150512686!3d48.84514364794244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1729604086226!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-    </div>
-    <br />
-    <div class="planning">
-      <span class="days">Jeudi</span>
-      <div class="hourly-container">
-        <span class="hourly">8h00 - 12h30</span>
-        <span class="hourly">14h30 - 20h00</span>
-      </div>
-    </div>
-    <br />
-    <div class="planning">
-      <span class="days">Vendredi</span>
-      <div class="hourly-container">
-        <span class="hourly">7h00 - 12h00</span>
-      </div>
-    </div>
-    <h3 class="footer-title">Localisation</h3>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10502.740676673904!2d2.3494517150512686!3d48.84514364794244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1729604086226!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-  <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none"><rect x="0" y="0" width="900" height="600" fill="#002748"/><path d="M0 184L12.5 176.3C25 168.7 50 153.3 75 144.8C100 136.3 125 134.7 150 138.2C175 141.7 200 150.3 225 171.3C250 192.3 275 225.7 300 224.7C325 223.7 350 188.3 375 173.5C400 158.7 425 164.3 450 158.8C475 153.3 500 136.7 525 142.3C550 148 575 176 600 189.2C625 202.3 650 200.7 675 188C700 175.3 725 151.7 750 141.5C775 131.3 800 134.7 825 137.2C850 139.7 875 141.3 887.5 142.2L900 143L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#002748"/><path d="M0 268L12.5 274.7C25 281.3 50 294.7 75 293.2C100 291.7 125 275.3 150 266.2C175 257 200 255 225 262.3C250 269.7 275 286.3 300 279.7C325 273 350 243 375 233.3C400 223.7 425 234.3 450 236.8C475 239.3 500 233.7 525 233.7C550 233.7 575 239.3 600 243C625 246.7 650 248.3 675 247.8C700 247.3 725 244.7 750 253.5C775 262.3 800 282.7 825 289.8C850 297 875 291 887.5 288L900 285L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#264563"/><path d="M0 312L12.5 315.5C25 319 50 326 75 322.2C100 318.3 125 303.7 150 304.8C175 306 200 323 225 321.7C250 320.3 275 300.7 300 306.7C325 312.7 350 344.3 375 343.2C400 342 425 308 450 306C475 304 500 334 525 334.2C550 334.3 575 304.7 600 293.7C625 282.7 650 290.3 675 299.3C700 308.3 725 318.7 750 327.5C775 336.3 800 343.7 825 336.2C850 328.7 875 306.3 887.5 295.2L900 284L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#486580"/><path d="M0 349L12.5 346.3C25 343.7 50 338.3 75 348.5C100 358.7 125 384.3 150 385.7C175 387 200 364 225 359.7C250 355.3 275 369.7 300 376.2C325 382.7 350 381.3 375 374.8C400 368.3 425 356.7 450 359.3C475 362 500 379 525 384.5C550 390 575 384 600 381.2C625 378.3 650 378.7 675 386.7C700 394.7 725 410.3 750 413.8C775 417.3 800 408.7 825 401C850 393.3 875 386.7 887.5 383.3L900 380L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#6b879d"/><path d="M0 440L12.5 436C25 432 50 424 75 422.3C100 420.7 125 425.3 150 431.7C175 438 200 446 225 443.7C250 441.3 275 428.7 300 434.7C325 440.7 350 465.3 375 471.7C400 478 425 466 450 455C475 444 500 434 525 435.8C550 437.7 575 451.3 600 462.3C625 473.3 650 481.7 675 475.7C700 469.7 725 449.3 750 439C775 428.7 800 428.3 825 429.5C850 430.7 875 433.3 887.5 434.7L900 436L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#90abbb"/><path d="M0 498L12.5 501.3C25 504.7 50 511.3 75 510C100 508.7 125 499.3 150 501.2C175 503 200 516 225 521.2C250 526.3 275 523.7 300 516.2C325 508.7 350 496.3 375 499.7C400 503 425 522 450 521.7C475 521.3 500 501.7 525 496.8C550 492 575 502 600 507.2C625 512.3 650 512.7 675 517.7C700 522.7 725 532.3 750 526.8C775 521.3 800 500.7 825 494.2C850 487.7 875 495.3 887.5 499.2L900 503L900 601L887.5 601C875 601 850 601 825 601C800 601 775 601 750 601C725 601 700 601 675 601C650 601 625 601 600 601C575 601 550 601 525 601C500 601 475 601 450 601C425 601 400 601 375 601C350 601 325 601 300 601C275 601 250 601 225 601C200 601 175 601 150 601C125 601 100 601 75 601C50 601 25 601 12.5 601L0 601Z" fill="#b8cfda"/>
-  </svg>
   <div class="last-footer-container">
     <a>Mentions légales</a>
     <a>Protection des données</a>
   </div>
 </footer>
 <div class="burger-wave-container">
-  <svg class="burger-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#fbfafa" fill-opacity="1" d="M0,32L60,53.3C120,75,240,117,360,165.3C480,213,600,267,720,272C840,277,960,235,1080,229.3C1200,224,1320,256,1380,272L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-    </path>
-  </svg>
+  <img class="svg-wave burger-wave" alt="wave" src="../assets/images/waves/burger-wave.svg" />
+
 </div>
 <script src="../assets/js/script.js"></script>
 </body>
 </html>
+
