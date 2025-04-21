@@ -3,10 +3,12 @@
     font-family: 'Nunito';
     src: url('./../fonts/Nunito-VariableFont_wght.ttf') format('truetype')
 }
+
 @font-face {
     font-family: 'Playfair Display';
     src: url('./../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype')
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +23,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', 'Nunito', sans-serif;
 }
@@ -49,10 +52,12 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 .svg-wave {
     width: 100%;
     height: 50px;
 }
+
 /* Header */
 .header-container {
     position: relative;
@@ -62,9 +67,11 @@ table {
     justify-content: space-between;
     padding: 1rem;
 }
+
 .dropdown-plus-menu {
     display: none;
 }
+
 .arrow-bottom {
     height: 0;
     width: 0;
@@ -72,31 +79,38 @@ table {
     border-right: 10px solid transparent;
     border-top: 10px solid #333;
 }
+
 .dropdown-plus-menu.active {
     display: flex;
     flex-direction: column;
 }
-.logo-container{
+
+.logo-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 5px;
     line-height: 1.2;
 }
+
 .logo-container h2 {
     color: #053f5f;
     font-size: 22px;
 }
+
 .logo-container h3 {
     color: #b8cfda;
     font-size: 16px;
 }
+
 .telephone-header-button {
     display: none;
 }
+
 .plus-item {
     position: relative;
 }
+
 .dropdown-plus-menu {
     position: absolute;
     top: 100%; /* aligne le menu sous l'élément 'Plus' */
@@ -112,18 +126,22 @@ table {
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 10;
 }
+
 .dropdown-plus-menu.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
+
 .dropdown-plus-menu ul {
     padding: 10px 0;
 }
+
 .dropdown-plus-menu ul li a {
     display: block;
     padding: 10px 15px;
 }
+
 .arrow {
     height: 0;
     width: 0;
@@ -138,6 +156,7 @@ table {
 .arrow.active {
     transform: rotate(180deg);
 }
+
 /* Burger menu */
 .menu {
     position: relative;
@@ -146,17 +165,21 @@ table {
     align-items: center;
     gap: 20px;
 }
+
 .navbar-normal-width {
     display: none;
 }
+
 .navbar-normal-width li {
     font-size: 18px;
     font-weight: 700;
 }
+
 .burger-wave {
     width: 100%;
     height: 100%;
 }
+
 .dropdown-menu {
     position: absolute;
     top: 110%;
@@ -206,6 +229,7 @@ table {
 .dropdown-menu-background {
     background-color: #f6f4f3;
 }
+
 .dropdown-buttons-container {
     padding: 1rem;
 }
@@ -258,6 +282,7 @@ table {
 .burger-menu.active > svg {
     transform: translateX(-4px)
 }
+
 .burger-menu > svg .rect {
     transition: all 0.5s ease; /* Transition pour chaque rectangle */
     transform-origin: 50% 50%; /* Origine de transformation au centre */
@@ -317,6 +342,7 @@ table {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .presentation-container .portrait-about-me {
 
     right: 0 !important;
@@ -325,15 +351,18 @@ table {
     border-radius: 10px 0 0 10px;
 
 }
+
 .psychology-explanation {
     padding: 30px;
-    text-align: justify;
+    text-align: center;
 }
+
 /* Article */
 .article-title {
     text-align: center;
     margin: 300px 0;
 }
+
 /* Take appointment */
 .take-appointment {
     display: flex;
@@ -403,9 +432,11 @@ table {
 .days {
     font-weight: 800;
 }
+
 .hourly {
     font-weight: 600;
 }
+
 .disable-bold {
     font-weight: normal;
 }
@@ -416,6 +447,7 @@ table {
     color: #a4bbc6;
     margin: 20px 0;
 }
+
 .information {
     display: flex;
     justify-content: start;
@@ -423,18 +455,21 @@ table {
     margin: 20px 0;
     gap: 10px;
 }
+
 .footer-icon {
     height: 25px;
     width: 25px;
 }
+
 .footer-container {
     font-size: 17px;
     background-color: #002748;
     padding: 1rem;
     color: #ffffff;
 }
+
 .footer-container span {
- font-size: 17px;
+    font-size: 17px;
 }
 
 .planning {
@@ -482,6 +517,7 @@ table {
 .last-footer-container a:hover::after {
     width: 100%;
 }
+
 .last-footer-container a {
     cursor: pointer;
     font-size: 18px;
@@ -511,22 +547,72 @@ table {
     transform: rotate(-1deg) translateY(-8px);
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container .access {
+    display: flex;
+    flex-direction: column;
+}
+
+.access__container {
+    display: flex;
+}
+
+.access__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.access__group {
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+/* Optionnel : ajuster les titres et listes */
+.access__title {
+    font-family: 'Nunito', serif;
+    margin: 10px 0;
+}
+
+.access__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.access__icon {
+    width: 25px;
+}
+
+.access__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
 /* WHY CONSULT */
 .consult-reasons {
     display: block;
     width: 100%;
     padding-left: 10px;
 }
+
 .symptom-list {
     list-style: inside;
     padding: 10px 0 0 10px;
 }
+
 .page-title {
     font-size: 7vw;
     width: fit-content;
     margin: auto;
     font-weight: 800;
 }
+
 .words-cloud {
     width: 80%;
     margin: 50px auto;
@@ -535,20 +621,24 @@ table {
 
 /* Psychoanalysis */
 .psychoanalysis-freud-container {
-        background-color: #EDF3F6;
+    background-color: #EDF3F6;
 }
+
 .freud-container {
     display: flex;
 }
+
 .freud-illustration-container {
     width: 55%;
     margin: 70px 0;
 }
+
 .freud-illustration {
     width: 100%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
 .freud-container p {
     width: 45%;
     padding: 0 20px;
@@ -558,6 +648,7 @@ table {
     width: 50%;
     margin: auto;
 }
+
 .freud-illustration-container span {
     font-size: 14px;
     font-style: italic;
@@ -570,14 +661,17 @@ table {
 .about-me {
     padding-top: 50px;
 }
-.about-me  img  {
+
+.about-me img {
     width: 60%;
     margin: auto;
     border-radius: 10px;
 }
-.about-me-text h1  {
+
+.about-me-text h1 {
     padding: 30px;
 }
+
 /* END OF MINIMAL DEVICE WIDTH */
 
 /* TABLETS */
@@ -585,28 +679,39 @@ table {
     body {
         font-size: 18px;
     }
+
     /* HEADER */
     .header-container, .footer-container {
         padding: 2rem 4rem;
     }
+
     .telephone-header-button {
         display: block;
     }
+
     .burger-wave-container {
         width: 55%;
         height: 150px;
     }
+
     .purple-warning {
         margin: 2rem 4rem;
     }
+
     .svg-wave {
         height: 100px;
     }
+
     /* FOOTER */
+    .footer-container {
+        flex-direction: row;
+    }
+
     .last-footer-container {
         flex-direction: row;
         justify-content: center;
     }
+
     /* Presentation container */
     .presentation-container h1 {
         font-size: 7vw;
@@ -615,90 +720,113 @@ table {
         padding: 30px 0;
         line-height: 1.3;
     }
+
     .presentation-container .portrait {
         width: 50%;
         margin: auto;
         border-radius: 15px;
     }
+
     /* Appointment */
     .take-appointment h2 {
         font-size: 35px;
     }
+
     /*  Psychoanalysis */
     .freud-illustration-container {
         width: 40%;
     }
+
     .psychoanalysis-illustration {
         width: 35%;
     }
+
     /* why consult */
     .words-cloud {
         width: 60%;
     }
+
     /* about me*/
-    .about-me  img {
+    .about-me img {
         width: 45%;
     }
 }
+
 /* Small laptops */
 @media (min-width: 1024px) {
     .consult-reasons {
         padding-left: 50px;
     }
+
     .symptom-list {
         padding: 50px 0 0 50px;
     }
+
     /* General */
     body {
         line-height: 2;
     }
+
     .svg-wave {
         height: 200px;
     }
+
     /* Header */
     .header-container, .footer-container {
         padding: 2rem 1rem;
     }
+
     .menu {
         padding-left: 1rem !important;
     }
+
     .logo-container h2 {
         font-size: 27px;
     }
+
     .logo-container h3 {
         font-size: 20px;
     }
+
     .menu {
         flex: 1;
         padding-left: 3rem;
         justify-content: space-between;
     }
+
     .burger-menu-container {
         display: none;
     }
+
     .dropdown-menu {
         display: none;
     }
+
     .navbar-normal-width {
         display: flex;
         justify-content: center;
         gap: 30px;
     }
+
     .dropdown-buttons-container a {
         font-size: 18px;
     }
+
     .dropdown-buttons-container a img {
         width: 20px;
         height: 20px;
     }
+
     /* Presentation container */
     .purple-warning {
         margin: 2rem 4rem 6rem 4rem;
         font-size: 16px;
     }
+
     .presentation-container {
         position: relative;
     }
+
     .presentation-container h1 {
         text-align: start;
         font-size: 7.5vw;
@@ -708,10 +836,10 @@ table {
         top: -90px;
         width: 70%;
         padding: unset;
-        text-shadow:
-                1px 1px 2px rgba(0, 0, 0, 0.3),
-                0px 0px 5px rgba(192, 192, 180, 0.5);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
+        0px 0px 5px rgba(192, 192, 180, 0.5);
     }
+
     .presentation-container .portrait {
         width: 33%;
         margin: auto;
@@ -720,6 +848,7 @@ table {
         top: -110px;
         left: 0;
     }
+
     .presentation-container .portrait-about-me {
         right: 0 !important;
         left: unset;
@@ -727,31 +856,35 @@ table {
         border-radius: 10px 0 0 10px;
 
     }
+
     .presentation-container p {
         padding: 20% 50px 110px 50px;
     }
 
     /* Appointment */
-
     .take-appointment p {
         padding: 0 4rem;
     }
+
     .take-appointment-button {
         font-size: 18px;
         margin: 60px auto;
     }
+
     .take-appointment-button img {
         width: 20px;
         height: 20px;
     }
-    /*  Psychoanalysis */
 
+    /*  Psychoanalysis */
     .psychoanalysis-illustration {
         width: 27%;
     }
+
     .freud-container {
         position: relative;
     }
+
     .freud-container .freud-illustration-container {
         width: 30%;
         margin: auto;
@@ -760,60 +893,75 @@ table {
         top: -110px;
         left: 0;
     }
+
     .psychoanalysis-freud-container .page-title {
         position: absolute;
         left: 36%;
     }
+
     .page-title {
         font-size: 5vw;
     }
+
     .psychology-explanation, .about-me-text h1 {
         padding: 20px 4rem;
     }
+
     .psychoanalysis-freud-container .first-p {
         padding: 40% 4rem 0 4rem !important;
     }
+
     /* Footer */
     .footer-container {
         display: flex;
         justify-content: space-between;
     }
+
     .hourly, .localisation, .contact {
         flex: 1;
     }
+
     .footer-title {
         margin: 20px auto;
     }
+
     /* why consult */
     .words-cloud {
         width: 45%;
     }
+
     /* about me */
     .about-me-container {
         display: flex;
         flex-direction: row-reverse;
     }
+
     .about-me-container .about-me-text, .about-me-container img {
         width: 50%;
     }
-    .about-me  img {
+
+    .about-me img {
         width: 35%;
     }
 }
+
 /* FIXME hotfix to avoid navbar wrap */
 @media (min-width: 1123px) {
     .header-container, .footer-container {
         padding: 2rem 4rem;
     }
+
     .menu {
         padding-left: 3rem !important;
     }
 }
+
 /* SVG FIX */
 
 .svg-container-wave-up {
     margin-bottom: -3px;
 }
+
 .svg-container-wave-down {
     margin-top: -3px;
 }

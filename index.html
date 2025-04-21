@@ -1,32 +1,75 @@
 ---
 layout: default
+description: "Psychothérapeute spécialisée en psychanalyse à Paris 9e. RV rapide au 07 62 80 25 77."
 title: "Cécile Vathonne - Psychothérapeute"
 ---
-  <main>
-    <img class="svg-wave" src="assets/images/waves/before-presentation-wave.svg" alt="Présentation">
+<main>
+    <img
+            class="svg-wave"
+            src="{{ '/assets/images/waves/before-presentation-wave.svg' | relative_url }}"
+            alt="Présentation"
+    />
+
     <div class="presentation-container">
-      <h1>Psychothérapeute</h1>
-      <img class="portrait" src="assets/images/cecile-vathonne-portrait.png" alt="portrait" />
-      <p class="psychology-explanation">
-        Je propose de recevoir toute personne qui souffre.
-        Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d’être écoutée.
-        Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au 07 62 80 25 77.
-      </p>
+        <h1>Psychothérapeute</h1>
+        <img
+                class="portrait"
+                src="{{ '/assets/images/cecile-vathonne-portrait.png' | relative_url }}"
+                alt="portrait"
+        />
+        <p class="psychology-explanation">
+            Je propose de recevoir toute personne qui souffre.
+            Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une
+            tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d’être écoutée.
+            Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au 07 62 80 25 77.
+        </p>
     </div>
-    <img class="svg-wave" src="assets/images/waves/before-take-appointment-wave.svg" alt="Prendre rendez-vous">
+
+    <img
+            class="svg-wave"
+            src="{{ '/assets/images/waves/before-take-appointment-wave.svg' | relative_url }}"
+            alt="Prendre rendez-vous"
+    />
+
     <div id="takeAppointment" class="take-appointment">
-      <h2>Prendre rendez-vous</h2>
-      <div class="take-appointment-subcontainer">
-        <p class="psychology-explanation">Les prises de rendez-vous se font exclusivement <b>par téléphone</b>. Je suis à votre disposition pour toute demande aux horaires indiqués en bas de la page.</p>
-        <div class="phone-illustration-container">
-          <img class="telephone-illustration" src="assets/images/telephone-illustration.jpg" alt="telephone-illustration">
-          <img class="phone-illustration-blob" src="assets/images/blob/telephone-blob.svg" alt="Blob" />
+        <h2>Prendre rendez-vous</h2>
+        <div class="take-appointment-subcontainer">
+            <p class="psychology-explanation">
+                Les prises de rendez-vous se font <b>par téléphone</b> au <b>07 62 80 25 77</b>
+                ou par <b>mail</b> à l'adresse <b>cecile.vathonne@gmail.com</b>
+            </p>
+
+            <div class="phone-illustration-container">
+                <img
+                        class="telephone-illustration"
+                        src="{{ '/assets/images/telephone-illustration.jpg' | relative_url }}"
+                        alt="telephone-illustration"
+                />
+                <img
+                        class="phone-illustration-blob"
+                        src="{{ '/assets/images/blob/telephone-blob.svg' | relative_url }}"
+                        alt="Blob"
+                />
+            </div>
+
+            <a class="take-appointment-button" href="tel:762802577">
+                <img
+                        width="15"
+                        height="15"
+                        src="{{ '/assets/images/telephone.svg' | relative_url }}"
+                        alt="telephone"
+                />
+                07 62 80 25 77
+            </a>
         </div>
-        <a class="take-appointment-button" href="tel:762802577"><img width="15px" height="15px" src="assets/images/telephone.svg" alt="telephone" /> 07 62 80 25 77</a>
-      </div>
-      <div id="price">
-        <h2>Combien ça coûte ? </h2>
-        <div class="purple-warning">Je pratique le principe de <strong>Consultation Publique de Psychanalyse</strong> (CPP). Vous êtes invités à régler vos séances <strong>en fonction de vos moyens</strong>. Nous pouvons donc discuter ensemble du prix des séances <strong>selon vos possibilités</strong>.</div>
-      </div>
+
+        <div id="price">
+            <h2>Combien ça coûte ?</h2>
+            <div class="purple-warning">
+                Je pratique le principe de <strong>Consultation Publique de Psychanalyse</strong> (CPP).
+                Vous êtes invités à régler vos séances <strong>en fonction de vos moyens</strong>.
+                Nous pouvons donc discuter ensemble du prix des séances <strong>selon vos possibilités</strong>.
+            </div>
+        </div>
     </div>
-  </main>
+</main>

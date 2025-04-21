@@ -1,63 +1,191 @@
 <footer>
-  <img class="svg-wave svg-container-wave-up" src="../assets/images/waves/before-footer-wave.svg" alt="vague" />
-  <div class="footer-container">
-    <div class="contact">
-      <h3 class="footer-title">Contact</h3>
-      <span class="information">
-        <img class="footer-icon" src="../assets/images/icons/work.svg" alt="Travail : ">
-        <span>Cabinet de psychothérapie et psychanalyse</span></span>
-      <span class="information">
-        <img class="footer-icon" src="../assets/images/icons/localisation.svg" alt="Localisation : ">
-        <span>33 rue Jean-Baptiste Pigalle - 75009 Paris</span></span>
-      <span class="information">
-        <img class="footer-icon" src="../assets/images/icons/telephone-empty.svg" alt="Numéro de téléphone : ">
+    <img
+            class="svg-wave svg-container-wave-up"
+            src="{{ '/assets/images/waves/before-footer-wave.svg' | relative_url }}"
+            alt="vague"
+    />
+
+    <div class="footer-container">
+        <div class="contact">
+            <h3 class="footer-title">Contact</h3>
+            <span class="information">
+        <img
+                class="footer-icon"
+                src="{{ '/assets/images/icons/work.svg' | relative_url }}"
+                alt="Travail : "
+        />
+        <span>Cabinet de psychothérapie et psychanalyse</span>
+      </span>
+            <span class="information">
+        <img
+                class="footer-icon"
+                src="{{ '/assets/images/icons/localisation.svg' | relative_url }}"
+                alt="Localisation : "
+        />
+        <span>33 rue Jean‑Baptiste Pigalle – 75009 Paris</span>
+      </span>
+            <span class="information">
+        <img
+                class="footer-icon"
+                src="{{ '/assets/images/icons/telephone-empty.svg' | relative_url }}"
+                alt="Numéro de téléphone : "
+        />
         <span class="disable-bold">07 62 80 25 77</span>
       </span>
-      <span class="information">
-        <img class="footer-icon" src="../assets/images/icons/enveloppe-empty.svg" alt="Mail : ">
+            <span class="information">
+        <img
+                class="footer-icon"
+                src="{{ '/assets/images/icons/enveloppe-empty.svg' | relative_url }}"
+                alt="Mail : "
+        />
         <span class="disable-bold">cecile.vathonne@gmail.com</span>
       </span>
+        </div>
+
+        <!--        <div class="hourly">-->
+        <!--            <h3 class="footer-title">Horaires</h3>-->
+        <!--            <div class="planning">-->
+        <!--                <span class="days">Lundi &amp; Mardi</span>-->
+        <!--                <div class="hourly-container">-->
+        <!--                    <span class="hourly">8h – 12h30</span>-->
+        <!--                    <span class="hourly">13h30 – 18h00</span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <br/>-->
+        <!--            <div class="planning">-->
+        <!--                <span class="days">Mercredi</span>-->
+        <!--                <div class="hourly-container">-->
+        <!--                    <span class="hourly">7h – 12h00</span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <br/>-->
+        <!--            <div class="planning">-->
+        <!--                <span class="days">Jeudi</span>-->
+        <!--                <div class="hourly-container">-->
+        <!--                    <span class="hourly">8h00 – 12h30</span>-->
+        <!--                    <span class="hourly">14h30 – 20h00</span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <br/>-->
+        <!--            <div class="planning">-->
+        <!--                <span class="days">Vendredi</span>-->
+        <!--                <div class="hourly-container">-->
+        <!--                    <span class="hourly">7h00 – 12h00</span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!-- HTML -->
+        <div class="access">
+            <h3 class="footer-title">Accès en transports</h3>
+            <div class="access__container">
+            <div class="access__group">
+                <h3 class="access__title">En métro</h3>
+                <ul class="access__list access__list--metro">
+                    <li class="access__item">
+                        <span class="access__label">Pigalle</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/two.svg' | relative_url }}"
+                                alt="Ligne 2"
+                        />
+                    </li>
+                    <li class="access__item">
+                        <span class="access__label">Saint‑Georges</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/twelve.svg' | relative_url }}"
+                                alt="Ligne 12"
+                        />
+                    </li>
+                    <li class="access__item">
+                        <span class="access__label">Place de Clichy</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/thirteen.svg' | relative_url }}"
+                                alt="Ligne 13"
+                        />
+                    </li>
+                    <li class="access__item">
+                        <span class="access__label">Saint‑Lazare</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/three.svg' | relative_url }}"
+                                alt="Ligne 3"
+                        />
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/nine.svg' | relative_url }}"
+                                alt="Ligne 3"
+                        />
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/twelve.svg' | relative_url }}"
+                                alt="Ligne 3"
+                        />
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/metro/fourteen.svg' | relative_url }}"
+                                alt="Ligne 3"
+                        />
+                    </li>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="access__group">
+                <h3 class="access__title">En bus</h3>
+                <ul class="access__list access__list--bus">
+                    <li class="access__item">
+                        <span class="access__label">Pigalle</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/bus/forty.svg' | relative_url }}"
+                                alt="Bus 40"
+                        />
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/bus/sixty-eight.svg' | relative_url }}"
+                                alt="Bus 68"
+                        />
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/bus/seventy-four.svg' | relative_url }}"
+                                alt="Bus 74"
+                        />
+                    </li>
+                    <li class="access__item">
+                        <span class="access__label">Gare du Nord</span>
+                        <img
+                                class="access__icon"
+                                src="{{ '/assets/images/bus/sixty-two.svg' | relative_url }}"
+                                alt="Bus 62"
+                        />
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="localisation">
+            <h3 class="footer-title">Localisation</h3>
+            <div class="map-container">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.8691732661623!2d2.3312595764305084!3d48.8797704992016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e4892a290e1%3A0xdfe08dc2186a8332!2s33%20Rue%20Jean-Baptiste%20Pigalle%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1745228456346!5m2!1sfr!2sfr"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
     </div>
-    <div class="hourly">
-      <h3 class="footer-title">Horaires</h3>
-      <div class="planning">
-        <span class="days">Lundi & Mardi</span>
-        <div class="hourly-container">
-          <span class="hourly">8h - 12h30</span>
-          <span class="hourly">13h30 - 18h00</span>
-        </div>
-      </div>
-      <br />
-      <div class="planning">
-        <span class="days">Mercredi</span>
-        <div class="hourly-container">
-          <span class="hourly">7h - 12h00</span>
-        </div>
-      </div>
-      <br />
-      <div class="planning">
-        <span class="days">Jeudi</span>
-        <div class="hourly-container">
-          <span class="hourly">8h00 - 12h30</span>
-          <span class="hourly">14h30 - 20h00</span>
-        </div>
-      </div>
-      <br />
-      <div class="planning">
-        <span class="days">Vendredi</span>
-        <div class="hourly-container">
-          <span class="hourly">7h00 - 12h00</span>
-        </div>
-      </div>
+
+    <div class="last-footer-container">
+        <a href="{{ '/protection-donnees' | relative_url }}">Protection des données</a>
+        <a href="{{ '/mentions-legales' | relative_url }}">Mentions légales</a>
     </div>
-    <div class="localisation">
-      <h3 class="footer-title">Localisation</h3>
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.8691732661623!2d2.3312595764305084!3d48.8797704992016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e4892a290e1%3A0xdfe08dc2186a8332!2s33%20Rue%20Jean-Baptiste%20Pigalle%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1745228456346!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>       </div>
-    </div>
-  </div>
-  <div class="last-footer-container">
-    <a href="{{ '/protection-donnees' | relative_url }}">Protection des données</a>
-    <a href="{{ '/mentions-legales' | relative_url }}">Mentions légales</a>
-  </div>
 </footer>
