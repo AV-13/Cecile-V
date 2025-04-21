@@ -297,6 +297,7 @@ table {
     background-color: #faedfc;
     padding: 1rem 2rem;
     border-radius: 9999px;
+    font-size: 14px;
 }
 
 /* Presentation */
@@ -327,6 +328,11 @@ table {
 .psychology-explanation {
     padding: 30px;
     text-align: justify;
+}
+/* Article */
+.article-title {
+    text-align: center;
+    margin: 300px 0;
 }
 /* Take appointment */
 .take-appointment {
@@ -506,6 +512,15 @@ table {
 }
 
 /* WHY CONSULT */
+.consult-reasons {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+.symptom-list {
+    list-style: inside;
+    padding: 10px 0 0 10px;
+}
 .page-title {
     font-size: 7vw;
     width: fit-content;
@@ -627,6 +642,12 @@ table {
 }
 /* Small laptops */
 @media (min-width: 1024px) {
+    .consult-reasons {
+        padding-left: 50px;
+    }
+    .symptom-list {
+        padding: 50px 0 0 50px;
+    }
     /* General */
     body {
         line-height: 2;
@@ -673,6 +694,7 @@ table {
     /* Presentation container */
     .purple-warning {
         margin: 2rem 4rem 6rem 4rem;
+        font-size: 16px;
     }
     .presentation-container {
         position: relative;
