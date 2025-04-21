@@ -1,5 +1,8 @@
 title: Cécile Vathonne - Psychothérapeute
 theme: null
+baseurl: ""
+url: "https://www.cecilevathonne.fr"
 plugins:
   - jekyll-feed
 markdown: kramdown
+permalink: pretty
