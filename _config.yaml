@@ -1,0 +1,5 @@
+title: Cécile Vathonne - Psychothérapeute
+theme: null
+plugins:
+  - jekyll-feed
+markdown: kramdown
