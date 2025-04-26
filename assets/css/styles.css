@@ -658,6 +658,10 @@ table {
 }
 
 /* ABOUT ME */
+/*.about-me-text {*/
+/*    padding: 20px 4rem 60px 4rem;*/
+/*}*/
+
 .about-me {
     padding-top: 50px;
 }
@@ -670,6 +674,10 @@ table {
 
 .about-me-text h1 {
     padding: 30px;
+}
+
+.about-me-text p {
+    padding: 20px 4rem 60px 4rem;
 }
 
 /* END OF MINIMAL DEVICE WIDTH */
