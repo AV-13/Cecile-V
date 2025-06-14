@@ -332,15 +332,16 @@ table {
 
 .presentation-container h1 {
     font-size: 7vw;
-    padding: 35px 4rem 0 10px;
+    text-align: center;
+    padding: 20px 0;
     font-weight: 800;
 }
 
 .presentation-container .portrait {
-    margin: 20px 0;
-    width: 70%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    margin: 20px auto;
+    width: 250px;
+    height: 220px;
+    border-radius: 5px;
 }
 
 .presentation-container .portrait-about-me {
@@ -836,25 +837,18 @@ table {
     }
 
     .presentation-container h1 {
-        text-align: start;
+        text-align: center;
         font-size: 7.5vw;
-        z-index: 20;
-        position: relative;
-        left: 25.5%;
-        top: -90px;
-        width: 70%;
-        padding: unset;
+        width: 100%;
+        margin-bottom: 50px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
         0px 0px 5px rgba(192, 192, 180, 0.5);
     }
 
     .presentation-container .portrait {
-        width: 33%;
+        width: 80%;
         margin: auto;
-        border-radius: 0 10px 10px 0;
-        position: absolute;
-        top: -110px;
-        left: 0;
+        height: auto;
     }
 
     .presentation-container .portrait-about-me {
@@ -866,7 +860,7 @@ table {
     }
 
     .presentation-container p {
-        padding: 20% 50px 110px 50px;
+        padding: 10% 50px 110px 50px;
     }
 
     /* Appointment */
