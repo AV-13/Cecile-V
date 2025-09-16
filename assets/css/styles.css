@@ -185,7 +185,7 @@ table {
     top: 110%;
     width: 20rem;
     background-color: #ffffff;
-    height: 30rem;
+    height: 33rem;
     right: 0;
     overflow: hidden;
     border-radius: 10px;
@@ -228,6 +228,10 @@ table {
 
 .dropdown-menu-background {
     background-color: #f6f4f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .dropdown-buttons-container {
@@ -243,6 +247,8 @@ table {
     border-radius: 5px;
     padding: 0.8rem;
     background-color: #ffec2d;
+    width: fit-content;
+    justify-content: center;
 }
 
 .dropdown-buttons-container a img {
@@ -771,10 +777,6 @@ table {
         padding: 2rem 4rem;
     }
 
-    .telephone-header-button {
-        display: block;
-    }
-
     .burger-wave-container {
         width: 55%;
         height: 150px;
@@ -840,7 +842,7 @@ table {
 }
 
 /* Small laptops */
-@media (min-width: 1024px) {
+@media (min-width: 1291px) {
     .consult-reasons {
         padding-left: 50px;
     }
@@ -896,7 +898,7 @@ table {
     }
 
     .dropdown-buttons-container a {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .dropdown-buttons-container a img {
@@ -939,6 +941,13 @@ table {
 
     .presentation-container p {
         padding: 10% 50px 110px 50px;
+    }
+
+    .telephone-header-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     /* Appointment */
