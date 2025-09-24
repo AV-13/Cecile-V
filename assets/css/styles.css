@@ -273,6 +273,11 @@ table {
     padding: 0.7rem;
     border-radius: 50%;
 }
+.burger-menu-doctolib-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .burger-menu {
     cursor: pointer;
@@ -884,6 +889,9 @@ table {
     }
 
     .burger-menu-container {
+        display: none;
+    }
+    .burger-menu-doctolib-button {
         display: none;
     }
 
