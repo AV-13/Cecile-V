@@ -15,7 +15,6 @@
 <main>
 	<div class="hero-header">
 			<h1 class="hero-title">Psychothérapie et psychanalyse</h1>
-			<p class="hero-subtitle">La cure par la parole pour mieux se comprendre et se construire</p>
 	</div>
 
 	<section class="content-section">

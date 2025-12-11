@@ -34,7 +34,12 @@
 	display: flex;
 	flex-direction: column;
 }
-
+.psi-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
 .logo-container {
 	display: flex;
 	justify-content: center;

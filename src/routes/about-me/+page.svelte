@@ -41,7 +41,7 @@
 						J'ai décidé de poursuivre ma formation au sein d'une école de psychanalyse pour enrichir mes
 						connaissances cliniques et théoriques. J'évolue donc depuis quelques années au sein du Réseau
 						pour la
-						Psychanalyse à l'Hôpital <b>(RPH - Ecole de psychanalyse)</b>. Je participe aux colloques, aux
+						Psychanalyse à l'Hôpital <b>(RPH - École de psychanalyse)</b>. Je participe aux colloques, aux
 						supervisions et aux groupes de
 						lecture proposés.
 						<br /><br />

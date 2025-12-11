@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run deploy:*)",
+      "Bash(npx gh-pages:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

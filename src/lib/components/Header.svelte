@@ -29,9 +29,12 @@
 </script>
 
 <header class="header-container">
-	<div class="logo-container">
-		<h2>Cécile Vathonne</h2>
-		<h3>Psychothérapeute</h3>
+	<div class="psi-container">
+		<img width="50" height="50" src="/images/psychology.svg" alt="Psi" />
+		<div class="logo-container">
+			<h2>Cécile Vathonne</h2>
+			<h3>Psychothérapeute</h3>
+		</div>
 	</div>
 
 	<nav class="menu">

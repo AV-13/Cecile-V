@@ -2,6 +2,7 @@
 	import '../lib/styles/global.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import PhoneBubbles from '$lib/components/PhoneBubbles.svelte';
 </script>
 
 <div class="background-image"></div>
@@ -9,6 +10,7 @@
 <main>
 	<slot />
 </main>
+<PhoneBubbles />
 <Footer />
 
 <style>
