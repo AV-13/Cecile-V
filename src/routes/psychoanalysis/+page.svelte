@@ -57,16 +57,16 @@
 				src="/images/consultation.jpg"
 				alt="Illustration d'une psychanalyse"
 			/>
-			<div class="comparison-cards">
-				<div class="comparison-card">
-					<h3 class="card-title">Psychothérapie</h3>
-					<p class="card-text">
+			<div class="comparison-section">
+				<div class="comparison-item">
+					<h3 class="comparison-title">Psychothérapie</h3>
+					<p class="comparison-text">
 						Le patient cherche à ne plus souffrir de ses symptômes. Il est installé sur le <strong>fauteuil</strong>.
 					</p>
 				</div>
-				<div class="comparison-card">
-					<h3 class="card-title">Psychanalyse</h3>
-					<p class="card-text">
+				<div class="comparison-item">
+					<h3 class="comparison-title">Psychanalyse</h3>
+					<p class="comparison-text">
 						Le psychanalysant a le désir de savoir sur sa souffrance. Il est installé sur le <strong>divan</strong>.
 					</p>
 				</div>
@@ -86,32 +86,32 @@
 	<section class="content-section">
 		<div class="centered-content">
 			<h2 class="section-title centered">Psychiatre, psychologue, psychothérapeute, psychanalyste : quelles différences ?</h2>
-			<div class="professionals-grid">
-				<div class="professional-card">
+			<div class="professionals-list">
+				<div class="professional-item">
 					<h3 class="professional-title">Psychiatre</h3>
-					<p class="professional-description">
+					<p class="professional-text">
 						Un médecin spécialiste des troubles psychiatriques. Il est habilité à prescrire des médicaments.
 					</p>
 				</div>
 
-				<div class="professional-card">
+				<div class="professional-item">
 					<h3 class="professional-title">Psychologue</h3>
-					<p class="professional-description">
+					<p class="professional-text">
 						Un spécialiste de la psychologie. Il peut exercer dans différents champs : le travail, le
 						développement de l'enfant, la neuropsychologie, etc. Seul le psychologue clinicien peut aussi occuper la position de psychothérapeute.
 					</p>
 				</div>
 
-				<div class="professional-card">
+				<div class="professional-item">
 					<h3 class="professional-title">Psychothérapeute</h3>
-					<p class="professional-description">
+					<p class="professional-text">
 						Il occupe une position clinique auprès des patients qu'il rencontre. Il propose une cure par la parole.
 					</p>
 				</div>
 
-				<div class="professional-card">
+				<div class="professional-item">
 					<h3 class="professional-title">Psychanalyste</h3>
-					<p class="professional-description">
+					<p class="professional-text">
 						Il occupe une position clinique auprès des psychanalysants dont il assure la cure. Il les invite à s'installer sur le divan.
 					</p>
 				</div>
@@ -245,15 +245,12 @@
 	.highlight-text {
 		font-size: 1.15rem;
 		line-height: 1.9;
-		color: #1f2937;
+		color: #374151;
 		text-align: center;
 		max-width: 900px;
 		margin: 0 auto;
-		padding: 2rem;
-		background: white;
-		border-left: 4px solid #107ACA;
-		border-radius: 8px;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+		padding: 2rem 1.5rem;
+		font-style: italic;
 	}
 
 	/* Consultation Illustration */
@@ -266,39 +263,35 @@
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 	}
 
-	/* Comparison Cards */
-	.comparison-cards {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-		margin-top: 2rem;
+	/* Comparison Section */
+	.comparison-section {
+		max-width: 800px;
+		margin: 3rem auto 0;
 	}
 
-	.comparison-card {
-		background: white;
-		padding: 2rem;
-		border-radius: 12px;
-		box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-		border-left: 5px solid #107ACA;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	.comparison-item {
+		margin-bottom: 2.5rem;
+		padding-bottom: 2.5rem;
+		border-bottom: 2px solid #faedfc;
 	}
 
-	.comparison-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+	.comparison-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 
-	.card-title {
-		font-size: 1.4rem;
+	.comparison-title {
+		font-size: 1.5rem;
 		font-weight: 700;
 		color: #053f5f;
 		margin: 0 0 1rem 0;
 	}
 
-	.card-text {
+	.comparison-text {
 		font-size: 1.05rem;
 		line-height: 1.7;
-		color: #4b5563;
+		color: #374151;
 		margin: 0;
 	}
 
@@ -313,40 +306,35 @@
 		padding: 1.5rem;
 	}
 
-	/* Professionals Grid */
-	.professionals-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-		margin-top: 2.5rem;
+	/* Professionals List */
+	.professionals-list {
+		max-width: 900px;
+		margin: 3rem auto 0;
 	}
 
-	.professional-card {
-		background: white;
-		padding: 2rem;
-		border-radius: 12px;
-		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-		border-top: 4px solid #faedfc;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	.professional-item {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid #e5e7eb;
 	}
 
-	.professional-card:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-		border-top-color: #107ACA;
+	.professional-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 
 	.professional-title {
-		font-size: 1.3rem;
+		font-size: 1.35rem;
 		font-weight: 700;
 		color: #053f5f;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.75rem 0;
 	}
 
-	.professional-description {
-		font-size: 1rem;
+	.professional-text {
+		font-size: 1.05rem;
 		line-height: 1.7;
-		color: #4b5563;
+		color: #374151;
 		margin: 0;
 	}
 
@@ -376,14 +364,12 @@
 			font-size: 2rem;
 		}
 
-		.comparison-cards {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 2rem;
+		.comparison-title {
+			font-size: 1.6rem;
 		}
 
-		.professionals-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 2rem;
+		.professional-title {
+			font-size: 1.45rem;
 		}
 
 		.cta-text {
@@ -434,8 +420,12 @@
 			max-width: none;
 		}
 
-		.professional-card {
-			padding: 2rem;
+		.comparison-title {
+			font-size: 1.7rem;
+		}
+
+		.professional-title {
+			font-size: 1.5rem;
 		}
 
 		.cta-text {
@@ -469,6 +459,14 @@
 		.centered-content {
 			max-width: 1400px;
 		}
+
+		.comparison-section {
+			max-width: 950px;
+		}
+
+		.professionals-list {
+			max-width: 1000px;
+		}
 	}
 
 	/* Extra large screens */
@@ -496,6 +494,22 @@
 
 		.section-title {
 			font-size: 2.5rem;
+		}
+
+		.comparison-section {
+			max-width: 1100px;
+		}
+
+		.professionals-list {
+			max-width: 1200px;
+		}
+
+		.comparison-title {
+			font-size: 1.8rem;
+		}
+
+		.professional-title {
+			font-size: 1.6rem;
 		}
 	}
 </style>

@@ -13,6 +13,10 @@
 		showPlusMenu = !showPlusMenu;
 	}
 
+	function closeMenu() {
+		showMenu = false;
+	}
+
 	onMount(() => {
 		// Close menus when clicking outside
 		const handleClickOutside = (e: MouseEvent) => {
@@ -82,13 +86,13 @@
 		<div class="dropdown-menu active">
 			<nav class="dropdown-nav">
 				<ul>
-					<li><a href="/">Accueil</a></li>
-					<li><a href="/about-me">À propos</a></li>
-					<li><a href="/why-consult">Pourquoi consulter</a></li>
-					<li><a href="/psychoanalysis">Psychothérapie et psychanalyse</a></li>
-					<li><a href="/#price">Combien ça coûte ?</a></li>
-					<li><a href="/network">Réseau</a></li>
-					<li><a href="/article">Article</a></li>
+					<li><a href="/" on:click={closeMenu}>Accueil</a></li>
+					<li><a href="/about-me" on:click={closeMenu}>À propos</a></li>
+					<li><a href="/why-consult" on:click={closeMenu}>Pourquoi consulter</a></li>
+					<li><a href="/psychoanalysis" on:click={closeMenu}>Psychothérapie et psychanalyse</a></li>
+					<li><a href="/#price" on:click={closeMenu}>Combien ça coûte ?</a></li>
+					<li><a href="/network" on:click={closeMenu}>Réseau</a></li>
+					<li><a href="/article" on:click={closeMenu}>Article</a></li>
 				</ul>
 			</nav>
 			<div class="dropdown-menu-background">

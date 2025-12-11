@@ -102,8 +102,9 @@
 	.portrait {
 		margin: 20px auto;
 		width: 250px;
-		height: 320px;
+		height: auto;
 		border-radius: 5px;
+		object-fit: cover;
 	}
 
 	.portrait-about-me {
@@ -147,6 +148,7 @@
 
 		.portrait {
 			width: 40%;
+			height: auto;
 		}
 
 		.about-me-text {
@@ -175,6 +177,7 @@
 
 		.about-me img {
 			width: 35%;
+			height: auto;
 			max-width: 400px;
 		}
 

@@ -322,7 +322,7 @@
 			background-color: #EDF3F6;
 			padding: 1rem 2rem;
 			border-radius: 9999px;
-			font-size: 16px;
+			font-size: 13px;
 	}
 	.network-container {
 		min-height: 60vh;
@@ -486,7 +486,7 @@
 	/* Tablets */
 	@media (min-width: 640px) {
 		.blue-warning {
-			font-size: 17px;
+			font-size: 15px;
 			padding: 1.5rem 2.5rem;
 			margin: 2.5rem auto;
 		}
@@ -518,6 +518,10 @@
 
 	/* Small Laptops */
 	@media (min-width: 1024px) {
+		.blue-warning {
+			font-size: 16px;
+		}
+
 		.main-title {
 			font-size: 3.5rem;
 		}
@@ -539,7 +543,7 @@
 	@media (min-width: 1291px) {
 		.blue-warning {
 			max-width: 700px;
-			font-size: 18px;
+			font-size: 17px;
 		}
 
 		.directory {
@@ -553,6 +557,11 @@
 
 	/* Extra large screens */
 	@media (min-width: 1920px) {
+		.blue-warning {
+			font-size: 18px;
+			max-width: 750px;
+		}
+
 		.directory {
 			max-width: 1800px;
 			padding: 5rem 6rem;
