@@ -194,20 +194,97 @@
 	}
 
 	/* Responsive */
+	/* Tablets */
 	@media (min-width: 640px) {
+		.presentation-container {
+			padding: 2rem 2rem;
+		}
+
+		.presentation-container h1 {
+			font-size: 6vw;
+			padding: 30px 0;
+		}
+
+		.intro-box {
+			padding: 2.5rem;
+		}
+
+		.intro-box p {
+			font-size: 1.15rem;
+		}
+
+		.container {
+			padding: 0 2rem;
+		}
+
 		.reasons-grid {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 2rem;
 		}
+
+		.outro-section {
+			padding: 2.5rem 2rem;
+		}
+
+		.outro-text {
+			font-size: 1.15rem;
+		}
 	}
 
+	/* Small Laptops */
 	@media (min-width: 1024px) {
+		.presentation-container h1 {
+			font-size: 5vw;
+		}
+
 		.reasons-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
 
 		.reason-card {
 			padding: 2.5rem;
+		}
+
+		.category-title {
+			font-size: 1.6rem;
+		}
+	}
+
+	/* Large screens */
+	@media (min-width: 1291px) {
+		.presentation-container h1 {
+			font-size: 4.5vw;
+		}
+
+		.intro-box {
+			padding: 3rem;
+		}
+
+		.container {
+			padding: 0 3rem;
+		}
+
+		.outro-section {
+			padding: 3rem 2rem;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.presentation-container {
+			max-width: 1400px;
+		}
+
+		.presentation-container h1 {
+			font-size: 4vw;
+		}
+
+		.container {
+			max-width: 1600px;
+		}
+
+		.intro-box p {
+			font-size: 1.2rem;
 		}
 	}
 </style>

@@ -105,4 +105,65 @@
 		width: 18px;
 		height: 18px;
 	}
+
+	/* Tablets */
+	@media (min-width: 640px) {
+		.content {
+			padding: 60px 40px;
+		}
+
+		.white-warning {
+			font-size: 17px;
+			padding: 1.5rem 2.5rem;
+			max-width: 700px;
+			margin: 2.5rem auto;
+		}
+
+		.take-appointment-button {
+			font-size: 17px;
+			padding: 1.1rem 1.8rem;
+		}
+
+		.take-appointment-button img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	/* Small Laptops */
+	@media (min-width: 1024px) {
+		.content {
+			padding: 80px 60px;
+		}
+
+		.white-warning {
+			font-size: 18px;
+			max-width: 800px;
+		}
+	}
+
+	/* Large screens */
+	@media (min-width: 1291px) {
+		.content {
+			padding: 100px 80px;
+		}
+
+		.white-warning {
+			max-width: 900px;
+			padding: 2rem 3rem;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.content {
+			padding: 120px 100px;
+			max-width: 1600px;
+			margin: 0 auto;
+		}
+
+		.white-warning {
+			font-size: 19px;
+		}
+	}
 </style>

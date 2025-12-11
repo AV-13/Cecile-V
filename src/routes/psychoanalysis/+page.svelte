@@ -7,17 +7,15 @@
 	<meta name="description" content="Découvrez la psychanalyse et les différences avec la psychothérapie." />
 </svelte:head>
 
+<img
+	class="svg-wave-top"
+	src="/images/waves/before-presentation-wave.svg"
+	alt="Présentation"
+/>
 <main>
-	<div class="psychoanalysis-hero">
-		<img
-			class="svg-wave-top"
-			src="/images/waves/before-presentation-wave.svg"
-			alt="Présentation"
-		/>
-		<div class="hero-content">
-			<h1 class="page-title">Psychothérapie et psychanalyse</h1>
+	<div class="hero-header">
+			<h1 class="hero-title">Psychothérapie et psychanalyse</h1>
 			<p class="hero-subtitle">La cure par la parole pour mieux se comprendre et se construire</p>
-		</div>
 	</div>
 
 	<section class="content-section">
@@ -122,17 +120,36 @@
 		</div>
 	</section>
 </main>
+<div class="ending-container">
+	<img
+		class="svg-wave"
+		src="/images/waves/before-take-appointment-wave.svg"
+		alt="Prendre rendez-vous"
+	/>
+	<div class="doctolib-container">
+		<a
+			href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
+			class="doctolib-button-main"
+			target="_blank"
+			rel="noopener"
+		>
+			Prendre rendez-vous
+			<img
+				style="vertical-align:middle;width:auto;height:19px;margin-left:8px"
+				src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
+				alt="Doctolib"
+			/>
+		</a>
+	</div>
+</div>
 
 <style>
+    .ending-container {
+        background-color: #fff;
+    }
 	main {
 		overflow-x: hidden;
-		background-color: white;
-	}
-
-	/* Hero Section */
-	.psychoanalysis-hero {
-		background: linear-gradient(135deg, #EDF3F6 0%, #d8e7f0 100%);
-		position: relative;
+		background-color: #edf3f6;
 	}
 
 	.svg-wave-top {
@@ -142,26 +159,27 @@
 		margin-bottom: -5px;
 	}
 
-	.hero-content {
-		padding: 3rem 1.5rem;
+	/* Hero Header */
+	.hero-header {
 		text-align: center;
+		padding: 3rem 1.5rem;
+		max-width: 900px;
+		margin: 0 auto;
 	}
 
-	.page-title {
-		font-size: 2rem;
+	.hero-title {
+		font-size: 2.2rem;
 		font-weight: 800;
 		color: #053f5f;
-		margin: 0 0 1rem 0;
+		margin-bottom: 1rem;
 		line-height: 1.2;
 	}
 
 	.hero-subtitle {
 		font-size: 1.1rem;
-		color: #2c5f7a;
-		font-weight: 500;
-		max-width: 600px;
-		margin: 0 auto;
+		color: #0a5f8f;
 		line-height: 1.6;
+		font-weight: 500;
 	}
 
 	/* Content Sections */
@@ -333,26 +351,30 @@
 		margin: 0;
 	}
 
-	/* Tablet Styles */
+	/* Tablets */
 	@media (min-width: 640px) {
 		.svg-wave-top {
 			height: 100px;
 		}
 
-		.hero-content {
+		.hero-header {
 			padding: 4rem 2rem;
 		}
 
-		.page-title {
-			font-size: 2.75rem;
+		.hero-title {
+			font-size: 2.8rem;
 		}
 
 		.hero-subtitle {
-			font-size: 1.25rem;
+			font-size: 1.2rem;
 		}
 
 		.content-section {
 			padding: 4rem 2rem;
+		}
+
+		.section-title {
+			font-size: 2rem;
 		}
 
 		.comparison-cards {
@@ -364,28 +386,36 @@
 			grid-template-columns: repeat(2, 1fr);
 			gap: 2rem;
 		}
+
+		.cta-text {
+			font-size: 1.2rem;
+		}
 	}
 
-	/* Desktop Styles */
+	/* Small Laptops */
 	@media (min-width: 1024px) {
 		.svg-wave-top {
 			height: 150px;
 		}
 
-		.hero-content {
-			padding: 5rem 2rem;
+		.hero-header {
+			padding: 5rem 3rem;
 		}
 
-		.page-title {
+		.hero-title {
 			font-size: 3.5rem;
 		}
 
 		.hero-subtitle {
-			font-size: 1.35rem;
+			font-size: 1.3rem;
 		}
 
 		.content-section {
-			padding: 5rem 2rem;
+			padding: 5rem 3rem;
+		}
+
+		.section-title {
+			font-size: 2.2rem;
 		}
 
 		.two-column-layout {
@@ -404,11 +434,69 @@
 		.section-illustration {
 			max-width: none;
 		}
+
+		.professional-card {
+			padding: 2rem;
+		}
+
+		.cta-text {
+			font-size: 1.25rem;
+		}
 	}
 
+	/* Large screens */
 	@media (min-width: 1291px) {
 		.svg-wave-top {
 			height: 200px;
+		}
+
+		.hero-header {
+			padding: 6rem 4rem;
+			max-width: 1100px;
+		}
+
+		.hero-title {
+			font-size: 4rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.4rem;
+		}
+
+		.content-section {
+			padding: 6rem 4rem;
+		}
+
+		.centered-content {
+			max-width: 1400px;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.hero-header {
+			padding: 7rem 5rem;
+			max-width: 1300px;
+		}
+
+		.hero-title {
+			font-size: 4.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.5rem;
+		}
+
+		.content-section {
+			padding: 7rem 5rem;
+		}
+
+		.centered-content {
+			max-width: 1600px;
+		}
+
+		.section-title {
+			font-size: 2.5rem;
 		}
 	}
 </style>

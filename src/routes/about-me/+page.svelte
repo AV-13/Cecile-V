@@ -118,6 +118,7 @@
 		height: 50px;
 	}
 
+	/* Tablets */
 	@media (min-width: 640px) {
 		.svg-wave {
 			height: 100px;
@@ -126,12 +127,41 @@
 		.portrait {
 			width: 50%;
 			height: auto;
+			max-width: 350px;
+		}
+
+		.about-me-text {
+			padding: 40px;
+		}
+
+		.presentation-container h1 {
+			font-size: 8vw;
 		}
 	}
 
+	/* Small Laptops */
+	@media (min-width: 1024px) {
+		.presentation-container h1 {
+			font-size: 6vw;
+		}
+
+		.portrait {
+			width: 40%;
+		}
+
+		.about-me-text {
+			padding: 50px 60px;
+		}
+	}
+
+	/* Large screens */
 	@media (min-width: 1291px) {
 		.svg-wave {
 			height: 200px;
+		}
+
+		.presentation-container h1 {
+			font-size: 5vw;
 		}
 
 		.about-me-container {
@@ -145,6 +175,24 @@
 
 		.about-me img {
 			width: 35%;
+			max-width: 400px;
+		}
+
+		.about-me-text {
+			padding: 60px 80px;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.presentation-container h1 {
+			font-size: 4.5vw;
+		}
+
+		.about-me-text {
+			padding: 80px 120px;
+			max-width: 1600px;
+			margin: 0 auto;
 		}
 	}
 </style>

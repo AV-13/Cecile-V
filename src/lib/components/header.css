@@ -309,15 +309,28 @@
 	transform: translateY(-6px) rotate(-45deg);
 }
 
-/* TABLETS */
+/* Tablets */
 @media (min-width: 640px) {
 	.header-container {
 		padding: 2rem 4rem;
 	}
 
+	.logo-container h2 {
+		font-size: 24px;
+	}
+
+	.logo-container h3 {
+		font-size: 17px;
+	}
+
 	.burger-wave-container {
 		width: 55%;
 		height: 150px;
+	}
+
+	.burger-menu-container {
+		width: 48px;
+		height: 48px;
 	}
 
 	.purple-warning {
@@ -336,9 +349,28 @@
 	.doctolib-container {
 		margin: 2rem 4rem 0 4rem;
 	}
+
+	.dropdown-menu {
+		width: 22rem;
+	}
 }
 
-/* Small laptops */
+/* Small Laptops */
+@media (min-width: 1024px) {
+	.logo-container h2 {
+		font-size: 25px;
+	}
+
+	.logo-container h3 {
+		font-size: 18px;
+	}
+
+	.navbar-normal-width li {
+		font-size: 16px;
+	}
+}
+
+/* Large screens */
 @media (min-width: 1291px) {
 	.header-container {
 		padding: 2rem 1rem;
@@ -365,6 +397,10 @@
 		flex: 1;
 		padding-left: 3rem;
 		justify-content: space-between;
+	}
+
+	.navbar-normal-width li {
+		font-size: 18px;
 	}
 
 	.burger-menu-container {
@@ -401,7 +437,7 @@
 	}
 }
 
-/* FIXME hotfix to avoid navbar wrap */
+/* Medium screens - navbar wrap fix */
 @media (min-width: 1123px) {
 	.header-container {
 		padding: 2rem 4rem;
@@ -409,5 +445,46 @@
 
 	.menu {
 		padding-left: 3rem !important;
+	}
+
+	.navbar-normal-width {
+		gap: 25px;
+	}
+}
+
+/* Extra large screens */
+@media (min-width: 1920px) {
+	.header-container {
+		padding: 2rem 6rem;
+	}
+
+	.logo-container h2 {
+		font-size: 30px;
+	}
+
+	.logo-container h3 {
+		font-size: 22px;
+	}
+
+	.navbar-normal-width {
+		gap: 35px;
+	}
+
+	.navbar-normal-width li {
+		font-size: 19px;
+	}
+
+	.phone-button {
+		font-size: 16px;
+		padding: 0.9rem;
+	}
+
+	.phone-button img {
+		width: 22px;
+		height: 22px;
+	}
+
+	.purple-warning {
+		font-size: 17px;
 	}
 }

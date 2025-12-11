@@ -160,7 +160,7 @@
 		],
 		'Essonne (91)': [
 			{
-				name: 'Lucille MIHOUBI',
+				name: 'Dr Lucille MIHOUBI',
 				address: '25 rue des Trembles – 91390 Morsang-sur-Orge',
 				phone: '07 83 82 03 79',
 				email: 'lucille.mihoubi@gmail.com',
@@ -169,8 +169,8 @@
 		],
 		'Hauts-de-Seine (92)': [
 			{
-				name: 'Ouarda FERLICOT',
-				address: '72 rue Maurice Thorez – 92000 Nanterre',
+				name: 'Dr Ouarda FERLICOT',
+				address: '44 avenue Pasteur - 92400 Courbevoie',
 				phone: '06 22 79 39 34',
 				email: 'ouardanm@gmail.com',
 				website: 'https://www.ouardaferlicot.fr'
@@ -483,7 +483,14 @@
 		justify-content: center;
 	}
 
+	/* Tablets */
 	@media (min-width: 640px) {
+		.blue-warning {
+			font-size: 17px;
+			padding: 1.5rem 2.5rem;
+			margin: 2.5rem auto;
+		}
+
 		.main-title {
 			font-size: 3rem;
 		}
@@ -491,11 +498,68 @@
 		.directory {
 			padding: 3rem 2rem;
 		}
+
+		.search-container {
+			max-width: 800px;
+		}
+
+		.search-input {
+			font-size: 17px;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.region-title {
+			font-size: 1.4rem;
+		}
 	}
 
+	/* Small Laptops */
 	@media (min-width: 1024px) {
+		.main-title {
+			font-size: 3.5rem;
+		}
+
+		.directory {
+			padding: 4rem 3rem;
+		}
+
 		.psychologist-list {
 			justify-content: flex-start;
+		}
+
+		.section-title {
+			font-size: 2.2rem;
+		}
+	}
+
+	/* Large screens */
+	@media (min-width: 1291px) {
+		.blue-warning {
+			max-width: 700px;
+			font-size: 18px;
+		}
+
+		.directory {
+			padding: 4rem 4rem;
+		}
+
+		.search-container {
+			max-width: 900px;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.directory {
+			max-width: 1800px;
+			padding: 5rem 6rem;
+		}
+
+		.main-title {
+			font-size: 4rem;
 		}
 	}
 </style>

@@ -224,6 +224,7 @@
 		font-size: 14px;
 	}
 
+	/* Tablets */
 	@media (min-width: 640px) {
 		.svg-wave {
 			height: 100px;
@@ -231,38 +232,104 @@
 
 		.presentation-container h1 {
 			padding: 30px 0;
+			font-size: 8vw;
 		}
 
 		.portrait {
 			width: 50%;
 			height: auto;
+			max-width: 350px;
+		}
+
+		.psychology-explanation {
+			padding: 40px;
 		}
 
 		.take-appointment h2 {
 			font-size: 35px;
 		}
 
+		.take-appointment-button {
+			font-size: 16px;
+			padding: 1rem 1.5rem;
+		}
+
+		.take-appointment-button img {
+			width: 18px;
+			height: 18px;
+		}
+
 		.purple-warning {
 			margin: 2rem 4rem;
+			font-size: 16px;
+		}
+
+		.phone-illustration-container {
+			max-width: 500px;
+			height: 350px;
 		}
 	}
 
+	/* Small Laptops */
+	@media (min-width: 1024px) {
+		.presentation-container h1 {
+			font-size: 6vw;
+		}
+
+		.portrait {
+			width: 40%;
+		}
+
+		.psychology-explanation {
+			padding: 50px 80px;
+		}
+
+		.take-appointment h2 {
+			font-size: 38px;
+		}
+	}
+
+	/* Large screens */
 	@media (min-width: 1291px) {
 		.svg-wave {
 			height: 200px;
 		}
 
 		.presentation-container h1 {
+			font-size: 5vw;
 			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
 				0px 0px 5px rgba(192, 192, 180, 0.5);
 		}
 
 		.portrait {
 			width: 35%;
+			max-width: 400px;
 		}
 
 		.psychology-explanation {
-			padding: 10% 50px 110px 50px;
+			padding: 60px 100px 80px 100px;
+		}
+
+		.take-appointment h2 {
+			font-size: 42px;
+		}
+
+		.phone-illustration-container {
+			max-width: 600px;
+			height: 400px;
+		}
+	}
+
+	/* Extra large screens */
+	@media (min-width: 1920px) {
+		.presentation-container h1 {
+			font-size: 4.5vw;
+		}
+
+		.psychology-explanation {
+			padding: 80px 150px 100px 150px;
+			max-width: 1600px;
+			margin: 0 auto;
 		}
 	}
 </style>

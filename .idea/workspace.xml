@@ -5,85 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b9746ff-e0db-4572-a909-8425a8f574f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Cecile.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/styles-drepecated.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/wip.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Nunito-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/accueil_psy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/arbre.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/arbre2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/arrow.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/blob.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/blob/cloud-blob.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/blob/psychoanalysis-blob.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/blob/telephone-blob.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bus/forty.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bus/seventy-four.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bus/sixty-eight.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/bus/sixty-two.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/cecile-vathonne-portrait.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/consultation.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/doctolib.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/doctolib.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/fil.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/footer-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/freud.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/hamburger.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/brain.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/enveloppe-empty-annuaire.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/enveloppe-empty.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/external-link.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/flag-checked.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/graduation.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/localisation-annuaire.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/localisation.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/telephone-empty-annuaire.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/telephone-empty.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icons/work.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/last-footer-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/logo_paris_V.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/fourteen.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/nine.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/thirteen.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/three.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/twelve.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/metro/two.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/paris.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/psychoanalysis-art.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/psychology.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/rph_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/take-appointment-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/telephone-illustration.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/telephone.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/waves/before-footer-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/waves/before-presentation-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/waves/before-take-appointment-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/waves/burger-wave.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/words-cloud-psy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about-me.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/article.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data-protection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/legal-information.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/network.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/psychoanalysis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/why-consult.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/article/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/article/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/network/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/network/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +89,7 @@
       <workItem from="1763548754340" duration="7165000" />
       <workItem from="1763713961832" duration="6366000" />
       <workItem from="1763976760342" duration="10000" />
-      <workItem from="1765443542157" duration="6595000" />
+      <workItem from="1765443542157" duration="8163000" />
     </task>
     <servers />
   </component>
