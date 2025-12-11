@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b9746ff-e0db-4572-a909-8425a8f574f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/article/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/article/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/network/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/network/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="35b9sdLaNMNk7Zq9dOxyxAqnj2S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.scratch_11.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;svelte&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/augus/WebstormProjects/Cecile-V/sveltekit-migration/src/routes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\augus\\WebstormProjects\\Cecile-V\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JavaScript&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\augus\WebstormProjects\Cecile-V\sveltekit-migration\src\routes" />
+      <recent name="C:\Users\augus\WebstormProjects\Cecile-V\sveltekit-migration\static\fonts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="scratch_11.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_11.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.scratch_11.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b9746ff-e0db-4572-a909-8425a8f574f4" name="Changes" comment="" />
+      <created>1763368111292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763368111292</updated>
+      <workItem from="1763368112642" duration="7971000" />
+      <workItem from="1763376554321" duration="3058000" />
+      <workItem from="1763457397218" duration="8457000" />
+      <workItem from="1763548754340" duration="7165000" />
+      <workItem from="1763713961832" duration="6366000" />
+      <workItem from="1763976760342" duration="10000" />
+      <workItem from="1765443542157" duration="8163000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

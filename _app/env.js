@@ -1,0 +1,1 @@
+export const env={"PUBLIC_DOCTOLIB_URL":"https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking","PUBLIC_SITE_TITLE":"Cécile Vathonne - Psychothérapeute","PUBLIC_SITE_URL":"https://www.cecilevathonne.fr"}
