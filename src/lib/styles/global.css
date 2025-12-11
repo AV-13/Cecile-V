@@ -1,0 +1,145 @@
+/* Global Styles - Optimized for Performance */
+
+/* @font-face declarations - Load only used subsets */
+@font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+	font-display: swap;
+}
+
+/* CSS Reset & Essentials */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	color: #053f5f;
+	height: 100%;
+	font-family: 'Nunito', Arial, sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playfair Display', 'Nunito', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+input, button, textarea, select {
+	font: inherit;
+	border: none;
+	outline: none;
+}
+
+button {
+	background: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Utility Classes */
+.svg-wave {
+	width: 100%;
+	height: 50px;
+}
+
+.purple-warning {
+	text-align: center;
+	margin: 2rem 1rem;
+	line-height: 1.6;
+	background-color: #faedfc;
+	padding: 1rem 2rem;
+	border-radius: 9999px;
+	font-size: 14px;
+}
+
+.blue-warning {
+	text-align: center;
+	margin: 2rem auto;
+	line-height: 1.6;
+	background-color: #b8cfda;
+	padding: 1rem 2rem;
+	border-radius: 9999px;
+	font-size: 14px;
+	width: fit-content;
+}
+
+/* Fade-in animation for sections */
+.fade-in-section {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Tablets */
+@media (min-width: 640px) {
+	body {
+		font-size: 18px;
+	}
+
+	.svg-wave {
+		height: 100px;
+	}
+
+	.purple-warning {
+		margin: 2rem 4rem;
+	}
+}
+
+/* Small laptops */
+@media (min-width: 1291px) {
+	body {
+		line-height: 2;
+	}
+
+	.svg-wave {
+		height: 200px;
+	}
+
+	.purple-warning {
+		margin: 2rem 4rem 6rem 4rem;
+		font-size: 16px;
+	}
+}
+
+/* SVG optimization */
+.svg-container-wave-up {
+	margin-bottom: -3px;
+}
+
+.svg-container-wave-down {
+	margin-top: -3px;
+}

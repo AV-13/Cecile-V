@@ -1,0 +1,57 @@
+/* ANNUAIRE */
+.annuaire-title {
+	margin: 30px auto;
+	text-align: center;
+}
+
+.annuaire-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	padding: 2rem 0;
+	justify-content: center;
+}
+
+.annuaire-item {
+	background: #fbfafa;
+	border: 2px solid #b8cfda;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(220, 220, 180, 0.08);
+	padding: 1.5rem 1.2rem;
+	min-width: 270px;
+	max-width: 370px;
+	flex: 1 1 300px;
+	margin-bottom: 1rem;
+	transition: box-shadow 0.2s;
+}
+
+.annuaire-item:hover {
+	box-shadow: 0 4px 16px rgba(219, 221, 130, 0.18);
+}
+
+.annuaire-item h3 {
+	margin-bottom: 0.7rem;
+	color: #053f5f;
+	font-size: 1.2rem;
+}
+
+.annuaire-info {
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+	margin-bottom: 0.3em;
+	font-size: 1rem;
+	color: #053f5f;
+}
+
+.annuaire-info a {
+	color: #053f5f;
+	text-decoration: underline;
+	word-break: break-all;
+}
+
+.annuaire-icon {
+	width: 20px;
+	height: 20px;
+	fill: #b8cfda;
+}

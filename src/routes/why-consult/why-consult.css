@@ -1,0 +1,33 @@
+/* Why Consult Page */
+
+.consult-reasons {
+	display: block;
+	width: 100%;
+	padding-left: 10px;
+}
+
+.symptom-list {
+	list-style: inside;
+	padding: 10px 0 0 10px;
+}
+
+.page-title {
+	font-size: 7vw;
+	width: fit-content;
+	margin: auto;
+	font-weight: 800;
+}
+
+@media (min-width: 1291px) {
+	.consult-reasons {
+		padding-left: 50px;
+	}
+
+	.symptom-list {
+		padding: 50px 0 0 50px;
+	}
+
+	.page-title {
+		font-size: 5vw;
+	}
+}

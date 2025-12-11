@@ -1,0 +1,43 @@
+/* About Me Page */
+
+.about-me {
+	background-color: #EDF3F6;
+}
+
+.about-me img {
+	width: 60%;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.about-me-text h1 {
+	padding: 30px;
+	font-size: 7vw;
+	text-align: center;
+	font-weight: 800;
+}
+
+.about-me-text p {
+	padding: 20px 4rem 60px 4rem;
+}
+
+@media (min-width: 640px) {
+	.about-me img {
+		width: 45%;
+	}
+}
+
+@media (min-width: 1291px) {
+	.about-me-container {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	.about-me-container .about-me-text, .about-me-container img {
+		width: 50%;
+	}
+
+	.about-me img {
+		width: 35%;
+	}
+}

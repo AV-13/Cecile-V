@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/psychology.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="index, follow" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "MedicalBusiness",
+				"name": "Cécile Vathonne – Psychothérapeute",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "33 Rue Jean‑Baptiste Pigalle",
+					"addressLocality": "Paris",
+					"postalCode": "75009",
+					"addressCountry": "FR"
+				},
+				"telephone": "07 62 80 25 77",
+				"url": "https://www.cecilevathonne.fr",
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday"],
+						"opens": "08:00",
+						"closes": "18:00"
+					}
+				]
+			}
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="auto">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
