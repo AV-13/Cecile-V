@@ -65,9 +65,9 @@
 				target="_blank"
 				rel="noopener"
 			>
-				Prendre rendez-vous
+				<span class="button-text">Prendre rendez-vous</span>
 				<img
-					style="vertical-align:middle;width:auto;height:19px;margin-left:8px"
+					style="vertical-align:middle;width:auto;height:19px"
 					src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
 					alt="Doctolib"
 				/>

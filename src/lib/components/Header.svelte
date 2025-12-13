@@ -105,12 +105,12 @@
 				<div class="burger-menu-doctolib-button">
 					<a
 						href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
-						style="display:flex;text-align:center;background-color:#107ACA;color:#ffffff;font-size:14px;overflow:hidden;font-family:Roboto, sans-serif;box-sizing:border-box;align-items:center;padding:0 24px;z-index:1000;height:48px;text-decoration:none;border-radius:24px;width:fit-content;margin:0 auto"
+						style="display:flex;text-align:center;background-color:#107ACA;color:#ffffff;font-size:14px;overflow:hidden;font-family:Roboto, sans-serif;box-sizing:border-box;align-items:center;justify-content:center;padding:8px 24px;z-index:1000;min-height:48px;text-decoration:none;border-radius:24px;width:fit-content;margin:0 auto;flex-wrap:wrap;gap:8px"
 						target="_blank"
 						rel="noopener">
-						Prendre rendez-vous
+						<span style="white-space:nowrap">Prendre rendez-vous</span>
 						<img
-							style="vertical-align:middle;width:auto;height:19px;margin-left:8px"
+							style="vertical-align:middle;width:auto;height:19px"
 							src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
 							alt="Doctolib"/>
 					</a>
@@ -127,9 +127,9 @@
 		target="_blank"
 		rel="noopener"
 	>
-		Prendre rendez-vous
+		<span class="button-text">Prendre rendez-vous</span>
 		<img
-			style="vertical-align:middle;width:auto;height:19px;margin-left:8px"
+			style="vertical-align:middle;width:auto;height:19px"
 			src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
 			alt="Doctolib"
 		/>

@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9746ff-e0db-4572-a909-8425a8f574f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/PhoneBubbles.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/PhoneBubbles.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about-me/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/network/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/network/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/article/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/article/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/psychoanalysis/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/why-consult/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,8 @@
       <workItem from="1763713961832" duration="6366000" />
       <workItem from="1763976760342" duration="10000" />
       <workItem from="1765443542157" duration="8163000" />
-      <workItem from="1765470333367" duration="2526000" />
+      <workItem from="1765470333367" duration="3298000" />
+      <workItem from="1765545045754" duration="3036000" />
     </task>
     <servers />
   </component>

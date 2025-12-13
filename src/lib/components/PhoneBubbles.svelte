@@ -41,7 +41,7 @@
 
     .bubbles-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1.5rem;
         max-width: 100%;
         margin: 0 auto;
@@ -52,7 +52,7 @@
         border-radius: 9999px;
         text-align: center;
         line-height: 1.6;
-        font-size: 12px;
+        font-size: 11px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -67,6 +67,7 @@
     }
 
     .bubble-text {
+				padding: 20px;
         text-align: center;
         width: 100%;
     }
@@ -115,13 +116,59 @@
         fill: #107aca;
     }
 
+    @media (min-width: 480px) {
+        .bubble {
+            font-size: 12px;
+        }
+
+        .bubble-text h3 {
+            font-size: 1rem;
+        }
+
+        .bubble-text p {
+            font-size: 0.9rem;
+        }
+
+        .link-text {
+            font-size: 0.75rem;
+        }
+    }
+
     @media (min-width: 640px) {
         .bubbles-wrapper {
-            padding: 2rem 4rem;
+            padding: 2rem 2rem;
         }
 
         .bubble {
-            padding: 1.5rem 2rem;
+            padding: 1.8rem 2rem;
+            font-size: 13px;
+        }
+
+        .bubble-text h3 {
+            font-size: 1.05rem;
+        }
+
+        .bubble-text p {
+            font-size: 0.92rem;
+        }
+
+        .link-text {
+            font-size: 0.78rem;
+        }
+
+        .external-icon {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .bubbles-wrapper {
+            padding: 2rem 3rem;
+        }
+
+        .bubble {
+            padding: 2rem 2.5rem;
             font-size: 14px;
         }
 
@@ -146,6 +193,52 @@
     @media (min-width: 1291px) {
         .bubbles-wrapper {
             padding: 2rem 4rem 6rem 4rem;
+        }
+
+        .bubbles-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .bubble {
+            padding: 2.5rem 3rem;
+            font-size: 14px;
+        }
+
+        .bubble-text h3 {
+            font-size: 1.15rem;
+        }
+
+        .bubble-text p {
+            font-size: 1rem;
+        }
+
+        .link-text {
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (min-width: 1920px) {
+        .bubble {
+            padding: 3rem 3.5rem;
+            font-size: 15px;
+        }
+
+        .bubble-text h3 {
+            font-size: 1.2rem;
+        }
+
+        .bubble-text p {
+            font-size: 1.05rem;
+        }
+
+        .link-text {
+            font-size: 0.9rem;
+        }
+
+        .external-icon {
+            width: 15px;
+            height: 15px;
         }
     }
 </style>
