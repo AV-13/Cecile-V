@@ -1,244 +1,134 @@
-<div class="bubbles-wrapper">
-	<div class="bubbles-container">
-		<div class="bubble bubble-phone">
-			<div class="bubble-text">
-				<h3>Consultation par téléphone</h3>
-				<p>
-					Si vous n'avez pas la possibilité de venir sur place ou si vous habitez loin de Paris, vous avez la possibilité de commencer une psychothérapie par téléphone. N'hésitez pas à me contacter pour en discuter.
-				</p>
-			</div>
+<script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
+</script>
+
+<div class="notes-wrapper">
+	<hr class="notes-rule" />
+	<div class="notes-container">
+		<div class="note" use:reveal>
+			<h3>Consultation par téléphone</h3>
+			<p>
+				Si vous n'avez pas la possibilité de venir sur place ou si vous habitez loin de Paris, vous avez la possibilité de commencer une psychothérapie par téléphone. N'hésitez pas à me contacter pour en discuter.
+			</p>
 		</div>
 
-		<div class="bubble bubble-urgence">
-			<div class="bubble-text">
-				<h3>Service d'Écoute Téléphonique d'Urgence (SÉTU)</h3>
+		<div class="note" use:reveal={{ delay: 0.15 }}>
+			<h3>Service d'Écoute Téléphonique d'Urgence (SÉTU)</h3>
+			<p>
+				Pour répondre aux urgences, il existe un service d'appel téléphonique accessible 24h/24 et 7j/7. Participant au SÉTU depuis quelques années, je suis formée à écouter et recevoir toute personne en urgence.
+			</p>
+			<p>
+				<strong>En cas d'urgence :</strong><br />
+				<strong>Me contacter : </strong><a href="tel:+33762802577">07 62 80 25 77</a><br />
+				<strong>SÉTU : </strong><a href="tel:+33145268130">01 45 26 81 30</a>
 				<p>
-					Pour répondre aux urgences, il existe un service d'appel téléphonique accessible 24h/24 et 7j/7. Participant au SÉTU depuis quelques années, je suis formée à écouter et recevoir toute personne en urgence.
+				<a href="https://www.rphweb.fr/service-decoute-telephonique-durgence-setu/" target="_blank" rel="noopener">
+					<span class="link-text">Lien vers le site</span>
+					<svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+					</svg>
+				</a>
 				</p>
-				<p>
-					<strong>En cas d'urgence :</strong><br />
-					<strong>Me contacter : </strong><a href="tel:+33762802577">07 62 80 25 77</a><br />
-					<strong>SÉTU : </strong><a href="tel:+33145268130">01 45 26 81 30</a>
-					<p>
-					<a href="https://www.rphweb.fr/service-decoute-telephonique-durgence-setu/" target="_blank" rel="noopener">
-						<span class="link-text">Lien vers le site</span>
-						<svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-							<path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-						</svg>
-					</a>
-					</p>
-			</div>
 		</div>
 	</div>
 </div>
 
 
 <style>
-    .bubbles-wrapper {
-        background-color: #ffffff;
-        padding: 2rem 1rem;
-    }
+	.notes-wrapper {
+		padding: 0 var(--gutter);
+		max-width: var(--content-max);
+		margin: var(--space-section) auto 0 auto;
+	}
 
-    .bubbles-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 100%;
-        margin: 0 auto;
-    }
+	.notes-rule {
+		border: none;
+		border-top: 1px solid var(--line);
+		margin-bottom: clamp(2.5rem, 5vw, 4rem);
+	}
 
-    .bubble {
-        padding: 1.5rem;
-        border-radius: 9999px;
-        text-align: center;
-        line-height: 1.6;
-        font-size: 11px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+	.notes-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.75rem;
+	}
 
-    .bubble-phone {
-        background-color: #e8f4ff;
-    }
+	.note h3 {
+		font-size: 1.35rem;
+		font-weight: 550;
+		line-height: 1.35;
+		color: var(--ink);
+		margin-bottom: 1.1rem;
+		padding-bottom: 0.7rem;
+		position: relative;
+	}
 
-    .bubble-urgence {
-        background-color: #fef3e8;
-    }
+	.note h3::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 36px;
+		height: 1.5px;
+		background-color: var(--sage);
+	}
 
-    .bubble-text {
-				padding: 20px;
-        text-align: center;
-        width: 100%;
-    }
+	.note p {
+		margin: 0 0 0.8rem 0;
+		font-size: 0.97rem;
+		line-height: 1.8;
+		color: var(--ink-soft);
+		max-width: 34rem;
+	}
 
-    .bubble-text h3 {
-        margin: 0 0 0.8rem 0;
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: #053f5f;
-    }
+	.note p:last-child {
+		margin-bottom: 0;
+	}
 
-    .bubble-text p {
-        margin: 0 0 0.8rem 0;
-        font-size: 0.85rem;
-        line-height: 1.6;
-        color: #053f5f;
-    }
+	.note a {
+		color: var(--ink);
+		text-decoration: underline;
+		text-decoration-color: var(--sage);
+		text-decoration-thickness: 1.5px;
+		text-underline-offset: 4px;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		flex-wrap: wrap;
+		transition: color 0.3s ease;
+	}
 
-    .bubble-text p:last-child {
-        margin-bottom: 0;
-    }
+	.note a:hover {
+		color: var(--sage-deep);
+	}
 
-    .bubble-text a {
-        color: #107aca;
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+	.link-text {
+		font-size: 0.88rem;
+		display: inline-block;
+	}
 
-    .bubble-text a:hover {
-        text-decoration: underline;
-    }
+	.external-icon {
+		width: 12px;
+		height: 12px;
+		fill: currentColor;
+	}
 
-    .link-text {
-        font-size: 0.75rem;
-        display: inline-block;
-    }
+	/* Deux colonnes séparées d'un filet vertical */
+	@media (min-width: 900px) {
+		.notes-container {
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+		}
 
-    .external-icon {
-        width: 12px;
-        height: 12px;
-        fill: #107aca;
-    }
+		.note {
+			padding-right: clamp(2rem, 4vw, 4rem);
+		}
 
-    @media (min-width: 480px) {
-        .bubble {
-            font-size: 12px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.9rem;
-        }
-
-        .link-text {
-            font-size: 0.75rem;
-        }
-    }
-
-    @media (min-width: 640px) {
-        .bubbles-wrapper {
-            padding: 2rem 2rem;
-        }
-
-        .bubble {
-            padding: 1.8rem 2rem;
-            font-size: 13px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.05rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.92rem;
-        }
-
-        .link-text {
-            font-size: 0.78rem;
-        }
-
-        .external-icon {
-            width: 13px;
-            height: 13px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .bubbles-wrapper {
-            padding: 2rem 3rem;
-        }
-
-        .bubble {
-            padding: 2rem 2.5rem;
-            font-size: 14px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.1rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.95rem;
-        }
-
-        .link-text {
-            font-size: 0.8rem;
-        }
-
-        .external-icon {
-            width: 14px;
-            height: 14px;
-        }
-    }
-
-    @media (min-width: 1291px) {
-        .bubbles-wrapper {
-            padding: 2rem 4rem 6rem 4rem;
-        }
-
-        .bubbles-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .bubble {
-            padding: 2.5rem 3rem;
-            font-size: 14px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.15rem;
-        }
-
-        .bubble-text p {
-            font-size: 1rem;
-        }
-
-        .link-text {
-            font-size: 0.85rem;
-        }
-    }
-
-    @media (min-width: 1920px) {
-        .bubble {
-            padding: 3rem 3.5rem;
-            font-size: 15px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.2rem;
-        }
-
-        .bubble-text p {
-            font-size: 1.05rem;
-        }
-
-        .link-text {
-            font-size: 0.9rem;
-        }
-
-        .external-icon {
-            width: 15px;
-            height: 15px;
-        }
-    }
+		.note + .note {
+			border-left: 1px solid var(--line);
+			padding-right: 0;
+			padding-left: clamp(2rem, 4vw, 4rem);
+		}
+	}
 </style>

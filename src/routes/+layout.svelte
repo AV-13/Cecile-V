@@ -1,12 +1,18 @@
 <script lang="ts">
 	import '../lib/styles/global.css';
+	import { page } from '$app/stores';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import PhoneBubbles from '$lib/components/PhoneBubbles.svelte';
+	import AmbientBackground from '$lib/components/AmbientBackground.svelte';
+	import Epigraph from '$lib/components/Epigraph.svelte';
 </script>
 
-<div class="background-image"></div>
+<AmbientBackground />
 <Header />
+{#if $page.url.pathname !== '/'}
+	<Epigraph />
+{/if}
 <main>
 	<slot />
 </main>
@@ -14,27 +20,6 @@
 <Footer />
 
 <style>
-	:global(html, body) {
-		height: 100%;
-	}
-
-	:global(body) {
-		margin: 0;
-		padding: 0;
-	}
-
-	.background-image {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		z-index: -1;
-		background: url('/images/arbre2.jpg') center center / cover no-repeat;
-		filter: blur(1px) brightness(0.7);
-		pointer-events: none;
-	}
-
 	main {
 		position: relative;
 		z-index: 1;
