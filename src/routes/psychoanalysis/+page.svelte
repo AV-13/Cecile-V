@@ -1,5 +1,6 @@
 <script lang="ts">
-	import './psychoanalysis.css';
+	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <svelte:head>
@@ -7,41 +8,39 @@
 	<meta name="description" content="Découvrez la psychanalyse et les différences avec la psychothérapie." />
 </svelte:head>
 
-<img
-	class="svg-wave-top"
-	src="/images/waves/before-presentation-wave.svg"
-	alt="Présentation"
-/>
 <main>
-	<div class="hero-header">
-			<h1 class="hero-title">Psychothérapie et psychanalyse</h1>
+	<div class="hero-header section-shell" use:reveal>
+		<h1 class="hero-title">Psychothérapie et psychanalyse</h1>
 	</div>
 
-	<section class="content-section">
-		<div class="two-column-layout">
-			<div class="image-column">
-				<img
-					class="section-illustration"
-					src="/images/fil.jpg"
-					alt="Illustration de Sigmund Freud, père de la psychanalyse."
-				/>
+	<section class="section-shell two-column-layout">
+		<div class="image-column" use:reveal>
+			<div class="visual-wrapper">
+				<div class="breathing-halo"></div>
+				<div class="arch-frame">
+					<img
+						class="section-illustration"
+						src="/images/fil.jpg"
+						alt="Illustration de Sigmund Freud, père de la psychanalyse."
+					/>
+				</div>
 			</div>
-			<div class="text-column">
-				<h2 class="section-title">La cure par la parole</h2>
-				<p class="section-text">
-					Dans les deux cas, il s'agit d'une cure par la parole. Elle a pour objectif de responsabiliser la personne
-					par rapport à la construction de sa vie, son travail, ses relations.
-				</p>
-				<p class="section-text">
-					La personne est invitée à parler librement et sans filtre. La confidentialité permet de pouvoir dire ce qui
-					concerne ses pensées, son corps et ses rêves en toute confiance.
-				</p>
-			</div>
+		</div>
+		<div class="text-column" use:reveal={{ delay: 0.15 }}>
+			<h2 class="section-heading">La cure par la parole</h2>
+			<p class="section-text">
+				Dans les deux cas, il s'agit d'une cure par la parole. Elle a pour objectif de responsabiliser la personne
+				par rapport à la construction de sa vie, son travail, ses relations.
+			</p>
+			<p class="section-text">
+				La personne est invitée à parler librement et sans filtre. La confidentialité permet de pouvoir dire ce qui
+				concerne ses pensées, son corps et ses rêves en toute confiance.
+			</p>
 		</div>
 	</section>
 
-	<section class="content-section bg-light">
-		<div class="centered-content">
+	<section class="highlight-section" use:reveal>
+		<div class="section-shell">
 			<p class="highlight-text">
 				Le travail de cure est l'occasion d'accueillir avec bienveillance les éléments inconscients pour se séparer petit à petit de ce qui fait
 				souffrir. Ce travail aide donc à traverser l'existence de façon plus légère, il permet de mieux se connaître
@@ -50,466 +49,289 @@
 		</div>
 	</section>
 
-	<section class="content-section">
-		<div class="centered-content">
-			<img
-				class="consultation-illustration"
-				src="/images/consultation.jpg"
-				alt="Illustration d'une psychanalyse"
-			/>
-			<div class="comparison-section">
-				<div class="comparison-item">
-					<h3 class="comparison-title">Psychothérapie</h3>
-					<p class="comparison-text">
-						Le patient cherche à ne plus souffrir de ses symptômes. Il est installé sur le <strong>fauteuil</strong>.
-					</p>
-				</div>
-				<div class="comparison-item">
-					<h3 class="comparison-title">Psychanalyse</h3>
-					<p class="comparison-text">
-						Le psychanalysant a le désir de savoir sur sa souffrance. Il est installé sur le <strong>divan</strong>.
-					</p>
-				</div>
+	<section class="section-shell comparison-block">
+		<div class="consultation-visual" use:reveal>
+			<div class="arch-frame consultation-frame">
+				<img
+					class="consultation-illustration"
+					src="/images/consultation.jpg"
+					alt="Illustration d'une psychanalyse"
+				/>
+			</div>
+		</div>
+		<div class="comparison-section">
+			<div class="comparison-item" use:reveal>
+				<h3 class="comparison-title">Psychothérapie</h3>
+				<p class="comparison-text">
+					Le patient cherche à ne plus souffrir de ses symptômes. Il est installé sur le <strong>fauteuil</strong>.
+				</p>
+			</div>
+			<div class="comparison-item" use:reveal={{ delay: 0.15 }}>
+				<h3 class="comparison-title">Psychanalyse</h3>
+				<p class="comparison-text">
+					Le psychanalysant a le désir de savoir sur sa souffrance. Il est installé sur le <strong>divan</strong>.
+				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="content-section bg-light">
-		<div class="centered-content">
-			<p class="cta-text">
-				Chacun peut être concerné par la souffrance à un moment de sa vie, qu'il soit <strong>nourrisson, enfant, adolescent
-				ou adulte</strong>. N'hésitez pas à prendre rendez-vous pour en parler !
-			</p>
-		</div>
+	<section class="cta-strip" use:reveal>
+		<p class="cta-text">
+			Chacun peut être concerné par la souffrance à un moment de sa vie, qu'il soit <strong>nourrisson, enfant, adolescent
+			ou adulte</strong>. N'hésitez pas à prendre rendez-vous pour en parler !
+		</p>
 	</section>
 
-	<section class="content-section">
-		<div class="centered-content">
-			<h2 class="section-title centered">Psychiatre, psychologue, psychothérapeute, psychanalyste : quelles différences ?</h2>
-			<div class="professionals-list">
-				<div class="professional-item">
-					<h3 class="professional-title">Psychiatre</h3>
-					<p class="professional-text">
-						Un médecin spécialiste des troubles psychiatriques. Il est habilité à prescrire des médicaments.
-					</p>
-				</div>
+	<section class="section-shell">
+		<h2 class="section-heading centered" use:reveal>Psychiatre, psychologue, psychothérapeute, psychanalyste : quelles différences ?</h2>
+		<div class="professionals-list">
+			<div class="professional-item" use:reveal>
+				<h3 class="professional-title">Psychiatre</h3>
+				<p class="professional-text">
+					Un médecin spécialiste des troubles psychiatriques. Il est habilité à prescrire des médicaments.
+				</p>
+			</div>
 
-				<div class="professional-item">
-					<h3 class="professional-title">Psychologue</h3>
-					<p class="professional-text">
-						Un spécialiste de la psychologie. Il peut exercer dans différents champs : le travail, le
-						développement de l'enfant, la neuropsychologie, etc. Seul le psychologue clinicien peut aussi occuper la position de psychothérapeute.
-					</p>
-				</div>
+			<div class="professional-item" use:reveal={{ delay: 0.1 }}>
+				<h3 class="professional-title">Psychologue</h3>
+				<p class="professional-text">
+					Un spécialiste de la psychologie. Il peut exercer dans différents champs : le travail, le
+					développement de l'enfant, la neuropsychologie, etc. Seul le psychologue clinicien peut aussi occuper la position de psychothérapeute.
+				</p>
+			</div>
 
-				<div class="professional-item">
-					<h3 class="professional-title">Psychothérapeute</h3>
-					<p class="professional-text">
-						Il occupe une position clinique auprès des patients qu'il rencontre. Il propose une cure par la parole.
-					</p>
-				</div>
+			<div class="professional-item" use:reveal={{ delay: 0.15 }}>
+				<h3 class="professional-title">Psychothérapeute</h3>
+				<p class="professional-text">
+					Il occupe une position clinique auprès des patients qu'il rencontre. Il propose une cure par la parole.
+				</p>
+			</div>
 
-				<div class="professional-item">
-					<h3 class="professional-title">Psychanalyste</h3>
-					<p class="professional-text">
-						Il occupe une position clinique auprès des psychanalysants dont il assure la cure. Il les invite à s'installer sur le divan.
-					</p>
-				</div>
+			<div class="professional-item" use:reveal={{ delay: 0.2 }}>
+				<h3 class="professional-title">Psychanalyste</h3>
+				<p class="professional-text">
+					Il occupe une position clinique auprès des psychanalysants dont il assure la cure. Il les invite à s'installer sur le divan.
+				</p>
 			</div>
 		</div>
 	</section>
-</main>
-<div class="ending-container">
-	<img
-		class="svg-wave"
-		src="/images/waves/before-take-appointment-wave.svg"
-		alt="Prendre rendez-vous"
-	/>
-	<div class="doctolib-container">
-		<a
-			href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
-			class="doctolib-button-main"
-			target="_blank"
-			rel="noopener"
-		>
-			<span class="button-text">Prendre rendez-vous</span>
-			<img
-				style="vertical-align:middle;width:auto;height:19px"
-				src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
-				alt="Doctolib"
-			/>
-		</a>
+
+	<div class="ending-container" use:reveal>
+		<hr class="hairline" />
+		<div class="doctolib-container">
+			<DoctolibButton />
+		</div>
 	</div>
-</div>
+</main>
 
 <style>
-    .ending-container {
-        background-color: #fff;
-    }
-	main {
-		overflow-x: hidden;
-		background-color: #edf3f6;
-	}
-
-	.svg-wave-top {
-		width: 100%;
-		height: 50px;
-		display: block;
-		margin-bottom: -5px;
-	}
-
-	/* Hero Header */
+	/* --- En-tête --- */
 	.hero-header {
 		text-align: center;
-		padding: 3rem 1.5rem;
-		max-width: 900px;
-		margin: 0 auto;
+		max-width: 56rem;
+		padding-bottom: 0;
 	}
 
 	.hero-title {
-		font-size: 2.2rem;
-		font-weight: 800;
-		color: #053f5f;
-		margin-bottom: 1rem;
+		font-size: clamp(2.2rem, 5.5vw, 4rem);
+		font-weight: 500;
 		line-height: 1.2;
 	}
 
-	.hero-subtitle {
-		font-size: 1.1rem;
-		color: #0a5f8f;
-		line-height: 1.6;
-		font-weight: 500;
-	}
-
-	/* Content Sections */
-	.content-section {
-		padding: 3rem 1.5rem;
-	}
-
-	.content-section.bg-light {
-		background-color: #f9fafb;
-	}
-
-	.centered-content {
-		max-width: 1100px;
-		margin: 0 auto;
-	}
-
-	/* Two Column Layout */
+	/* --- La cure par la parole --- */
 	.two-column-layout {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 3rem;
 		align-items: center;
-		max-width: 1100px;
-		margin: 0 auto;
 	}
 
 	.image-column {
 		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.visual-wrapper {
+		position: relative;
+		width: min(70vw, 320px);
+	}
+
+	.arch-frame {
+		aspect-ratio: 4 / 5;
+	}
+
+	/* L'illustration au fond jaune vif est apaisée pour rester dans la palette */
+	.section-illustration {
+		filter: saturate(0.45) sepia(0.14) brightness(1.02);
 	}
 
 	.text-column {
-		width: 100%;
+		max-width: var(--text-max);
 	}
 
-	.section-illustration {
-		width: 100%;
-		max-width: 400px;
-		border-radius: 12px;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-		display: block;
-		margin: 0 auto;
-	}
-
-	.section-title {
-		font-size: 1.75rem;
-		font-weight: 700;
-		color: #053f5f;
-		margin: 0 0 1.5rem 0;
-		line-height: 1.3;
-	}
-
-	.section-title.centered {
-		text-align: center;
+	.text-column h2 {
+		margin-bottom: 1.5rem;
 	}
 
 	.section-text {
-		font-size: 1.05rem;
-		line-height: 1.8;
-		color: #374151;
-		margin-bottom: 1.25rem;
-	}
-
-	/* Highlight Text */
-	.highlight-text {
-		font-size: 1.15rem;
 		line-height: 1.9;
-		color: #374151;
-		text-align: center;
-		max-width: 900px;
-		margin: 0 auto;
-		padding: 2rem 1.5rem;
+		margin-bottom: 1.25rem;
+		font-size: 1.02rem;
+	}
+
+	/* --- Citation --- */
+	.highlight-section {
+		background-color: var(--paper-3);
+	}
+
+	.highlight-text {
+		font-family: var(--font-display);
 		font-style: italic;
+		font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+		line-height: 1.9;
+		color: var(--ink);
+		text-align: center;
+		max-width: 46rem;
+		margin: 0 auto;
 	}
 
-	/* Consultation Illustration */
-	.consultation-illustration {
-		width: 100%;
-		max-width: 500px;
-		border-radius: 12px;
-		margin: 0 auto 3rem auto;
+	.highlight-text::before {
+		content: '';
 		display: block;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--sage);
+		margin: 0 auto 1.75rem auto;
 	}
 
-	/* Comparison Section */
+	/* --- Fauteuil / divan --- */
+	.comparison-block {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.consultation-visual {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.consultation-frame {
+		width: min(80vw, 420px);
+		aspect-ratio: 5 / 4;
+	}
+
 	.comparison-section {
-		max-width: 800px;
-		margin: 3rem auto 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		width: 100%;
+		max-width: 52rem;
 	}
 
 	.comparison-item {
-		margin-bottom: 2.5rem;
-		padding-bottom: 2.5rem;
-		border-bottom: 2px solid #faedfc;
-	}
-
-	.comparison-item:last-child {
-		border-bottom: none;
-		margin-bottom: 0;
-		padding-bottom: 0;
+		background-color: rgba(255, 255, 255, 0.55);
+		border: 1px solid var(--line);
+		border-radius: var(--radius-soft);
+		padding: 2.25rem 2rem;
+		backdrop-filter: blur(4px);
 	}
 
 	.comparison-title {
 		font-size: 1.5rem;
-		font-weight: 700;
-		color: #053f5f;
-		margin: 0 0 1rem 0;
+		font-weight: 550;
+		margin-bottom: 0.9rem;
 	}
 
 	.comparison-text {
-		font-size: 1.05rem;
-		line-height: 1.7;
-		color: #374151;
+		line-height: 1.8;
 		margin: 0;
 	}
 
-	/* CTA Text */
-	.cta-text {
-		font-size: 1.15rem;
-		line-height: 1.8;
-		color: #1f2937;
-		text-align: center;
-		max-width: 800px;
+	/* --- Bandeau CTA --- */
+	.cta-strip {
+		padding: 0 var(--gutter);
+		max-width: var(--content-max);
 		margin: 0 auto;
-		padding: 1.5rem;
 	}
 
-	/* Professionals List */
+	.cta-text {
+		line-height: 1.9;
+		text-align: center;
+		max-width: 42rem;
+		margin: 0 auto;
+		font-size: 1.05rem;
+	}
+
+	/* --- Les métiers du psychisme --- */
 	.professionals-list {
-		max-width: 900px;
-		margin: 3rem auto 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		max-width: 60rem;
+		margin: 3rem auto 0 auto;
 	}
 
 	.professional-item {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid #e5e7eb;
-	}
-
-	.professional-item:last-child {
-		border-bottom: none;
-		margin-bottom: 0;
-		padding-bottom: 0;
+		border-top: 1px solid var(--line);
+		padding-top: 1.75rem;
 	}
 
 	.professional-title {
-		font-size: 1.35rem;
-		font-weight: 700;
-		color: #053f5f;
-		margin: 0 0 0.75rem 0;
+		font-size: 1.4rem;
+		font-weight: 550;
+		margin-bottom: 0.75rem;
 	}
 
 	.professional-text {
-		font-size: 1.05rem;
-		line-height: 1.7;
-		color: #374151;
+		line-height: 1.8;
 		margin: 0;
+		font-size: 0.98rem;
 	}
 
-	/* Tablets */
-	@media (min-width: 640px) {
-		.svg-wave-top {
-			height: 100px;
-		}
-
-		.hero-header {
-			padding: 4rem 2rem;
-		}
-
-		.hero-title {
-			font-size: 2.8rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.2rem;
-		}
-
-		.content-section {
-			padding: 4rem 2rem;
-		}
-
-		.section-title {
-			font-size: 2rem;
-		}
-
-		.comparison-title {
-			font-size: 1.6rem;
-		}
-
-		.professional-title {
-			font-size: 1.45rem;
-		}
-
-		.cta-text {
-			font-size: 1.2rem;
-		}
+	.ending-container {
+		padding-bottom: clamp(1rem, 3vw, 2rem);
 	}
 
-	/* Small Laptops */
-	@media (min-width: 1024px) {
-		.svg-wave-top {
-			height: 150px;
-		}
+	.doctolib-container {
+		display: flex;
+		justify-content: center;
+		margin-top: clamp(2.5rem, 6vw, 4rem);
+	}
 
-		.hero-header {
-			padding: 5rem 3rem;
-		}
-
-		.hero-title {
-			font-size: 3.5rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.3rem;
-		}
-
-		.content-section {
-			padding: 5rem 3rem;
-		}
-
-		.section-title {
-			font-size: 2.2rem;
-		}
-
+	/* Tablettes et plus */
+	@media (min-width: 900px) {
 		.two-column-layout {
 			flex-direction: row;
-			gap: 4rem;
+			justify-content: space-between;
+			gap: 5rem;
 		}
 
 		.image-column {
-			width: 40%;
+			flex: 1;
+			justify-content: flex-end;
+			order: 2;
+		}
+
+		.visual-wrapper {
+			width: min(28vw, 340px);
 		}
 
 		.text-column {
-			width: 60%;
-		}
-
-		.section-illustration {
-			max-width: none;
-		}
-
-		.comparison-title {
-			font-size: 1.7rem;
-		}
-
-		.professional-title {
-			font-size: 1.5rem;
-		}
-
-		.cta-text {
-			font-size: 1.25rem;
-		}
-	}
-
-	/* Large screens */
-	@media (min-width: 1291px) {
-		.svg-wave-top {
-			height: 200px;
-		}
-
-		.hero-header {
-			padding: 6rem 4rem;
-			max-width: 1100px;
-		}
-
-		.hero-title {
-			font-size: 4rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.4rem;
-		}
-
-		.content-section {
-			padding: 6rem 4rem;
-		}
-
-		.centered-content {
-			max-width: 1400px;
+			flex: 1.3;
 		}
 
 		.comparison-section {
-			max-width: 950px;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
 		}
 
 		.professionals-list {
-			max-width: 1000px;
-		}
-	}
-
-	/* Extra large screens */
-	@media (min-width: 1920px) {
-		.hero-header {
-			padding: 7rem 5rem;
-			max-width: 1300px;
-		}
-
-		.hero-title {
-			font-size: 4.5rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.5rem;
-		}
-
-		.content-section {
-			padding: 7rem 5rem;
-		}
-
-		.centered-content {
-			max-width: 1600px;
-		}
-
-		.section-title {
-			font-size: 2.5rem;
-		}
-
-		.comparison-section {
-			max-width: 1100px;
-		}
-
-		.professionals-list {
-			max-width: 1200px;
-		}
-
-		.comparison-title {
-			font-size: 1.8rem;
-		}
-
-		.professional-title {
-			font-size: 1.6rem;
+			grid-template-columns: 1fr 1fr;
+			gap: 2.5rem 3.5rem;
 		}
 	}
 </style>

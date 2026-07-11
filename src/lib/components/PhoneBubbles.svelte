@@ -1,6 +1,10 @@
+<script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
+</script>
+
 <div class="bubbles-wrapper">
 	<div class="bubbles-container">
-		<div class="bubble bubble-phone">
+		<div class="bubble bubble-phone" use:reveal>
 			<div class="bubble-text">
 				<h3>Consultation par téléphone</h3>
 				<p>
@@ -9,7 +13,7 @@
 			</div>
 		</div>
 
-		<div class="bubble bubble-urgence">
+		<div class="bubble bubble-urgence" use:reveal={{ delay: 0.15 }}>
 			<div class="bubble-text">
 				<h3>Service d'Écoute Téléphonique d'Urgence (SÉTU)</h3>
 				<p>
@@ -34,211 +38,95 @@
 
 
 <style>
-    .bubbles-wrapper {
-        background-color: #ffffff;
-        padding: 2rem 1rem;
-    }
+	.bubbles-wrapper {
+		padding: 0 var(--gutter);
+		max-width: var(--content-max);
+		margin: var(--space-section) auto 0 auto;
+	}
 
-    .bubbles-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 100%;
-        margin: 0 auto;
-    }
+	.bubbles-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
 
-    .bubble {
-        padding: 1.5rem;
-        border-radius: 9999px;
-        text-align: center;
-        line-height: 1.6;
-        font-size: 11px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+	.bubble {
+		padding: 2.25rem 2rem;
+		border-radius: var(--radius-soft);
+		line-height: 1.75;
+		display: flex;
+		align-items: flex-start;
+		border: 1px solid var(--line);
+	}
 
-    .bubble-phone {
-        background-color: #e8f4ff;
-    }
+	.bubble-phone {
+		background-color: var(--sage-tint);
+	}
 
-    .bubble-urgence {
-        background-color: #fef3e8;
-    }
+	.bubble-urgence {
+		background-color: var(--mist-tint);
+	}
 
-    .bubble-text {
-				padding: 20px;
-        text-align: center;
-        width: 100%;
-    }
+	.bubble-text {
+		width: 100%;
+	}
 
-    .bubble-text h3 {
-        margin: 0 0 0.8rem 0;
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: #053f5f;
-    }
+	.bubble-text h3 {
+		margin: 0 0 1rem 0;
+		font-size: 1.25rem;
+		font-weight: 550;
+		color: var(--ink);
+	}
 
-    .bubble-text p {
-        margin: 0 0 0.8rem 0;
-        font-size: 0.85rem;
-        line-height: 1.6;
-        color: #053f5f;
-    }
+	.bubble-text p {
+		margin: 0 0 0.8rem 0;
+		font-size: 0.95rem;
+		line-height: 1.75;
+		color: var(--ink-soft);
+	}
 
-    .bubble-text p:last-child {
-        margin-bottom: 0;
-    }
+	.bubble-text p:last-child {
+		margin-bottom: 0;
+	}
 
-    .bubble-text a {
-        color: #107aca;
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+	.bubble-text a {
+		color: var(--ink);
+		text-decoration: underline;
+		text-decoration-color: var(--sage);
+		text-decoration-thickness: 1.5px;
+		text-underline-offset: 4px;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		flex-wrap: wrap;
+		transition: color 0.3s ease;
+	}
 
-    .bubble-text a:hover {
-        text-decoration: underline;
-    }
+	.bubble-text a:hover {
+		color: var(--sage-deep);
+	}
 
-    .link-text {
-        font-size: 0.75rem;
-        display: inline-block;
-    }
+	.link-text {
+		font-size: 0.85rem;
+		display: inline-block;
+	}
 
-    .external-icon {
-        width: 12px;
-        height: 12px;
-        fill: #107aca;
-    }
+	.external-icon {
+		width: 12px;
+		height: 12px;
+		fill: currentColor;
+	}
 
-    @media (min-width: 480px) {
-        .bubble {
-            font-size: 12px;
-        }
+	/* Tablettes et plus */
+	@media (min-width: 900px) {
+		.bubbles-container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+		}
 
-        .bubble-text h3 {
-            font-size: 1rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.9rem;
-        }
-
-        .link-text {
-            font-size: 0.75rem;
-        }
-    }
-
-    @media (min-width: 640px) {
-        .bubbles-wrapper {
-            padding: 2rem 2rem;
-        }
-
-        .bubble {
-            padding: 1.8rem 2rem;
-            font-size: 13px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.05rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.92rem;
-        }
-
-        .link-text {
-            font-size: 0.78rem;
-        }
-
-        .external-icon {
-            width: 13px;
-            height: 13px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .bubbles-wrapper {
-            padding: 2rem 3rem;
-        }
-
-        .bubble {
-            padding: 2rem 2.5rem;
-            font-size: 14px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.1rem;
-        }
-
-        .bubble-text p {
-            font-size: 0.95rem;
-        }
-
-        .link-text {
-            font-size: 0.8rem;
-        }
-
-        .external-icon {
-            width: 14px;
-            height: 14px;
-        }
-    }
-
-    @media (min-width: 1291px) {
-        .bubbles-wrapper {
-            padding: 2rem 4rem 6rem 4rem;
-        }
-
-        .bubbles-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .bubble {
-            padding: 2.5rem 3rem;
-            font-size: 14px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.15rem;
-        }
-
-        .bubble-text p {
-            font-size: 1rem;
-        }
-
-        .link-text {
-            font-size: 0.85rem;
-        }
-    }
-
-    @media (min-width: 1920px) {
-        .bubble {
-            padding: 3rem 3.5rem;
-            font-size: 15px;
-        }
-
-        .bubble-text h3 {
-            font-size: 1.2rem;
-        }
-
-        .bubble-text p {
-            font-size: 1.05rem;
-        }
-
-        .link-text {
-            font-size: 0.9rem;
-        }
-
-        .external-icon {
-            width: 15px;
-            height: 15px;
-        }
-    }
+		.bubble {
+			padding: 2.75rem 2.5rem;
+		}
+	}
 </style>

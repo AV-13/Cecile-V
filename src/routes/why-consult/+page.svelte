@@ -1,5 +1,6 @@
 <script lang="ts">
-	import './why-consult.css';
+	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const reasons = [
 		'Anxiété',
@@ -24,6 +25,10 @@
 		'Fatigue',
 		'Grossesse ou parentalité difficile'
 	];
+
+	// Deux rangées qui dérivent en sens opposés, comme des pensées qui circulent
+	const rowA = reasons.slice(0, 11);
+	const rowB = reasons.slice(11);
 </script>
 
 <svelte:head>
@@ -31,13 +36,8 @@
 	<meta name="description" content="Découvrez les raisons et symptômes pour lesquels consulter un psychothérapeute." />
 </svelte:head>
 
-<img
-	class="svg-wave-top"
-	src="/images/waves/before-presentation-wave.svg"
-	alt="Présentation"
-/>
 <main>
-	<div class="hero-header">
+	<div class="hero-header section-shell" use:reveal>
 		<h1 class="hero-title">Pourquoi consulter ?</h1>
 		<p class="hero-subtitle">
 			Les raisons d'une première consultation peuvent être très diverses, elles sont toutes les
@@ -46,286 +46,167 @@
 		</p>
 	</div>
 
-	<section class="content-section">
-		<div class="centered-content">
-			<div class="reasons-list">
-				<ul class="items-list">
-					{#each reasons as item}
-						<li>{item}</li>
-					{/each}
-				</ul>
-			</div>
+	<!-- Les motifs, en mouvement perpétuel — comme la parole qui circule -->
+	<section class="reasons-drift" use:reveal={{ delay: 0.1 }}>
+		<div class="marquee">
+			<ul class="marquee-track" style="--drift-duration: 80s;">
+				{#each rowA as item}
+					<li class="reason-chip">{item}</li>
+				{/each}
+				{#each rowA as item}
+					<li class="reason-chip" aria-hidden="true">{item}</li>
+				{/each}
+			</ul>
+		</div>
+		<div class="marquee">
+			<ul class="marquee-track track-reverse" style="--drift-duration: 95s;">
+				{#each rowB as item}
+					<li class="reason-chip chip-alt">{item}</li>
+				{/each}
+				{#each rowB as item}
+					<li class="reason-chip chip-alt" aria-hidden="true">{item}</li>
+				{/each}
+			</ul>
 		</div>
 	</section>
 
-	<section class="content-section bg-light">
-		<div class="centered-content">
-			<p class="cta-text">
-				Et bien d'autres raisons encore... N'hésitez pas à me contacter pour en discuter ensemble.
-			</p>
+	<section class="cta-section section-shell" use:reveal>
+		<p class="cta-text">
+			Et bien d'autres raisons encore... N'hésitez pas à me contacter pour en discuter ensemble.
+		</p>
+		<div class="doctolib-container">
+			<DoctolibButton />
 		</div>
 	</section>
 </main>
-<div class="ending-container">
-	<img
-		class="svg-wave"
-		src="/images/waves/before-take-appointment-wave.svg"
-		alt="Prendre rendez-vous"
-	/>
-	<div class="doctolib-container">
-		<a
-			href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
-			class="doctolib-button-main"
-			target="_blank"
-			rel="noopener"
-		>
-			<span class="button-text">Prendre rendez-vous</span>
-			<img
-				style="vertical-align:middle;width:auto;height:19px"
-				src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
-				alt="Doctolib"
-			/>
-		</a>
-	</div>
-</div>
-
 
 <style>
-	.ending-container {
-		background-color: #fff;
-	}
-
-	main {
-		overflow-x: hidden;
-		background-color: #edf3f6;
-	}
-
-	.svg-wave-top {
-		width: 100%;
-		height: 50px;
-		display: block;
-		margin-bottom: -5px;
-	}
-
-	/* Hero Header */
+	/* --- En-tête --- */
 	.hero-header {
 		text-align: center;
-		padding: 3rem 1.5rem;
-		max-width: 900px;
-		margin: 0 auto;
+		max-width: 52rem;
+		padding-bottom: clamp(2rem, 5vw, 4rem);
 	}
 
 	.hero-title {
-		font-size: 2.2rem;
-		font-weight: 800;
-		color: #053f5f;
-		margin-bottom: 1rem;
-		line-height: 1.2;
+		font-size: clamp(2.4rem, 6vw, 4.2rem);
+		font-weight: 500;
+		margin-bottom: 1.5rem;
 	}
 
 	.hero-subtitle {
-		font-size: 1.1rem;
-		color: #0a5f8f;
-		line-height: 1.6;
-		font-weight: 500;
-	}
-
-	/* Content Sections */
-	.content-section {
-		padding: 3rem 1.5rem;
-	}
-
-	.content-section.bg-light {
-		background-color: #f9fafb;
-	}
-
-	.centered-content {
-		max-width: 1100px;
-		margin: 0 auto;
-	}
-
-	/* Reasons List */
-	.reasons-list {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-	.reason-item {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid #e5e7eb;
-	}
-
-	.reason-item:last-child {
-		border-bottom: none;
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
-	.reason-title {
-		font-size: 1.35rem;
-		font-weight: 700;
-		color: #053f5f;
-		margin: 0 0 0.75rem 0;
-	}
-
-	.items-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.items-list li {
 		font-size: 1.05rem;
-		line-height: 1.7;
-		color: #374151;
-		margin-bottom: 0.5rem;
-		padding-left: 1.5rem;
-		position: relative;
-	}
-
-	.items-list li::before {
-		content: '•';
-		color: #107aca;
-		font-weight: bold;
-		position: absolute;
-		left: 0;
-	}
-
-	/* CTA Text */
-	.cta-text {
-		font-size: 1.15rem;
-		line-height: 1.8;
-		color: #1f2937;
-		text-align: center;
-		max-width: 800px;
+		line-height: 1.9;
+		max-width: 40rem;
 		margin: 0 auto;
-		padding: 1.5rem;
 	}
 
-	/* Tablets */
-	@media (min-width: 640px) {
-		.svg-wave-top {
-			height: 100px;
-		}
-
-		.hero-header {
-			padding: 4rem 2rem;
-		}
-
-		.hero-title {
-			font-size: 2.8rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.2rem;
-		}
-
-		.content-section {
-			padding: 4rem 2rem;
-		}
-
-		.reason-title {
-			font-size: 1.45rem;
-		}
-
-		.cta-text {
-			font-size: 1.2rem;
-		}
+	/* --- Dérive perpétuelle des motifs --- */
+	.reasons-drift {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		padding: 1rem 0;
 	}
 
-	/* Small Laptops */
-	@media (min-width: 1024px) {
-		.svg-wave-top {
-			height: 150px;
-		}
+	.marquee {
+		overflow: hidden;
+		width: 100%;
+		-webkit-mask-image: linear-gradient(
+			90deg,
+			transparent,
+			black 12%,
+			black 88%,
+			transparent
+		);
+		mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+	}
 
-		.hero-header {
-			padding: 5rem 3rem;
-		}
+	.marquee-track {
+		display: flex;
+		width: max-content;
+		animation: drift var(--drift-duration) linear infinite;
+	}
 
-		.hero-title {
-			font-size: 3.5rem;
-		}
+	.track-reverse {
+		animation-direction: reverse;
+	}
 
-		.hero-subtitle {
-			font-size: 1.3rem;
-		}
+	/* Le survol suspend la dérive, pour lire tranquillement */
+	.marquee:hover .marquee-track {
+		animation-play-state: paused;
+	}
 
-		.content-section {
-			padding: 5rem 3rem;
-		}
-
-		.reason-title {
-			font-size: 1.5rem;
-		}
-
-		.cta-text {
-			font-size: 1.25rem;
+	@keyframes drift {
+		to {
+			transform: translateX(-50%);
 		}
 	}
 
-	/* Large screens */
-	@media (min-width: 1291px) {
-		.svg-wave-top {
-			height: 200px;
+	.reason-chip {
+		white-space: nowrap;
+		margin-right: 1.1rem;
+		padding: 0.8rem 1.7rem;
+		border-radius: 999px;
+		border: 1px solid var(--line);
+		background-color: rgba(255, 255, 255, 0.6);
+		color: var(--ink-soft);
+		font-size: 0.95rem;
+		font-weight: 500;
+		backdrop-filter: blur(3px);
+	}
+
+	.chip-alt {
+		background-color: var(--sage-tint);
+		border-color: transparent;
+		color: var(--ink);
+	}
+
+	/* Mouvement réduit : la liste se pose, complète et lisible */
+	@media (prefers-reduced-motion: reduce) {
+		.marquee {
+			-webkit-mask-image: none;
+			mask-image: none;
 		}
 
-		.hero-header {
-			padding: 6rem 4rem;
-			max-width: 1100px;
+		.marquee-track {
+			animation: none;
+			width: auto;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+			padding: 0 var(--gutter);
 		}
 
-		.hero-title {
-			font-size: 4rem;
+		.reason-chip {
+			white-space: normal;
+			margin-right: 0;
+			text-align: center;
 		}
 
-		.hero-subtitle {
-			font-size: 1.4rem;
-		}
-
-		.content-section {
-			padding: 6rem 4rem;
-		}
-
-		.centered-content {
-			max-width: 1400px;
-		}
-
-		.reasons-list {
-			max-width: 1000px;
+		.marquee-track li[aria-hidden='true'] {
+			display: none;
 		}
 	}
 
-	/* Extra large screens */
-	@media (min-width: 1920px) {
-		.hero-header {
-			padding: 7rem 5rem;
-			max-width: 1300px;
-		}
+	/* --- Fin de page --- */
+	.cta-section {
+		text-align: center;
+	}
 
-		.hero-title {
-			font-size: 4.5rem;
-		}
+	.cta-text {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+		line-height: 1.8;
+		color: var(--ink-soft);
+		max-width: 40rem;
+		margin: 0 auto;
+	}
 
-		.hero-subtitle {
-			font-size: 1.5rem;
-		}
-
-		.content-section {
-			padding: 7rem 5rem;
-		}
-
-		.centered-content {
-			max-width: 1600px;
-		}
-
-		.reasons-list {
-			max-width: 1200px;
-		}
-
-		.reason-title {
-			font-size: 1.6rem;
-		}
+	.doctolib-container {
+		display: flex;
+		justify-content: center;
+		margin-top: 2.5rem;
 	}
 </style>

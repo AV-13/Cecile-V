@@ -1,169 +1,77 @@
-<script>
+<script lang="ts">
+	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <svelte:head>
 	<title>Articles - Cécile Vathonne</title>
 	<meta name="description" content="Articles de vulgarisation scientifique auxquels Cécile Vathonne a collaboré." />
 </svelte:head>
-<img
-	class="svg-wave"
-	src="/images/waves/before-presentation-wave.svg"
-	alt="Présentation"
-/>
+
 <main>
-	<div class="content">
-		<div class="white-warning">
+	<div class="content section-shell" use:reveal>
+		<p class="article-intro">
 			Cécile Vathonne a collaboré à l'écriture de plusieurs articles de vulgarisation scientifique.
-		</div>
+		</p>
 		<a
 			href="https://www.santemagazine.fr/sante/maladies/maladies-mentales/phobies/cibophobie-comment-vaincre-la-peur-de-manger-1115064"
 			target="_blank"
 			rel="noopener"
-			class="take-appointment-button"
+			class="btn"
 		>
 			Consulter l'article
-			<span>
-				<img src="/images/icons/external-link.svg" alt="(lien externe)" />
-			</span>
+			<svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
+				<path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
+			</svg>
 		</a>
 	</div>
 
-	<img
-		class="bottom-wave"
-		src="/images/waves/before-take-appointment-wave.svg"
-		alt="wave"
-	/>
+	<div class="ending-container" use:reveal>
+		<hr class="hairline" />
+		<div class="doctolib-container">
+			<DoctolibButton />
+		</div>
+	</div>
 </main>
-<div class="doctolib-container">
-	<a
-		href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
-		class="doctolib-button-main"
-		target="_blank"
-		rel="noopener"
-	>
-		<span class="button-text">Prendre rendez-vous</span>
-		<img
-			style="vertical-align:middle;width:auto;height:19px"
-			src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png"
-			alt="Doctolib"
-		/>
-	</a>
-</div>
 
 <style>
-		.doctolib-container {
-				background-color: white;
-				margin: unset !important;
-		}
 	main {
-		min-height: 60vh;
-		background-color: #edf3f6;
-	}
-	.bottom-wave {
-		width: 100%;
-		display: block;
+		min-height: 50vh;
 	}
 
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 30px;
-		padding: 40px 20px;
+		gap: 2.5rem;
+		text-align: center;
 	}
-  .white-warning {
-      text-align: center;
-      margin: 2rem 1rem;
-      line-height: 1.6;
-      background-color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      font-size: 16px;
-  }
 
-	.take-appointment-button {
+	.article-intro {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+		line-height: 1.85;
+		color: var(--ink);
+		max-width: 42rem;
+	}
+
+	.article-intro::before {
+		content: '';
+		display: block;
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--sage);
+		margin: 0 auto 1.75rem auto;
+	}
+
+	.ending-container {
+		padding-bottom: clamp(1rem, 3vw, 2rem);
+	}
+
+	.doctolib-container {
 		display: flex;
-		font-size: 16px;
-		font-weight: 700;
-		gap: 12px;
-		align-items: center;
-		border-radius: 5px;
-		padding: 1rem 1.5rem;
-		background-color: #ffec2d;
-		width: fit-content;
-		cursor: pointer;
-		text-decoration: none;
-		color: #000;
-		transition: transform 0.2s;
-	}
-
-	.take-appointment-button:hover {
-		transform: translateY(-2px);
-	}
-
-	.take-appointment-button img {
-		width: 18px;
-		height: 18px;
-	}
-
-	/* Tablets */
-	@media (min-width: 640px) {
-		.content {
-			padding: 60px 40px;
-		}
-
-		.white-warning {
-			font-size: 17px;
-			padding: 1.5rem 2.5rem;
-			max-width: 700px;
-			margin: 2.5rem auto;
-		}
-
-		.take-appointment-button {
-			font-size: 17px;
-			padding: 1.1rem 1.8rem;
-		}
-
-		.take-appointment-button img {
-			width: 20px;
-			height: 20px;
-		}
-	}
-
-	/* Small Laptops */
-	@media (min-width: 1024px) {
-		.content {
-			padding: 80px 60px;
-		}
-
-		.white-warning {
-			font-size: 18px;
-			max-width: 800px;
-		}
-	}
-
-	/* Large screens */
-	@media (min-width: 1291px) {
-		.content {
-			padding: 100px 80px;
-		}
-
-		.white-warning {
-			max-width: 900px;
-			padding: 2rem 3rem;
-		}
-	}
-
-	/* Extra large screens */
-	@media (min-width: 1920px) {
-		.content {
-			padding: 120px 100px;
-			max-width: 1600px;
-			margin: 0 auto;
-		}
-
-		.white-warning {
-			font-size: 19px;
-		}
+		justify-content: center;
+		margin-top: clamp(2.5rem, 6vw, 4rem);
 	}
 </style>

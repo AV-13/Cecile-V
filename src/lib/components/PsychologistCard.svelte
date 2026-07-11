@@ -42,30 +42,44 @@
 
 <style>
 	.psychologist-card {
-		background: #fbfafa;
-		border: 2px solid #b8cfda;
-		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(220, 220, 180, 0.08);
-		padding: 1.5rem 1.2rem;
+		background: rgba(255, 255, 255, 0.6);
+		border: 1px solid var(--line);
+		border-radius: var(--radius-soft);
+		padding: 1.9rem 1.7rem;
 		min-width: 270px;
-		max-width: 370px;
+		max-width: 380px;
 		flex: 1 1 300px;
-		transition: all 0.3s ease;
+		backdrop-filter: blur(3px);
+		transition:
+			box-shadow 0.4s var(--ease-out-soft),
+			transform 0.4s var(--ease-out-soft),
+			border-color 0.4s ease;
 	}
 
 	.psychologist-card:hover {
-		box-shadow: 0 6px 20px rgba(219, 221, 130, 0.25);
+		box-shadow: 0 24px 44px -28px rgba(47, 64, 71, 0.35);
 		transform: translateY(-4px);
-		border-color: #9ab8c8;
+		border-color: var(--sage);
 	}
 
 	.psychologist-card h4 {
-		margin-bottom: 1rem;
-		color: #053f5f;
-		font-size: 1.25rem;
-		font-weight: 700;
-		border-bottom: 2px solid #dbdd82;
-		padding-bottom: 0.5rem;
+		font-family: var(--font-display);
+		margin-bottom: 1.1rem;
+		color: var(--ink);
+		font-size: 1.3rem;
+		font-weight: 550;
+		padding-bottom: 0.65rem;
+		position: relative;
+	}
+
+	.psychologist-card h4::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 36px;
+		height: 1.5px;
+		background-color: var(--sage);
 	}
 
 	.info {
@@ -73,29 +87,30 @@
 		align-items: flex-start;
 		gap: 0.7em;
 		margin-bottom: 0.6em;
-		font-size: 0.95rem;
-		color: #053f5f;
-		line-height: 1.5;
+		font-size: 0.92rem;
+		color: var(--ink-soft);
+		line-height: 1.6;
 	}
 
 	.icon {
-		width: 20px;
-		height: 20px;
+		width: 18px;
+		height: 18px;
 		flex-shrink: 0;
-		margin-top: 2px;
-		opacity: 0.7;
+		margin-top: 3px;
+		opacity: 0.55;
 	}
 
 	.info a {
-		color: #053f5f;
+		color: var(--ink-soft);
 		text-decoration: none;
 		word-break: break-word;
-		transition: color 0.2s;
+		transition: color 0.25s ease;
 	}
 
 	.info a:hover {
-		color: #0a5f8f;
+		color: var(--sage-deep);
 		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
 	.info span {

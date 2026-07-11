@@ -1,33 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { PUBLIC_DOCTOLIB_URL } from '$env/static/public';
-
-	let showMenu = false;
-
-	function toggleMenu() {
-		showMenu = !showMenu;
-	}
-
-	onMount(() => {
-		// Intersection Observer for fade-in effects
-		const sections = document.querySelectorAll('.fade-in-section');
-		const options = {
-			threshold: 0.1
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('visible');
-					observer.unobserve(entry.target);
-				}
-			});
-		}, options);
-
-		sections.forEach((section) => {
-			observer.observe(section);
-		});
-	});
+	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <svelte:head>
@@ -36,83 +9,75 @@
 </svelte:head>
 
 <main>
-	<img
-		class="svg-wave"
-		src="/images/waves/before-presentation-wave.svg"
-		alt="Présentation"
-	/>
+	<!-- Présentation -->
+	<section class="presentation-container section-shell">
+		<div class="presentation-text" use:reveal>
+			<h1>Psychothérapeute</h1>
+			<p class="psychology-explanation">
+				Je propose de recevoir toute personne qui souffre.
+				Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une
+				tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d'être écoutée.
+				Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au <a
+					class="quiet-link" href="tel:07 62 80 25 77">07 62 80 25 77</a>.
+			</p>
+		</div>
+		<div class="presentation-visual" use:reveal={{ delay: 0.2 }}>
+			<div class="portrait-wrapper">
+				<div class="breathing-halo"></div>
+				<div class="arch-frame portrait">
+					<img src="/images/accueil_psy.jpg" alt="portrait" />
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<div class="presentation-container">
-		<h1>Psychothérapeute</h1>
-		<img
-			class="portrait"
-			src="/images/accueil_psy.jpg"
-			alt="portrait"
-		/>
-		<p class="psychology-explanation">
-			Je propose de recevoir toute personne qui souffre.
-			Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une
-			tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d'être écoutée.
-			Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au <a
-				href="tel:07 62 80 25 77">07 62 80 25 77</a>.
-		</p>
-	</div>
+	<hr class="hairline" />
 
-	<img
-		class="svg-wave"
-		src="/images/waves/before-take-appointment-wave.svg"
-		alt="Prendre rendez-vous"
-	/>
+	<!-- Prendre rendez-vous -->
+	<section id="takeAppointment" class="take-appointment section-shell">
+		<div class="appointment-visual" use:reveal>
+			<div class="phone-illustration-container">
+				<div class="breathing-halo halo-alt"></div>
+				<div class="blob-frame">
+					<img
+						class="telephone-illustration"
+						src="/images/telephone-illustration.jpg"
+						alt="telephone-illustration"
+					/>
+				</div>
+			</div>
+		</div>
 
-	<div id="takeAppointment" class="take-appointment">
-		<h2>Prendre rendez-vous</h2>
-		<div class="take-appointment-subcontainer">
-			<p style="text-align: center">
+		<div class="appointment-content" use:reveal={{ delay: 0.15 }}>
+			<h2 class="section-heading">Prendre rendez-vous</h2>
+			<p>
 				Les prises de rendez-vous se font <b>par téléphone</b> au <b>07 62 80 25 77</b>, par <b>mail</b> à
 				l'adresse <b>cecile.vathonne@gmail.com</b> ou via Doctolib.
 			</p>
 
-			<div class="phone-illustration-container">
-				<img
-					class="telephone-illustration"
-					src="/images/telephone-illustration.jpg"
-					alt="telephone-illustration"
-				/>
-				<img
-					class="phone-illustration-blob"
-					src="/images/blob/telephone-blob.svg"
-					alt="Blob"
-				/>
+			<div class="appointment-actions">
+				<a class="btn" href="tel:762802577">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+					</svg>
+					07 62 80 25 77
+				</a>
+				<DoctolibButton />
 			</div>
-
-			<a class="take-appointment-button" href="tel:762802577">
-				<img
-					width="15"
-					height="15"
-					src="/images/telephone.svg"
-					alt="telephone"
-				/>
-				07 62 80 25 77
-			</a>
-			<a href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
-				style="display:flex;text-align:center;background-color:#107ACA;color:#ffffff;font-size:14px;overflow:hidden;font-family:Roboto, sans-serif;box-sizing:border-box;align-items:center;justify-content:center;padding:8px 24px;z-index:1000;min-height:48px;text-decoration:none;border-radius:24px;width:fit-content;margin:28px auto 0px auto;flex-wrap:wrap;gap:8px"
-				target="_blank"
-				rel="noopener">
-				<span style="white-space:nowrap">Prendre rendez-vous</span>
-				<img style="vertical-align:middle;width:auto;height:19px"
-					src="https://pro.doctolib.fr/external_button/doctolib-white-transparent.png" alt="Doctolib"/>
-			</a>
 		</div>
+	</section>
 
-		<div id="price">
-			<h2>Combien ça coûte ?</h2>
-			<div class="purple-warning">
+	<!-- Tarifs -->
+	<section id="price" class="price-section section-shell">
+		<div class="price-card" use:reveal>
+			<h2 class="section-heading centered">Combien ça coûte ?</h2>
+			<p class="price-text">
 				Je pratique le principe de <strong>Consultation Publique de Psychanalyse (CPP)</strong>.
 				Vous êtes invités à régler vos séances <strong>en fonction de vos moyens</strong>.
 				Nous pouvons donc discuter ensemble du prix des séances <strong>selon vos possibilités</strong>.
-			</div>
+			</p>
 		</div>
-	</div>
+	</section>
 </main>
 
 <style>
@@ -121,215 +86,178 @@
 		flex-direction: column;
 	}
 
-	.svg-wave {
-		width: 100%;
-		height: 50px;
-	}
-
+	/* --- Présentation --- */
 	.presentation-container {
-		background-color: #EDF3F6;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+		width: 100%;
 	}
 
-	.presentation-container h1 {
-		font-size: 7vw;
+	.presentation-text {
 		text-align: center;
-		padding: 20px 0;
-		font-weight: 800;
+		max-width: var(--text-max);
 	}
 
-	.portrait {
-		margin: 20px auto;
-		width: 250px;
-		height: 320px;
-		border-radius: 5px;
+	.presentation-text h1 {
+		font-size: clamp(2.6rem, 7vw, 4.75rem);
+		font-weight: 500;
+		margin-bottom: 1.75rem;
 	}
 
 	.psychology-explanation {
-		padding: 30px;
-		text-align: justify;
+		text-align: left;
+		font-size: 1.02rem;
+		line-height: 1.9;
 	}
 
+	.presentation-visual {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.portrait-wrapper {
+		position: relative;
+		width: min(78vw, 340px);
+	}
+
+	.portrait {
+		aspect-ratio: 4 / 5;
+	}
+
+	/* --- Prendre rendez-vous --- */
 	.take-appointment {
-			background-color: white;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.appointment-content {
+		text-align: center;
+		max-width: var(--text-max);
 		display: flex;
 		flex-direction: column;
-		text-align: center;
+		align-items: center;
 	}
 
-	.take-appointment h2 {
-		font-size: 28px;
-		padding: 35px 10px;
-		font-weight: 800;
+	.appointment-content h2 {
+		margin-bottom: 1.5rem;
 	}
 
-	.take-appointment p {
-		padding: 0 20px 0 10px;
+	.appointment-content p {
+		line-height: 1.9;
+	}
+
+	.appointment-actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 2.25rem;
+	}
+
+	.appointment-visual {
+		display: flex;
+		justify-content: center;
+		width: 100%;
 	}
 
 	.phone-illustration-container {
 		position: relative;
-		width: 100%;
-		max-width: 400px;
-		height: 300px;
-		margin: 0 auto 30px auto;
+		width: min(64vw, 280px);
+	}
+
+	.halo-alt {
+		background: linear-gradient(140deg, var(--mist-tint), rgba(217, 200, 184, 0.7));
+		animation-duration: 17s;
+	}
+
+	.blob-frame {
 		overflow: hidden;
+		border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+		box-shadow: 0 30px 60px -35px rgba(47, 64, 71, 0.4);
+		aspect-ratio: 1;
 	}
 
-	.phone-illustration-blob {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 95%;
+	.telephone-illustration {
+		width: 100%;
 		height: 100%;
-		z-index: 1;
+		object-fit: cover;
 	}
 
-	.phone-illustration-container .telephone-illustration {
-		position: absolute;
-		top: 55%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 38%;
-		height: auto;
-		border-radius: 20px;
-		z-index: 2;
+	/* --- Tarifs --- */
+	.price-section {
+		padding-top: 0;
 	}
 
-	.take-appointment-button {
-		display: flex;
-		font-size: 14px;
-		font-weight: 700;
-		gap: 12px;
-		align-items: center;
-		border-radius: 5px;
-		padding: 0.8rem;
-		background-color: #ffec2d;
-		width: fit-content;
-		margin: auto;
-		cursor: pointer;
-	}
-
-	.take-appointment-button img {
-		width: 15px;
-		height: 15px;
-	}
-
-	.purple-warning {
+	.price-card {
+		background-color: rgba(255, 255, 255, 0.55);
+		border: 1px solid var(--line);
+		border-radius: calc(var(--radius-soft) * 1.5);
+		padding: clamp(2.5rem, 6vw, 4.5rem);
 		text-align: center;
-		margin: 2rem 1rem;
-		line-height: 1.6;
-		background-color: #faedfc;
-		padding: 1rem 2rem;
-		border-radius: 9999px;
-		font-size: 14px;
+		backdrop-filter: blur(4px);
 	}
 
-	/* Tablets */
-	@media (min-width: 640px) {
-		.svg-wave {
-			height: 100px;
+	.price-card h2 {
+		margin-bottom: 1.5rem;
+	}
+
+	.price-text {
+		max-width: 38rem;
+		margin: 0 auto;
+		line-height: 1.9;
+		font-size: 1.02rem;
+	}
+
+	/* Tablettes */
+	@media (min-width: 900px) {
+		.presentation-container {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 4rem;
 		}
 
-		.presentation-container h1 {
-			padding: 30px 0;
-			font-size: 8vw;
+		.presentation-text {
+			text-align: left;
+			flex: 1.2;
 		}
 
-		.portrait {
-			width: 50%;
-			height: auto;
-			max-width: 350px;
+		.presentation-visual {
+			flex: 1;
+			justify-content: flex-end;
 		}
 
-		.psychology-explanation {
-			padding: 40px;
+		.portrait-wrapper {
+			width: min(34vw, 400px);
 		}
 
-		.take-appointment h2 {
-			font-size: 35px;
+		.take-appointment {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 4rem;
 		}
 
-		.take-appointment-button {
-			font-size: 16px;
-			padding: 1rem 1.5rem;
+		.appointment-visual {
+			flex: 1;
+			justify-content: flex-start;
 		}
 
-		.take-appointment-button img {
-			width: 18px;
-			height: 18px;
+		.appointment-content {
+			flex: 1.2;
+			text-align: left;
+			align-items: flex-start;
 		}
 
-		.purple-warning {
-			margin: 2rem 4rem;
-			font-size: 16px;
+		.appointment-actions {
+			justify-content: flex-start;
 		}
 
 		.phone-illustration-container {
-			max-width: 500px;
-			height: 350px;
-		}
-	}
-
-	/* Small Laptops */
-	@media (min-width: 1024px) {
-		.presentation-container h1 {
-			font-size: 6vw;
-		}
-
-		.portrait {
-			width: 40%;
-		}
-
-		.psychology-explanation {
-			padding: 50px 80px;
-		}
-
-		.take-appointment h2 {
-			font-size: 38px;
-		}
-	}
-
-	/* Large screens */
-	@media (min-width: 1291px) {
-		.svg-wave {
-			height: 200px;
-		}
-
-		.presentation-container h1 {
-			font-size: 5vw;
-			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
-				0px 0px 5px rgba(192, 192, 180, 0.5);
-		}
-
-		.portrait {
-			width: 35%;
-			max-width: 400px;
-		}
-
-		.psychology-explanation {
-			padding: 60px 100px 80px 100px;
-		}
-
-		.take-appointment h2 {
-			font-size: 42px;
-		}
-
-		.phone-illustration-container {
-			max-width: 600px;
-			height: 400px;
-		}
-	}
-
-	/* Extra large screens */
-	@media (min-width: 1920px) {
-		.presentation-container h1 {
-			font-size: 4.5vw;
-		}
-
-		.psychology-explanation {
-			padding: 80px 150px 100px 150px;
-			max-width: 1600px;
-			margin: 0 auto;
+			width: min(28vw, 330px);
 		}
 	}
 </style>

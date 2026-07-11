@@ -66,86 +66,66 @@
 
 <style>
 	main {
-		background-color: #edf3f6;
-		color: #053f5f;
-		min-height: 100vh;
-		padding: 2rem 1rem;
+		min-height: 60vh;
+		padding: clamp(2rem, 6vw, 4rem) var(--gutter) 0 var(--gutter);
 	}
 
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 2rem 1.5rem;
-		background-color: white;
-		border-radius: 10px;
-		box-shadow: 0 2px 10px rgba(5, 63, 95, 0.1);
+		padding: clamp(2rem, 5vw, 3.5rem);
+		background-color: rgba(255, 255, 255, 0.6);
+		border: 1px solid var(--line);
+		border-radius: calc(var(--radius-soft) * 1.5);
+		backdrop-filter: blur(4px);
 	}
 
 	h1 {
 		text-align: center;
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		color: #053f5f;
-		font-weight: 800;
+		font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+		font-weight: 500;
+		margin-bottom: 2.5rem;
 	}
 
 	section {
-		margin-bottom: 2rem;
+		margin-bottom: 2.25rem;
 	}
 
 	h2 {
-		font-size: 1.5rem;
-		margin-bottom: 1rem;
-		color: #053f5f;
-		font-weight: 700;
-		border-bottom: 2px solid #ffec2d;
+		font-size: 1.35rem;
+		font-weight: 550;
+		margin-bottom: 0.9rem;
 		padding-bottom: 0.5rem;
 		width: fit-content;
+		position: relative;
+	}
+
+	h2::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 36px;
+		height: 1.5px;
+		background-color: var(--sage);
 	}
 
 	p {
-		line-height: 1.8;
+		line-height: 1.85;
 		margin-bottom: 1rem;
-		text-align: justify;
+		color: var(--ink-soft);
 	}
 
 	a {
-		color: #053f5f;
+		color: var(--ink);
 		text-decoration: underline;
+		text-decoration-color: var(--sage);
+		text-underline-offset: 4px;
 		font-weight: 600;
+		transition: color 0.3s ease;
 	}
 
 	a:hover {
-		color: #107aca;
-	}
-
-	/* Responsive */
-	@media (min-width: 640px) {
-		main {
-			padding: 3rem 2rem;
-		}
-
-		.container {
-			padding: 3rem 4rem;
-		}
-
-		h1 {
-			font-size: 2.5rem;
-			margin-bottom: 3rem;
-		}
-
-		h2 {
-			font-size: 1.75rem;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		main {
-			padding: 4rem 2rem;
-		}
-
-		h1 {
-			font-size: 3rem;
-		}
+		color: var(--sage-deep);
 	}
 </style>

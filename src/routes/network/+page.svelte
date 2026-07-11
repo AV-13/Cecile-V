@@ -228,15 +228,15 @@
 
 <main class="network-container">
 	<section class="directory">
-		<div class="blue-warning">
+		<p class="directory-intro">
 			Voici la liste des psychothérapeutes et psychanalystes de ma confiance, qui exercent à Paris, en Ile-de-France ou au-delà. Tous ces collègues pratiquent la Consultation Publique de Psychanalyse (CPP).
-		</div>
+		</p>
 
 		<!-- Barre de recherche -->
 		<div class="search-container">
 			<div class="search-wrapper">
 				<svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="#053f5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
 				<input
 					type="text"
@@ -247,7 +247,7 @@
 				{#if searchQuery}
 					<button class="clear-button" on:click={() => searchQuery = ''}>
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12 4L4 12M4 4l8 8" stroke="#053f5f" stroke-width="2" stroke-linecap="round"/>
+							<path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 						</svg>
 					</button>
 				{/if}
@@ -314,54 +314,66 @@
 </main>
 
 <style>
-	.blue-warning {
-			text-align: center;
-			max-width: 600px;
-			margin: 2rem auto;
-			line-height: 1.6;
-			background-color: #EDF3F6;
-			padding: 1rem 2rem;
-			border-radius: 9999px;
-			font-size: 13px;
-	}
 	.network-container {
 		min-height: 60vh;
-		background: #fff
 	}
 
 	.directory {
 		max-width: 1400px;
 		margin: 0 auto;
-		padding: 2rem 1rem;
+		padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+	}
+
+	.directory-intro {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+		line-height: 1.85;
+		color: var(--ink-soft);
+		text-align: center;
+		max-width: 44rem;
+		margin: 0 auto 2rem auto;
+	}
+
+	.directory-intro::before {
+		content: '';
+		display: block;
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--sage);
+		margin: 0 auto 1.5rem auto;
 	}
 
 	/* Barre de recherche */
 	.search-container {
-		max-width: 700px;
-		margin: 2rem auto;
+		max-width: 640px;
+		margin: 2.5rem auto 3.5rem auto;
 	}
 
 	.search-wrapper {
 		position: relative;
 		display: flex;
 		align-items: center;
-		background-color: white;
-		border: 2px solid #b8cfda;
-		border-radius: 50px;
-		padding: 0.75rem 1.5rem;
-		transition: all 0.3s ease;
-		box-shadow: 0 2px 8px rgba(5, 63, 95, 0.08);
+		background-color: rgba(255, 255, 255, 0.65);
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		padding: 0.8rem 1.5rem;
+		color: var(--ink-soft);
+		transition:
+			border-color 0.35s ease,
+			box-shadow 0.35s ease;
+		backdrop-filter: blur(3px);
 	}
 
 	.search-wrapper:focus-within {
-		border-color: #053f5f;
-		box-shadow: 0 4px 16px rgba(5, 63, 95, 0.15);
-		transform: translateY(-2px);
+		border-color: var(--sage-deep);
+		box-shadow: 0 16px 32px -24px rgba(47, 64, 71, 0.4);
 	}
 
 	.search-icon {
 		flex-shrink: 0;
 		margin-right: 0.75rem;
+		opacity: 0.6;
 	}
 
 	.search-input {
@@ -369,12 +381,14 @@
 		border: none;
 		outline: none;
 		font-size: 16px;
-		color: #053f5f;
+		color: var(--ink);
 		background: transparent;
+		min-width: 0;
 	}
 
 	.search-input::placeholder {
-		color: #b8cfda;
+		color: var(--ink-soft);
+		opacity: 0.55;
 	}
 
 	.clear-button {
@@ -382,193 +396,111 @@
 		background: none;
 		border: none;
 		cursor: pointer;
-		padding: 0.25rem;
+		padding: 0.3rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		transition: background-color 0.2s ease;
+		color: var(--ink);
+		transition: background-color 0.25s ease;
 	}
 
 	.clear-button:hover {
-		background-color: #f0f0f0;
+		background-color: var(--sage-tint);
 	}
 
 	.search-results-count {
 		text-align: center;
 		margin-top: 1rem;
-		font-size: 14px;
-		color: #053f5f;
+		font-size: 0.85rem;
+		color: var(--ink-soft);
 		font-weight: 600;
 	}
 
-	/* Message aucun résultat */
+	/* Aucun résultat */
 	.no-results {
 		text-align: center;
 		padding: 3rem 2rem;
-		color: #053f5f;
+		color: var(--ink);
 	}
 
 	.no-results p {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		margin-bottom: 1.5rem;
 		font-weight: 600;
 	}
 
 	.clear-search-button {
-		background-color: #053f5f;
-		color: white;
-		border: none;
-		padding: 0.75rem 2rem;
-		border-radius: 50px;
-		font-size: 16px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.8rem 1.9rem;
+		min-height: 48px;
+		border-radius: 999px;
+		background-color: var(--ink);
+		color: var(--paper);
+		font-size: 0.95rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition:
+			background-color 0.35s var(--ease-out-soft),
+			transform 0.35s var(--ease-out-soft);
 	}
 
 	.clear-search-button:hover {
-		background-color: #107aca;
+		background-color: var(--sage-deep);
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(5, 63, 95, 0.2);
 	}
 
-	.main-title {
-		text-align: center;
-		font-size: 2.5rem;
-		color: #053f5f;
-		margin-bottom: 3rem;
-		padding-bottom: 1rem;
-		border-bottom: 3px solid #dbdd82;
-		font-weight: 800;
-	}
-
+	/* Sections */
 	.section {
-		margin-bottom: 4rem;
+		margin-bottom: 4.5rem;
 	}
 
 	.section-title {
-		font-size: 1.8rem;
-		color: #053f5f;
+		font-size: clamp(1.5rem, 3.2vw, 2rem);
+		font-weight: 550;
+		color: var(--ink);
 		margin-bottom: 2rem;
-		padding-left: 1rem;
-		border-left: 5px solid #b8cfda;
-		font-weight: 700;
+		padding-bottom: 0.75rem;
+		position: relative;
+		width: fit-content;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 48px;
+		height: 1.5px;
+		background-color: var(--sage);
 	}
 
 	.region-title {
-		font-size: 1.3rem;
-		color: #0a5f8f;
-		margin: 2rem 0 1.5rem 0;
-		padding-left: 2rem;
-		font-weight: 600;
-		position: relative;
-	}
-
-	.region-title::before {
-		content: '›';
-		position: absolute;
-		left: 0.5rem;
-		color: #dbdd82;
-		font-size: 1.5rem;
-		font-weight: bold;
+		font-family: var(--font-body);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: var(--sage-deep);
+		margin: 2.25rem 0 1.5rem 0;
 	}
 
 	.psychologist-list {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2rem;
+		gap: 1.75rem;
 		padding: 0;
 		list-style: none;
 		justify-content: center;
 	}
 
-	/* Tablets */
-	@media (min-width: 640px) {
-		.blue-warning {
-			font-size: 15px;
-			padding: 1.5rem 2.5rem;
-			margin: 2.5rem auto;
-		}
-
-		.main-title {
-			font-size: 3rem;
-		}
-
-		.directory {
-			padding: 3rem 2rem;
-		}
-
-		.search-container {
-			max-width: 800px;
-		}
-
-		.search-input {
-			font-size: 17px;
-		}
-
-		.section-title {
-			font-size: 2rem;
-		}
-
-		.region-title {
-			font-size: 1.4rem;
-		}
-	}
-
-	/* Small Laptops */
+	/* Grands écrans */
 	@media (min-width: 1024px) {
-		.blue-warning {
-			font-size: 16px;
-		}
-
-		.main-title {
-			font-size: 3.5rem;
-		}
-
-		.directory {
-			padding: 4rem 3rem;
-		}
-
 		.psychologist-list {
 			justify-content: flex-start;
 		}
-
-		.section-title {
-			font-size: 2.2rem;
-		}
-	}
-
-	/* Large screens */
-	@media (min-width: 1291px) {
-		.blue-warning {
-			max-width: 700px;
-			font-size: 17px;
-		}
-
-		.directory {
-			padding: 4rem 4rem;
-		}
-
-		.search-container {
-			max-width: 900px;
-		}
-	}
-
-	/* Extra large screens */
-	@media (min-width: 1920px) {
-		.blue-warning {
-			font-size: 18px;
-			max-width: 750px;
-		}
-
-		.directory {
-			max-width: 1800px;
-			padding: 5rem 6rem;
-		}
-
-		.main-title {
-			font-size: 4rem;
-		}
 	}
 </style>
+
