@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import AtmosphereCarousel from '$lib/components/AtmosphereCarousel.svelte';
 	import CurveDivider from '$lib/components/CurveDivider.svelte';
@@ -17,10 +18,11 @@
 	let heroPaused = false;
 </script>
 
-<svelte:head>
-	<title>Cécile Vathonne - Psychothérapeute</title>
-	<meta name="description" content="Psychothérapeute spécialisée en psychanalyse à Paris 9e. RV rapide au 07 62 80 25 77." />
-</svelte:head>
+<Seo
+	title="Psychothérapeute à Paris 9e — Cécile Vathonne, psychologue clinicienne"
+	description="Psychothérapeute et psychologue clinicienne à Paris 9e (Pigalle). Consultations adultes et enfants, séances réglées selon vos moyens (CPP). Tél : 07 62 80 25 77."
+	path="/"
+/>
 
 <main>
 	<!-- Héro : les paysages défilent, la phrase demeure -->
@@ -67,7 +69,7 @@
 		<div class="presentation-visual" use:reveal={{ delay: 0.2 }}>
 			<div class="portrait-wrapper">
 				<div class="photo-veil portrait">
-					<img src="/images/accueil_psy.jpg" alt="portrait" />
+					<img src="/images/accueil_psy.jpg" alt="La salle d’attente du cabinet de psychothérapie, 33 rue Jean-Baptiste Pigalle à Paris 9e" />
 				</div>
 			</div>
 		</div>

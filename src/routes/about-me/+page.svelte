@@ -1,11 +1,17 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import { reveal } from '$lib/actions/reveal';
 </script>
 
+<Seo
+	title="Mon parcours — Cécile Vathonne, psychologue clinicienne à Paris"
+	description="Psychologue clinicienne diplômée de l'Université Paris V Descartes (RPPS 10009020818), psychothérapeute, membre du RPH — École de psychanalyse. Découvrez son parcours."
+	path="/about-me"
+/>
+
 <svelte:head>
-	<title>À propos - Cécile Vathonne</title>
-	<meta name="description" content="Parcours de Cécile Vathonne, psychothérapeute clinicienne et psychanalyste à Paris 9e." />
+	{@html '<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@id":"https://www.cecilevathonne.fr/#cecile"}}<' + '/script>'}
 </svelte:head>
 
 <main>

@@ -269,6 +269,19 @@ table {
 	text-decoration-color: var(--sage-deep);
 }
 
+/* Visible des lecteurs d'écran et des moteurs, pas à l'écran */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 /* Filet horizontal très fin */
 .hairline {
 	border: none;

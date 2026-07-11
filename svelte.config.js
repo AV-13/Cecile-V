@@ -10,7 +10,10 @@ const config = {
 			// these options are set automatically — see below for more info
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			// 404.html : GitHub Pages sert les pages prérendues (SEO) et
+			// ce fichier pour les routes inconnues — index.html ne doit
+			// jamais être écrasé par la coquille SPA vide.
+			fallback: '404.html',
 			precompress: false,
 			strict: true
 		}),

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
@@ -6,12 +7,14 @@
 		'https://www.santemagazine.fr/sante/maladies/maladies-mentales/phobies/cibophobie-comment-vaincre-la-peur-de-manger-1115064';
 </script>
 
-<svelte:head>
-	<title>Articles - Cécile Vathonne</title>
-	<meta name="description" content="Articles de vulgarisation scientifique auxquels Cécile Vathonne a collaboré." />
-</svelte:head>
+<Seo
+	title="Articles — Cécile Vathonne, psychothérapeute à Paris"
+	description="Articles de vulgarisation scientifique co-écrits par Cécile Vathonne, psychothérapeute à Paris : la cibophobie, ou comment vaincre la peur de manger (Santé Magazine)."
+	path="/article"
+/>
 
 <main>
+	<h1 class="sr-only">Articles de vulgarisation scientifique</h1>
 	<div class="content section-shell">
 		<p class="article-intro" use:reveal>
 			Cécile Vathonne a collaboré à l'écriture de plusieurs articles de vulgarisation scientifique.

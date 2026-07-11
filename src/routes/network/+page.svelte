@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import PsychologistCard from '$lib/components/PsychologistCard.svelte';
 	import CurveDivider from '$lib/components/CurveDivider.svelte';
 
@@ -222,12 +223,14 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Annuaire - Cécile Vathonne</title>
-	<meta name="description" content="Annuaire des psychologues partenaires de Cécile Vathonne." />
-</svelte:head>
+<Seo
+	title="Annuaire des psychothérapeutes partenaires — Cécile Vathonne"
+	description="Psychothérapeutes et psychanalystes de confiance à Paris, en Île-de-France et au-delà, pratiquant tous la Consultation Publique de Psychanalyse (CPP)."
+	path="/network"
+/>
 
 <main class="network-container">
+	<h1 class="sr-only">Annuaire des psychothérapeutes et psychanalystes partenaires</h1>
 	<!-- L'annuaire s'ouvre sur une bande immersive : l'intro et la recherche -->
 	<CurveDivider fill="var(--forest)" />
 	<section class="directory-hero">

@@ -1,6 +1,7 @@
 <svelte:head>
-	<title>Politique de confidentialité - Cécile Vathonne</title>
-	<meta name="description" content="Politique de confidentialité et protection des données." />
+	<title>Protection des données — Cécile Vathonne, psychothérapeute à Paris 9e</title>
+	<meta name="description" content="Politique de confidentialité et protection des données personnelles du cabinet de Cécile Vathonne, psychothérapeute à Paris 9e." />
+	<link rel="canonical" href="https://www.cecilevathonne.fr/data-protection" />
 </svelte:head>
 
 <main>

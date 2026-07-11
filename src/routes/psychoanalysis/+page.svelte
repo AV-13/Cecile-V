@@ -1,12 +1,14 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import { reveal } from '$lib/actions/reveal';
 </script>
 
-<svelte:head>
-	<title>La psychanalyse - Cécile Vathonne</title>
-	<meta name="description" content="Découvrez la psychanalyse et les différences avec la psychothérapie." />
-</svelte:head>
+<Seo
+	title="Psychothérapie et psychanalyse : quelles différences ? — Cécile Vathonne"
+	description="La cure par la parole : ce qui distingue psychothérapie et psychanalyse, et les différences entre psychiatre, psychologue, psychothérapeute et psychanalyste."
+	path="/psychoanalysis"
+/>
 
 <main>
 	<div class="hero-header section-shell" use:reveal>
