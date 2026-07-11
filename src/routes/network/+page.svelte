@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PsychologistCard from '$lib/components/PsychologistCard.svelte';
+	import CurveDivider from '$lib/components/CurveDivider.svelte';
 
 	interface Psychologist {
 		name: string;
@@ -227,16 +228,17 @@
 </svelte:head>
 
 <main class="network-container">
-	<section class="directory">
+	<!-- L'annuaire s'ouvre sur une bande immersive : l'intro et la recherche -->
+	<CurveDivider fill="var(--forest)" />
+	<section class="directory-hero">
 		<p class="directory-intro">
 			Voici la liste des psychothérapeutes et psychanalystes de ma confiance, qui exercent à Paris, en Ile-de-France ou au-delà. Tous ces collègues pratiquent la Consultation Publique de Psychanalyse (CPP).
 		</p>
 
-		<!-- Barre de recherche -->
 		<div class="search-container">
 			<div class="search-wrapper">
-				<svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
 				<input
 					type="text"
@@ -245,27 +247,30 @@
 					class="search-input"
 				/>
 				{#if searchQuery}
-					<button class="clear-button" on:click={() => searchQuery = ''}>
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					<button class="clear-button" on:click={() => searchQuery = ''} aria-label="Effacer la recherche">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
 						</svg>
 					</button>
 				{/if}
 			</div>
 			{#if searchQuery}
-				<div class="search-results-count">
+				<div class="search-results-count" aria-live="polite">
 					{filterPsychologists([...parisContacts, ...Object.values(ileDeFramceContacts).flat(), ...horsIleDeFrance], searchQuery).length} résultat(s) trouvé(s)
 				</div>
 			{/if}
 		</div>
+	</section>
+	<CurveDivider fill="var(--forest)" flip />
 
+	<section class="directory">
 		<!-- Paris -->
 		{#if filterPsychologists(parisContacts, searchQuery).length > 0}
 			<div class="section">
-				<h2 class="section-title">Consultations à Paris (75)</h2>
+				<h2 class="section-title"><span>Consultations à Paris (75)</span></h2>
 				<ul class="psychologist-list">
-					{#each filterPsychologists(parisContacts, searchQuery) as psychologist}
-						<PsychologistCard {...psychologist} />
+					{#each filterPsychologists(parisContacts, searchQuery) as psychologist, i}
+						<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
 					{/each}
 				</ul>
 			</div>
@@ -274,14 +279,14 @@
 		<!-- Île-de-France -->
 		{#if Object.entries(ileDeFramceContacts).some(([_, contacts]) => filterPsychologists(contacts, searchQuery).length > 0)}
 			<div class="section">
-				<h2 class="section-title">Consultations en Île-de-France</h2>
+				<h2 class="section-title"><span>Consultations en Île-de-France</span></h2>
 				{#each Object.entries(ileDeFramceContacts) as [region, contacts]}
 					{@const filteredContacts = filterPsychologists(contacts, searchQuery)}
 					{#if filteredContacts.length > 0}
 						<h3 class="region-title">{region}</h3>
 						<ul class="psychologist-list">
-							{#each filteredContacts as psychologist}
-								<PsychologistCard {...psychologist} />
+							{#each filteredContacts as psychologist, i}
+								<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
 							{/each}
 						</ul>
 					{/if}
@@ -292,10 +297,10 @@
 		<!-- Hors Île-de-France -->
 		{#if filterPsychologists(horsIleDeFrance, searchQuery).length > 0}
 			<div class="section">
-				<h2 class="section-title">Consultations hors d'Île-de-France</h2>
+				<h2 class="section-title"><span>Consultations hors d'Île-de-France</span></h2>
 				<ul class="psychologist-list">
-					{#each filterPsychologists(horsIleDeFrance, searchQuery) as psychologist}
-						<PsychologistCard {...psychologist} />
+					{#each filterPsychologists(horsIleDeFrance, searchQuery) as psychologist, i}
+						<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
 					{/each}
 				</ul>
 			</div>
@@ -305,7 +310,7 @@
 		{#if searchQuery && filterPsychologists([...parisContacts, ...Object.values(ileDeFramceContacts).flat(), ...horsIleDeFrance], searchQuery).length === 0}
 			<div class="no-results">
 				<p>Aucun psychologue ne correspond à votre recherche.</p>
-				<button class="clear-search-button" on:click={() => searchQuery = ''}>
+				<button class="btn" on:click={() => searchQuery = ''}>
 					Réinitialiser la recherche
 				</button>
 			</div>
@@ -316,23 +321,24 @@
 <style>
 	.network-container {
 		min-height: 60vh;
+		margin-top: clamp(1.5rem, 4vw, 3rem);
 	}
 
-	.directory {
-		max-width: 1400px;
-		margin: 0 auto;
-		padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+	/* --- Bande immersive : intro + recherche --- */
+	.directory-hero {
+		background-color: var(--forest);
+		padding: clamp(1.5rem, 4vw, 3rem) var(--gutter) clamp(2rem, 5vw, 3.5rem) var(--gutter);
 	}
 
 	.directory-intro {
 		font-family: var(--font-display);
 		font-style: italic;
-		font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+		font-size: clamp(1.05rem, 2.2vw, 1.35rem);
 		line-height: 1.85;
-		color: var(--ink-soft);
+		color: var(--paper);
 		text-align: center;
-		max-width: 44rem;
-		margin: 0 auto 2rem auto;
+		max-width: 46rem;
+		margin: 0 auto 2.5rem auto;
 	}
 
 	.directory-intro::before {
@@ -340,40 +346,42 @@
 		display: block;
 		width: 44px;
 		height: 1.5px;
-		background-color: var(--sage);
+		background-color: var(--paper);
+		opacity: 0.7;
 		margin: 0 auto 1.5rem auto;
 	}
 
-	/* Barre de recherche */
 	.search-container {
-		max-width: 640px;
-		margin: 2.5rem auto 3.5rem auto;
+		max-width: 620px;
+		margin: 0 auto;
 	}
 
 	.search-wrapper {
 		position: relative;
 		display: flex;
 		align-items: center;
-		background-color: rgba(255, 255, 255, 0.65);
-		border: 1px solid var(--line);
+		background-color: rgba(245, 242, 236, 0.1);
+		border: 1px solid rgba(245, 242, 236, 0.45);
 		border-radius: 999px;
-		padding: 0.8rem 1.5rem;
-		color: var(--ink-soft);
+		padding: 0.85rem 1.6rem;
+		color: rgba(245, 242, 236, 0.75);
+		backdrop-filter: blur(4px);
 		transition:
 			border-color 0.35s ease,
+			background-color 0.35s ease,
 			box-shadow 0.35s ease;
-		backdrop-filter: blur(3px);
 	}
 
 	.search-wrapper:focus-within {
-		border-color: var(--sage-deep);
-		box-shadow: 0 16px 32px -24px rgba(47, 64, 71, 0.4);
+		border-color: var(--paper);
+		background-color: rgba(245, 242, 236, 0.16);
+		box-shadow: 0 18px 36px -24px rgba(15, 22, 25, 0.8);
 	}
 
 	.search-icon {
 		flex-shrink: 0;
 		margin-right: 0.75rem;
-		opacity: 0.6;
+		opacity: 0.75;
 	}
 
 	.search-input {
@@ -381,14 +389,13 @@
 		border: none;
 		outline: none;
 		font-size: 16px;
-		color: var(--ink);
+		color: var(--paper);
 		background: transparent;
 		min-width: 0;
 	}
 
 	.search-input::placeholder {
-		color: var(--ink-soft);
-		opacity: 0.55;
+		color: rgba(245, 242, 236, 0.55);
 	}
 
 	.clear-button {
@@ -401,23 +408,81 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		color: var(--ink);
+		color: var(--paper);
 		transition: background-color 0.25s ease;
 	}
 
 	.clear-button:hover {
-		background-color: var(--sage-tint);
+		background-color: rgba(245, 242, 236, 0.15);
 	}
 
 	.search-results-count {
 		text-align: center;
-		margin-top: 1rem;
+		margin-top: 1.1rem;
 		font-size: 0.85rem;
-		color: var(--ink-soft);
 		font-weight: 600;
+		letter-spacing: 0.04em;
+		color: rgba(245, 242, 236, 0.85);
 	}
 
-	/* Aucun résultat */
+	/* --- L'annuaire --- */
+	.directory {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter);
+	}
+
+	.section {
+		margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+	}
+
+	.section:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Titre de section éditorial : le filet court jusqu'au bord */
+	.section-title {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+		font-weight: 550;
+		color: var(--ink);
+		margin-bottom: 2.25rem;
+	}
+
+	.section-title span {
+		flex-shrink: 1;
+		min-width: 0;
+	}
+
+	.section-title::after {
+		content: '';
+		height: 1px;
+		flex: 1;
+		min-width: 2.5rem;
+		background-color: var(--line);
+	}
+
+	.region-title {
+		font-family: var(--font-body);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--sage-deep);
+		margin: 2.5rem 0 1.5rem 0;
+	}
+
+	.psychologist-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* --- Aucun résultat --- */
 	.no-results {
 		text-align: center;
 		padding: 3rem 2rem;
@@ -425,82 +490,31 @@
 	}
 
 	.no-results p {
-		font-size: 1.1rem;
-		margin-bottom: 1.5rem;
-		font-weight: 600;
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: 1.25rem;
+		margin-bottom: 1.75rem;
+		color: var(--ink-soft);
 	}
 
-	.clear-search-button {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0.8rem 1.9rem;
-		min-height: 48px;
-		border-radius: 999px;
-		background-color: var(--ink);
-		color: var(--paper);
-		font-size: 0.95rem;
-		font-weight: 600;
-		cursor: pointer;
-		transition:
-			background-color 0.35s var(--ease-out-soft),
-			transform 0.35s var(--ease-out-soft);
-	}
-
-	.clear-search-button:hover {
-		background-color: var(--sage-deep);
-		transform: translateY(-2px);
-	}
-
-	/* Sections */
-	.section {
-		margin-bottom: 4.5rem;
-	}
-
-	.section-title {
-		font-size: clamp(1.5rem, 3.2vw, 2rem);
-		font-weight: 550;
-		color: var(--ink);
-		margin-bottom: 2rem;
-		padding-bottom: 0.75rem;
-		position: relative;
-		width: fit-content;
-	}
-
-	.section-title::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 48px;
-		height: 1.5px;
-		background-color: var(--sage);
-	}
-
-	.region-title {
-		font-family: var(--font-body);
-		font-size: 0.78rem;
-		font-weight: 700;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		color: var(--sage-deep);
-		margin: 2.25rem 0 1.5rem 0;
-	}
-
-	.psychologist-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.75rem;
-		padding: 0;
-		list-style: none;
-		justify-content: center;
+	/* Tablettes */
+	@media (min-width: 640px) {
+		.psychologist-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	/* Grands écrans */
-	@media (min-width: 1024px) {
+	@media (min-width: 1100px) {
 		.psychologist-list {
-			justify-content: flex-start;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+		}
+	}
+
+	@media (min-width: 1700px) {
+		.psychologist-list {
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 </style>
-
