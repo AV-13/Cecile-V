@@ -28,6 +28,7 @@
 	--mist: #a9bcc6;
 	--mist-tint: #dfe6ea;
 	--blush: #d9c8b8;
+	--forest: #3d4f49;
 	--line: rgba(47, 64, 71, 0.14);
 
 	/* Typographie */
@@ -183,7 +184,7 @@ table {
 	text-align: center;
 }
 
-/* Bouton principal — encre profonde, calme */
+/* Bouton principal — encre profonde, capitales espacées */
 .btn {
 	display: inline-flex;
 	align-items: center;
@@ -195,12 +196,15 @@ table {
 	background-color: var(--ink);
 	color: var(--paper);
 	font-family: var(--font-body);
-	font-size: 0.95rem;
-	font-weight: 600;
-	letter-spacing: 0.02em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
 	cursor: pointer;
 	transition:
 		background-color 0.35s var(--ease-out-soft),
+		border-color 0.35s var(--ease-out-soft),
+		color 0.35s var(--ease-out-soft),
 		transform 0.35s var(--ease-out-soft),
 		box-shadow 0.35s var(--ease-out-soft);
 	white-space: nowrap;
@@ -218,12 +222,12 @@ table {
 
 .btn svg,
 .btn img {
-	width: 17px;
-	height: 17px;
+	width: 16px;
+	height: 16px;
 	flex-shrink: 0;
 }
 
-/* Bouton secondaire — contour discret */
+/* Bouton contour — sur fond clair */
 .btn-ghost {
 	background: transparent;
 	color: var(--ink);
@@ -233,6 +237,21 @@ table {
 .btn-ghost:hover {
 	background-color: var(--ink);
 	color: var(--paper);
+	box-shadow: none;
+}
+
+/* Bouton contour — sur fond sombre ou image */
+.btn-light {
+	background: rgba(245, 242, 236, 0.08);
+	color: var(--paper);
+	border: 1px solid rgba(245, 242, 236, 0.75);
+	backdrop-filter: blur(2px);
+}
+
+.btn-light:hover {
+	background-color: rgba(245, 242, 236, 0.22);
+	border-color: var(--paper);
+	box-shadow: none;
 }
 
 /* Lien souligné calme */

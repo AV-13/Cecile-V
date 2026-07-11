@@ -20,8 +20,8 @@
 				<div class="arch-frame">
 					<img
 						class="section-illustration"
-						src="/images/fil.jpg"
-						alt="Illustration de Sigmund Freud, père de la psychanalyse."
+						src="/images/wal_172619-man-7825138_1920.jpg"
+						alt="Visage recueilli, les yeux baissés, dans une lumière chaude"
 					/>
 				</div>
 			</div>
@@ -40,6 +40,7 @@
 	</section>
 
 	<section class="highlight-section" use:reveal>
+		<div class="highlight-backdrop" aria-hidden="true"></div>
 		<div class="section-shell">
 			<p class="highlight-text">
 				Le travail de cure est l'occasion d'accueillir avec bienveillance les éléments inconscients pour se séparer petit à petit de ce qui fait
@@ -161,9 +162,8 @@
 		aspect-ratio: 4 / 5;
 	}
 
-	/* L'illustration au fond jaune vif est apaisée pour rester dans la palette */
 	.section-illustration {
-		filter: saturate(0.45) sepia(0.14) brightness(1.02);
+		filter: saturate(0.85);
 	}
 
 	.text-column {
@@ -180,20 +180,41 @@
 		font-size: 1.02rem;
 	}
 
-	/* --- Citation --- */
+	/* --- Citation, posée sur la nuit étoilée --- */
 	.highlight-section {
-		background-color: var(--paper-3);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.highlight-backdrop {
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(rgba(18, 24, 38, 0.45), rgba(18, 24, 38, 0.55)),
+			url('/images/rauschenberger-night-4489561_1920.jpg') center 30% / cover no-repeat;
+		animation: night-drift 40s ease-in-out infinite alternate;
+	}
+
+	@keyframes night-drift {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.07);
+		}
 	}
 
 	.highlight-text {
+		position: relative;
 		font-family: var(--font-display);
 		font-style: italic;
 		font-size: clamp(1.15rem, 2.6vw, 1.5rem);
 		line-height: 1.9;
-		color: var(--ink);
+		color: var(--paper);
 		text-align: center;
 		max-width: 46rem;
 		margin: 0 auto;
+		text-shadow: 0 1px 20px rgba(10, 14, 24, 0.6);
 	}
 
 	.highlight-text::before {
@@ -201,7 +222,8 @@
 		display: block;
 		width: 44px;
 		height: 1.5px;
-		background-color: var(--sage);
+		background-color: var(--paper);
+		opacity: 0.8;
 		margin: 0 auto 1.75rem auto;
 	}
 

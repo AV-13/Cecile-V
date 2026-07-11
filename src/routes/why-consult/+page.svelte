@@ -70,6 +70,16 @@
 		</div>
 	</section>
 
+	<!-- Une respiration : le chemin qui monte -->
+	<section class="breath-band" use:reveal aria-hidden="true">
+		<img
+			src="/images/inspira-heaven-207930_1920.jpg"
+			alt=""
+			loading="lazy"
+			draggable="false"
+		/>
+	</section>
+
 	<section class="cta-section section-shell" use:reveal>
 		<p class="cta-text">
 			Et bien d'autres raisons encore... N'hésitez pas à me contacter pour en discuter ensemble.
@@ -186,6 +196,31 @@
 
 		.marquee-track li[aria-hidden='true'] {
 			display: none;
+		}
+	}
+
+	/* --- Respiration visuelle --- */
+	.breath-band {
+		margin-top: clamp(2.5rem, 6vw, 4.5rem);
+		height: clamp(230px, 42vw, 460px);
+		overflow: hidden;
+	}
+
+	.breath-band img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 40%;
+		filter: saturate(0.78);
+		animation: breath-drift 34s ease-in-out infinite alternate;
+	}
+
+	@keyframes breath-drift {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.08);
 		}
 	}
 

@@ -1,6 +1,20 @@
 <script lang="ts">
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import AtmosphereCarousel from '$lib/components/AtmosphereCarousel.svelte';
+	import CurveDivider from '$lib/components/CurveDivider.svelte';
 	import { reveal } from '$lib/actions/reveal';
+
+	// Les paysages du chemin thérapeutique : contemplation, lumière
+	// qui perce, ciel qui se dégage, traversée de la nuit.
+	const atmospheres = [
+		{ src: '/images/243623-child-438373_1920.jpg', alt: '' },
+		{ src: '/images/duernsteiner-forest-4919834_1920.jpg', alt: '' },
+		{ src: '/images/mariakray-sky-6804245_1920.jpg', alt: '' },
+		{ src: '/images/evgenit-sunrise-3340367_1920.jpg', alt: '' },
+		{ src: '/images/rauschenberger-night-4489561_1920.jpg', alt: '' }
+	];
+
+	let heroPaused = false;
 </script>
 
 <svelte:head>
@@ -9,6 +23,35 @@
 </svelte:head>
 
 <main>
+	<!-- Héro : les paysages défilent, la phrase demeure -->
+	<section class="hero" aria-label="Présentation">
+		<AtmosphereCarousel images={atmospheres} paused={heroPaused} />
+		<div class="hero-scrim"></div>
+
+		<div class="hero-content">
+			<p class="hero-epigraph">
+				Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>,
+				voire de <strong>souffrance</strong>. Laisser cette souffrance s'installer, ce n'est
+				<strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une
+				<strong>écoute sérieuse</strong>. Prendre <strong>rendez-vous</strong>, c'est facile et
+				rapide.
+			</p>
+			<DoctolibButton variant="outline-light" />
+		</div>
+
+		<button
+			class="hero-pause"
+			on:click={() => (heroPaused = !heroPaused)}
+			aria-label={heroPaused ? 'Reprendre le défilement des images' : 'Suspendre le défilement des images'}
+		>
+			{#if heroPaused}
+				<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+			{:else}
+				<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+			{/if}
+		</button>
+	</section>
+
 	<!-- Présentation -->
 	<section class="presentation-container section-shell">
 		<div class="presentation-text" use:reveal>
@@ -31,41 +74,36 @@
 		</div>
 	</section>
 
-	<hr class="hairline" />
+	<!-- Prendre rendez-vous — bande immersive -->
+	<CurveDivider fill="var(--forest)" />
+	<section id="takeAppointment" class="take-appointment">
+		<div class="appointment-inner">
+			<div class="appointment-visual" use:reveal>
+				<div class="arch-frame bridge-frame">
+					<img src="/images/anthr_photoblog-bridge-4336404_1920.jpg" alt="Pont dans un jardin paisible" />
+				</div>
+			</div>
 
-	<!-- Prendre rendez-vous -->
-	<section id="takeAppointment" class="take-appointment section-shell">
-		<div class="appointment-visual" use:reveal>
-			<div class="phone-illustration-container">
-				<div class="breathing-halo halo-alt"></div>
-				<div class="blob-frame">
-					<img
-						class="telephone-illustration"
-						src="/images/telephone-illustration.jpg"
-						alt="telephone-illustration"
-					/>
+			<div class="appointment-content" use:reveal={{ delay: 0.15 }}>
+				<h2 class="section-heading">Prendre rendez-vous</h2>
+				<p>
+					Les prises de rendez-vous se font <b>par téléphone</b> au <b>07 62 80 25 77</b>, par <b>mail</b> à
+					l'adresse <b>cecile.vathonne@gmail.com</b> ou via Doctolib.
+				</p>
+
+				<div class="appointment-actions">
+					<a class="btn btn-light" href="tel:762802577">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+						</svg>
+						07 62 80 25 77
+					</a>
+					<DoctolibButton variant="outline-light" />
 				</div>
 			</div>
 		</div>
-
-		<div class="appointment-content" use:reveal={{ delay: 0.15 }}>
-			<h2 class="section-heading">Prendre rendez-vous</h2>
-			<p>
-				Les prises de rendez-vous se font <b>par téléphone</b> au <b>07 62 80 25 77</b>, par <b>mail</b> à
-				l'adresse <b>cecile.vathonne@gmail.com</b> ou via Doctolib.
-			</p>
-
-			<div class="appointment-actions">
-				<a class="btn" href="tel:762802577">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-					</svg>
-					07 62 80 25 77
-				</a>
-				<DoctolibButton />
-			</div>
-		</div>
 	</section>
+	<CurveDivider fill="var(--forest)" flip />
 
 	<!-- Tarifs -->
 	<section id="price" class="price-section section-shell">
@@ -84,6 +122,106 @@
 	main {
 		display: flex;
 		flex-direction: column;
+	}
+
+	/* --- Héro --- */
+	.hero {
+		position: relative;
+		min-height: clamp(480px, 72vh, 760px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: clamp(1rem, 2.5vw, 2rem);
+		overflow: hidden;
+	}
+
+	.hero-scrim {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(ellipse 60% 55% at 50% 48%, rgba(31, 42, 46, 0.34), transparent 70%),
+			linear-gradient(
+				180deg,
+				rgba(31, 42, 46, 0.46) 0%,
+				rgba(31, 42, 46, 0.32) 45%,
+				rgba(31, 42, 46, 0.6) 100%
+			);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2.25rem;
+		max-width: 46rem;
+		padding: 4rem var(--gutter);
+		text-align: center;
+		animation: hero-in 1.6s var(--ease-out-soft) both;
+	}
+
+	@keyframes hero-in {
+		from {
+			opacity: 0;
+			transform: translateY(26px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.hero-epigraph {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+		line-height: 1.85;
+		color: var(--paper);
+		text-shadow: 0 1px 22px rgba(31, 42, 46, 0.45);
+	}
+
+	.hero-epigraph strong {
+		color: #ffffff;
+		font-weight: 600;
+	}
+
+	.hero-epigraph::before {
+		content: '';
+		display: block;
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--paper);
+		opacity: 0.8;
+		margin: 0 auto 1.6rem auto;
+	}
+
+	.hero-pause {
+		position: absolute;
+		right: clamp(1rem, 3vw, 2rem);
+		bottom: clamp(1rem, 3vw, 2rem);
+		z-index: 3;
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		border: 1px solid rgba(245, 242, 236, 0.65);
+		color: var(--paper);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(31, 42, 46, 0.25);
+		backdrop-filter: blur(3px);
+		transition: background-color 0.3s ease, border-color 0.3s ease;
+	}
+
+	.hero-pause:hover {
+		background-color: rgba(31, 42, 46, 0.5);
+		border-color: var(--paper);
+	}
+
+	.hero-pause svg {
+		width: 15px;
+		height: 15px;
 	}
 
 	/* --- Présentation --- */
@@ -129,6 +267,14 @@
 
 	/* --- Prendre rendez-vous --- */
 	.take-appointment {
+		background-color: var(--forest);
+		color: var(--paper);
+		padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
+	}
+
+	.appointment-inner {
+		max-width: var(--content-max);
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column-reverse;
 		align-items: center;
@@ -144,11 +290,17 @@
 	}
 
 	.appointment-content h2 {
+		color: var(--paper);
 		margin-bottom: 1.5rem;
 	}
 
 	.appointment-content p {
 		line-height: 1.9;
+		color: rgba(245, 242, 236, 0.85);
+	}
+
+	.appointment-content p b {
+		color: #ffffff;
 	}
 
 	.appointment-actions {
@@ -165,34 +317,17 @@
 		width: 100%;
 	}
 
-	.phone-illustration-container {
-		position: relative;
-		width: min(64vw, 280px);
+	.bridge-frame {
+		width: min(70vw, 300px);
+		aspect-ratio: 4 / 5;
+		box-shadow: 0 30px 60px -30px rgba(15, 22, 25, 0.7);
 	}
 
-	.halo-alt {
-		background: linear-gradient(140deg, var(--mist-tint), rgba(217, 200, 184, 0.7));
-		animation-duration: 17s;
-	}
-
-	.blob-frame {
-		overflow: hidden;
-		border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
-		box-shadow: 0 30px 60px -35px rgba(47, 64, 71, 0.4);
-		aspect-ratio: 1;
-	}
-
-	.telephone-illustration {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	.bridge-frame img {
+		filter: saturate(0.75);
 	}
 
 	/* --- Tarifs --- */
-	.price-section {
-		padding-top: 0;
-	}
-
 	.price-card {
 		background-color: rgba(255, 255, 255, 0.55);
 		border: 1px solid var(--line);
@@ -235,7 +370,7 @@
 			width: min(34vw, 400px);
 		}
 
-		.take-appointment {
+		.appointment-inner {
 			flex-direction: row;
 			justify-content: space-between;
 			gap: 4rem;
@@ -247,7 +382,7 @@
 		}
 
 		.appointment-content {
-			flex: 1.2;
+			flex: 1.3;
 			text-align: left;
 			align-items: flex-start;
 		}
@@ -256,8 +391,14 @@
 			justify-content: flex-start;
 		}
 
-		.phone-illustration-container {
-			width: min(28vw, 330px);
+		.bridge-frame {
+			width: min(26vw, 320px);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-content {
+			animation: none;
 		}
 	}
 </style>
