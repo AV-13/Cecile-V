@@ -1,6 +1,7 @@
 <svelte:head>
-	<title>Mentions légales - Cécile Vathonne</title>
-	<meta name="description" content="Mentions légales du site de Cécile Vathonne, psychothérapeute." />
+	<title>Mentions légales — Cécile Vathonne, psychothérapeute à Paris 9e</title>
+	<meta name="description" content="Mentions légales du site de Cécile Vathonne, psychothérapeute et psychologue clinicienne à Paris 9e." />
+	<link rel="canonical" href="https://www.cecilevathonne.fr/legal-information" />
 </svelte:head>
 
 <main>

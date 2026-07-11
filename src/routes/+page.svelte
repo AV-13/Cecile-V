@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import AtmosphereCarousel from '$lib/components/AtmosphereCarousel.svelte';
 	import CurveDivider from '$lib/components/CurveDivider.svelte';
@@ -17,10 +18,11 @@
 	let heroPaused = false;
 </script>
 
-<svelte:head>
-	<title>Cécile Vathonne - Psychothérapeute</title>
-	<meta name="description" content="Psychothérapeute spécialisée en psychanalyse à Paris 9e. RV rapide au 07 62 80 25 77." />
-</svelte:head>
+<Seo
+	title="Psychothérapeute à Paris 9e — Cécile Vathonne, psychologue clinicienne"
+	description="Psychothérapeute et psychologue clinicienne à Paris 9e (Pigalle). Consultations adultes et enfants, séances réglées selon vos moyens (CPP). Tél : 07 62 80 25 77."
+	path="/"
+/>
 
 <main>
 	<!-- Héro : les paysages défilent, la phrase demeure -->
@@ -66,9 +68,8 @@
 		</div>
 		<div class="presentation-visual" use:reveal={{ delay: 0.2 }}>
 			<div class="portrait-wrapper">
-				<div class="breathing-halo"></div>
-				<div class="arch-frame portrait">
-					<img src="/images/accueil_psy.jpg" alt="portrait" />
+				<div class="photo-veil portrait">
+					<img src="/images/accueil_psy.jpg" alt="La salle d’attente du cabinet de psychothérapie, 33 rue Jean-Baptiste Pigalle à Paris 9e" />
 				</div>
 			</div>
 		</div>
@@ -79,7 +80,7 @@
 	<section id="takeAppointment" class="take-appointment">
 		<div class="appointment-inner">
 			<div class="appointment-visual" use:reveal>
-				<div class="arch-frame bridge-frame">
+				<div class="photo-veil bridge-frame">
 					<img src="/images/anthr_photoblog-bridge-4336404_1920.jpg" alt="Pont dans un jardin paisible" />
 				</div>
 			</div>
@@ -318,13 +319,9 @@
 	}
 
 	.bridge-frame {
-		width: min(70vw, 300px);
+		--veil-color: var(--forest);
+		width: min(70vw, 320px);
 		aspect-ratio: 4 / 5;
-		box-shadow: 0 30px 60px -30px rgba(15, 22, 25, 0.7);
-	}
-
-	.bridge-frame img {
-		filter: saturate(0.75);
 	}
 
 	/* --- Tarifs : une bande posée sur sable, sans cadre --- */

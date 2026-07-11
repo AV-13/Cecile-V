@@ -5,26 +5,99 @@
 		<link rel="icon" href="/psychology.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#f5f2ec" />
+		<meta name="google-site-verification" content="t3sLVLQoe5cGMy3Pxw5lxH3dDwQVY7p9Tv1vG98atzs" />
+		<link
+			rel="preload"
+			href="/fonts/PlayfairDisplay-VariableFont_wght.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/fonts/Nunito-VariableFont_wght.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "MedicalBusiness",
-				"name": "Cécile Vathonne – Psychothérapeute",
-				"address": {
-					"@type": "PostalAddress",
-					"streetAddress": "33 Rue Jean‑Baptiste Pigalle",
-					"addressLocality": "Paris",
-					"postalCode": "75009",
-					"addressCountry": "FR"
-				},
-				"telephone": "07 62 80 25 77",
-				"url": "https://www.cecilevathonne.fr",
-				"openingHoursSpecification": [
+				"@graph": [
 					{
-						"@type": "OpeningHoursSpecification",
-						"dayOfWeek": ["Monday", "Tuesday"],
-						"opens": "08:00",
-						"closes": "18:00"
+						"@type": "Psychologist",
+						"@id": "https://www.cecilevathonne.fr/#cabinet",
+						"name": "Cécile Vathonne – Psychothérapeute",
+						"url": "https://www.cecilevathonne.fr",
+						"image": "https://www.cecilevathonne.fr/images/og-image.jpg",
+						"description": "Cabinet de psychothérapie et psychanalyse à Paris 9e. Consultation Publique de Psychanalyse (CPP) : séances réglées en fonction de vos moyens.",
+						"telephone": "+33762802577",
+						"email": "cecile.vathonne@gmail.com",
+						"priceRange": "Consultation Publique de Psychanalyse : selon vos moyens",
+						"address": {
+							"@type": "PostalAddress",
+							"streetAddress": "33 Rue Jean‑Baptiste Pigalle",
+							"addressLocality": "Paris",
+							"postalCode": "75009",
+							"addressCountry": "FR"
+						},
+						"geo": {
+							"@type": "GeoCoordinates",
+							"latitude": 48.87977,
+							"longitude": 2.33126
+						},
+						"areaServed": ["Paris", "Île-de-France"],
+						"openingHoursSpecification": [
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": ["Monday", "Tuesday"],
+								"opens": "08:00",
+								"closes": "18:00"
+							}
+						],
+						"sameAs": [
+							"https://www.doctolib.fr/psychologue/paris/cecile-vathonne"
+						],
+						"founder": { "@id": "https://www.cecilevathonne.fr/#cecile" }
+					},
+					{
+						"@type": "Person",
+						"@id": "https://www.cecilevathonne.fr/#cecile",
+						"name": "Cécile Vathonne",
+						"jobTitle": "Psychothérapeute — Psychologue clinicienne",
+						"url": "https://www.cecilevathonne.fr/about-me",
+						"telephone": "+33762802577",
+						"email": "cecile.vathonne@gmail.com",
+						"identifier": {
+							"@type": "PropertyValue",
+							"propertyID": "RPPS",
+							"value": "10009020818"
+						},
+						"alumniOf": {
+							"@type": "CollegeOrUniversity",
+							"name": "Université Paris V Descartes"
+						},
+						"memberOf": {
+							"@type": "Organization",
+							"name": "Réseau pour la Psychanalyse à l'Hôpital (RPH – École de psychanalyse)",
+							"url": "https://www.rphweb.fr"
+						},
+						"knowsAbout": [
+							"Psychothérapie",
+							"Psychanalyse",
+							"Psychologie clinique",
+							"Psychopathologie"
+						],
+						"worksFor": { "@id": "https://www.cecilevathonne.fr/#cabinet" }
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://www.cecilevathonne.fr/#website",
+						"url": "https://www.cecilevathonne.fr",
+						"name": "Cécile Vathonne — Psychothérapeute",
+						"inLanguage": "fr-FR",
+						"publisher": { "@id": "https://www.cecilevathonne.fr/#cecile" }
 					}
 				]
 			}

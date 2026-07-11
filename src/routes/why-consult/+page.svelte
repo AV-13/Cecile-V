@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
@@ -31,10 +32,11 @@
 	const rowB = reasons.slice(11);
 </script>
 
-<svelte:head>
-	<title>Pourquoi consulter - Cécile Vathonne</title>
-	<meta name="description" content="Découvrez les raisons et symptômes pour lesquels consulter un psychothérapeute." />
-</svelte:head>
+<Seo
+	title="Pourquoi consulter un psychothérapeute ? — Cécile Vathonne, Paris 9e"
+	description="Anxiété, dépression, deuil, burn out, troubles du sommeil ou de l'alimentation… Les raisons de consulter un psychothérapeute sont diverses et toutes légitimes."
+	path="/why-consult"
+/>
 
 <main>
 	<div class="hero-header section-shell" use:reveal>
