@@ -270,21 +270,6 @@ table {
 	text-decoration-color: var(--sage-deep);
 }
 
-/* Encart doux (remplace les anciennes pilules colorées) */
-.soft-note {
-	background-color: rgba(255, 255, 255, 0.55);
-	border: 1px solid var(--line);
-	border-radius: var(--radius-soft);
-	padding: 1.75rem 2rem;
-	line-height: 1.8;
-	color: var(--ink-soft);
-	max-width: var(--text-max);
-	margin: 2rem auto;
-	text-align: center;
-	font-size: 0.98rem;
-	backdrop-filter: blur(4px);
-}
-
 /* Filet horizontal très fin */
 .hairline {
 	border: none;

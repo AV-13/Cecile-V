@@ -270,7 +270,7 @@
 				<h2 class="section-title"><span>Consultations à Paris (75)</span></h2>
 				<ul class="psychologist-list">
 					{#each filterPsychologists(parisContacts, searchQuery) as psychologist, i}
-						<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
+						<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 					{/each}
 				</ul>
 			</div>
@@ -286,7 +286,7 @@
 						<h3 class="region-title">{region}</h3>
 						<ul class="psychologist-list">
 							{#each filteredContacts as psychologist, i}
-								<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
+								<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 							{/each}
 						</ul>
 					{/if}
@@ -300,7 +300,7 @@
 				<h2 class="section-title"><span>Consultations hors d'Île-de-France</span></h2>
 				<ul class="psychologist-list">
 					{#each filterPsychologists(horsIleDeFrance, searchQuery) as psychologist, i}
-						<PsychologistCard {...psychologist} delay={(i % 3) * 0.08} />
+						<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 					{/each}
 				</ul>
 			</div>
@@ -427,7 +427,7 @@
 
 	/* --- L'annuaire --- */
 	.directory {
-		max-width: 1400px;
+		max-width: 1240px;
 		margin: 0 auto;
 		padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter);
 	}
@@ -475,11 +475,9 @@
 	}
 
 	.psychologist-list {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1.75rem;
 		padding: 0;
 		list-style: none;
+		border-bottom: 1px solid var(--line);
 	}
 
 	/* --- Aucun résultat --- */
@@ -497,24 +495,4 @@
 		color: var(--ink-soft);
 	}
 
-	/* Tablettes */
-	@media (min-width: 640px) {
-		.psychologist-list {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	/* Grands écrans */
-	@media (min-width: 1100px) {
-		.psychologist-list {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 2rem;
-		}
-	}
-
-	@media (min-width: 1700px) {
-		.psychologist-list {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
 </style>

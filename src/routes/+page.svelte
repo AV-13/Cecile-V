@@ -106,8 +106,8 @@
 	<CurveDivider fill="var(--forest)" flip />
 
 	<!-- Tarifs -->
-	<section id="price" class="price-section section-shell">
-		<div class="price-card" use:reveal>
+	<section id="price" class="price-section">
+		<div class="price-inner" use:reveal>
 			<h2 class="section-heading centered">Combien ça coûte ?</h2>
 			<p class="price-text">
 				Je pratique le principe de <strong>Consultation Publique de Psychanalyse (CPP)</strong>.
@@ -327,25 +327,37 @@
 		filter: saturate(0.75);
 	}
 
-	/* --- Tarifs --- */
-	.price-card {
-		background-color: rgba(255, 255, 255, 0.55);
-		border: 1px solid var(--line);
-		border-radius: calc(var(--radius-soft) * 1.5);
-		padding: clamp(2.5rem, 6vw, 4.5rem);
-		text-align: center;
-		backdrop-filter: blur(4px);
+	/* --- Tarifs : une bande posée sur sable, sans cadre --- */
+	.price-section {
+		background-color: var(--paper-2);
+		margin-top: var(--space-section);
 	}
 
-	.price-card h2 {
-		margin-bottom: 1.5rem;
+	.price-inner {
+		max-width: var(--content-max);
+		margin: 0 auto;
+		padding: clamp(3.5rem, 8vw, 6rem) var(--gutter);
+		text-align: center;
+	}
+
+	.price-inner h2 {
+		margin-bottom: 1.75rem;
+	}
+
+	.price-inner h2::before {
+		content: '';
+		display: block;
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--sage);
+		margin: 0 auto 1.6rem auto;
 	}
 
 	.price-text {
 		max-width: 38rem;
 		margin: 0 auto;
-		line-height: 1.9;
-		font-size: 1.02rem;
+		line-height: 1.95;
+		font-size: clamp(1.02rem, 2vw, 1.15rem);
 	}
 
 	/* Tablettes */

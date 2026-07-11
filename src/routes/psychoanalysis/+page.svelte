@@ -249,28 +249,26 @@
 	.comparison-section {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 1.5rem;
+		gap: 2.25rem;
 		width: 100%;
-		max-width: 52rem;
+		max-width: 54rem;
 	}
 
 	.comparison-item {
-		background-color: rgba(255, 255, 255, 0.55);
-		border: 1px solid var(--line);
-		border-radius: var(--radius-soft);
-		padding: 2.25rem 2rem;
-		backdrop-filter: blur(4px);
+		border-top: 1px solid var(--line);
+		padding-top: 1.75rem;
 	}
 
 	.comparison-title {
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		font-weight: 550;
 		margin-bottom: 0.9rem;
 	}
 
 	.comparison-text {
-		line-height: 1.8;
+		line-height: 1.85;
 		margin: 0;
+		max-width: 30rem;
 	}
 
 	/* --- Bandeau CTA --- */
@@ -348,7 +346,19 @@
 
 		.comparison-section {
 			grid-template-columns: 1fr 1fr;
-			gap: 2rem;
+			gap: 0;
+		}
+
+		.comparison-item {
+			border-top: none;
+			padding-top: 0;
+			padding-right: clamp(2rem, 4vw, 3.5rem);
+		}
+
+		.comparison-item + .comparison-item {
+			border-left: 1px solid var(--line);
+			padding-right: 0;
+			padding-left: clamp(2rem, 4vw, 3.5rem);
 		}
 
 		.professionals-list {

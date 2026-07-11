@@ -67,53 +67,53 @@
 <style>
 	main {
 		min-height: 60vh;
-		padding: clamp(2rem, 6vw, 4rem) var(--gutter) 0 var(--gutter);
+		padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) 0 var(--gutter);
 	}
 
 	.container {
-		max-width: 800px;
+		max-width: 44rem;
 		margin: 0 auto;
-		padding: clamp(2rem, 5vw, 3.5rem);
-		background-color: rgba(255, 255, 255, 0.6);
-		border: 1px solid var(--line);
-		border-radius: calc(var(--radius-soft) * 1.5);
-		backdrop-filter: blur(4px);
 	}
 
 	h1 {
 		text-align: center;
-		font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+		font-size: clamp(2rem, 4.5vw, 3rem);
 		font-weight: 500;
-		margin-bottom: 2.5rem;
+		margin-bottom: clamp(2.5rem, 6vw, 4rem);
+	}
+
+	h1::before {
+		content: '';
+		display: block;
+		width: 44px;
+		height: 1.5px;
+		background-color: var(--sage);
+		margin: 0 auto 1.6rem auto;
 	}
 
 	section {
-		margin-bottom: 2.25rem;
+		border-top: 1px solid var(--line);
+		padding: 1.9rem 0;
+	}
+
+	section:last-of-type {
+		border-bottom: 1px solid var(--line);
 	}
 
 	h2 {
-		font-size: 1.35rem;
+		font-size: 1.4rem;
 		font-weight: 550;
 		margin-bottom: 0.9rem;
-		padding-bottom: 0.5rem;
-		width: fit-content;
-		position: relative;
-	}
-
-	h2::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 36px;
-		height: 1.5px;
-		background-color: var(--sage);
 	}
 
 	p {
-		line-height: 1.85;
+		line-height: 1.9;
 		margin-bottom: 1rem;
 		color: var(--ink-soft);
+	}
+
+	p:last-child {
+		margin-bottom: 0;
 	}
 
 	a {
