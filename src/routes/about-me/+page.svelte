@@ -12,8 +12,7 @@
 	<section class="about-me section-shell">
 		<div class="about-visual" use:reveal>
 			<div class="portrait-wrapper">
-				<div class="breathing-halo"></div>
-				<div class="arch-frame portrait">
+				<div class="photo-veil portrait">
 					<img src="/images/cecile-vathonne-portrait.png" alt="portrait de Cécile Vathonne" />
 				</div>
 			</div>

@@ -66,8 +66,7 @@
 		</div>
 		<div class="presentation-visual" use:reveal={{ delay: 0.2 }}>
 			<div class="portrait-wrapper">
-				<div class="breathing-halo"></div>
-				<div class="arch-frame portrait">
+				<div class="photo-veil portrait">
 					<img src="/images/accueil_psy.jpg" alt="portrait" />
 				</div>
 			</div>
@@ -79,7 +78,7 @@
 	<section id="takeAppointment" class="take-appointment">
 		<div class="appointment-inner">
 			<div class="appointment-visual" use:reveal>
-				<div class="arch-frame bridge-frame">
+				<div class="photo-veil bridge-frame">
 					<img src="/images/anthr_photoblog-bridge-4336404_1920.jpg" alt="Pont dans un jardin paisible" />
 				</div>
 			</div>
@@ -318,13 +317,9 @@
 	}
 
 	.bridge-frame {
-		width: min(70vw, 300px);
+		--veil-color: var(--forest);
+		width: min(70vw, 320px);
 		aspect-ratio: 4 / 5;
-		box-shadow: 0 30px 60px -30px rgba(15, 22, 25, 0.7);
-	}
-
-	.bridge-frame img {
-		filter: saturate(0.75);
 	}
 
 	/* --- Tarifs : une bande posée sur sable, sans cadre --- */

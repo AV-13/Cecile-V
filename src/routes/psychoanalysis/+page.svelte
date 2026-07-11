@@ -16,8 +16,7 @@
 	<section class="section-shell two-column-layout">
 		<div class="image-column" use:reveal>
 			<div class="visual-wrapper">
-				<div class="breathing-halo"></div>
-				<div class="arch-frame">
+				<div class="photo-veil">
 					<img
 						class="section-illustration"
 						src="/images/wal_172619-man-7825138_1920.jpg"
@@ -52,7 +51,7 @@
 
 	<section class="section-shell comparison-block">
 		<div class="consultation-visual" use:reveal>
-			<div class="arch-frame consultation-frame">
+			<div class="photo-veil consultation-frame">
 				<img
 					class="consultation-illustration"
 					src="/images/consultation.jpg"
@@ -158,12 +157,8 @@
 		width: min(70vw, 320px);
 	}
 
-	.arch-frame {
+	.photo-veil {
 		aspect-ratio: 4 / 5;
-	}
-
-	.section-illustration {
-		filter: saturate(0.85);
 	}
 
 	.text-column {

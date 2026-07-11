@@ -26,7 +26,7 @@
 			use:reveal={{ delay: 0.15 }}
 		>
 			<div class="preview-visual">
-				<div class="arch-frame preview-frame">
+				<div class="photo-veil preview-frame">
 					<img
 						src="/images/article-cibophobie-preview.jpg"
 						alt="Illustration de l'article : la cibophobie, la peur de manger"
@@ -110,10 +110,6 @@
 	.preview-frame {
 		width: min(74vw, 320px);
 		aspect-ratio: 4 / 5;
-	}
-
-	.preview-frame img {
-		filter: saturate(0.8);
 	}
 
 	.preview-text {
