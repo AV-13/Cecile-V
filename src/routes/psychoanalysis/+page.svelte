@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import PageEnding from '$lib/components/PageEnding.svelte';
 	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <Seo
-	title="Psychothérapie et psychanalyse : quelles différences ? — Cécile Vathonne"
+	title="La psychanalyse - Cécile Vathonne"
+	metaTitle="Psychothérapie et psychanalyse : quelles différences ? — Cécile Vathonne"
 	description="La cure par la parole : ce qui distingue psychothérapie et psychanalyse, et les différences entre psychiatre, psychologue, psychothérapeute et psychanalyste."
 	path="/psychoanalysis"
 />
@@ -21,8 +22,8 @@
 				<div class="photo-veil">
 					<img
 						class="section-illustration"
-						src="/images/wal_172619-man-7825138_1920.jpg"
-						alt="Visage recueilli, les yeux baissés, dans une lumière chaude"
+						src="/images/pexels-olly-3937394.jpg"
+						alt="Deux femmes en conversation, assises dans un salon chaleureux"
 					/>
 				</div>
 			</div>
@@ -118,12 +119,7 @@
 		</div>
 	</section>
 
-	<div class="ending-container" use:reveal>
-		<hr class="hairline" />
-		<div class="doctolib-container">
-			<DoctolibButton />
-		</div>
-	</div>
+	<PageEnding />
 </main>
 
 <style>
@@ -189,16 +185,7 @@
 		background:
 			linear-gradient(rgba(18, 24, 38, 0.45), rgba(18, 24, 38, 0.55)),
 			url('/images/rauschenberger-night-4489561_1920.jpg') center 30% / cover no-repeat;
-		animation: night-drift 40s ease-in-out infinite alternate;
-	}
-
-	@keyframes night-drift {
-		from {
-			transform: scale(1);
-		}
-		to {
-			transform: scale(1.07);
-		}
+		animation: kenburns 40s ease-in-out infinite alternate;
 	}
 
 	.highlight-text {
@@ -307,16 +294,6 @@
 		line-height: 1.8;
 		margin: 0;
 		font-size: 0.98rem;
-	}
-
-	.ending-container {
-		padding-bottom: clamp(1rem, 3vw, 2rem);
-	}
-
-	.doctolib-container {
-		display: flex;
-		justify-content: center;
-		margin-top: clamp(2.5rem, 6vw, 4rem);
 	}
 
 	/* Tablettes et plus */

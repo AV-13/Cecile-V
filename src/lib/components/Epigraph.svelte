@@ -1,15 +1,10 @@
 <script lang="ts">
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { EPIGRAPH_HTML } from '$lib/content';
 </script>
 
 <div class="epigraph-block">
-	<p class="epigraph">
-		Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>,
-		voire de <strong>souffrance</strong>. Laisser cette souffrance s'installer, ce n'est
-		<strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une
-		<strong>écoute sérieuse</strong>. Prendre <strong>rendez-vous</strong>, c'est facile et
-		rapide.
-	</p>
+	<p class="epigraph">{@html EPIGRAPH_HTML}</p>
 	<div class="doctolib-container">
 		<DoctolibButton />
 	</div>
@@ -33,7 +28,8 @@
 		color: var(--ink-soft);
 	}
 
-	.epigraph strong {
+	/* :global — le contenu injecté par {@html} n'est pas couvert par le scoping Svelte */
+	.epigraph :global(strong) {
 		font-weight: 600;
 		color: var(--ink);
 	}

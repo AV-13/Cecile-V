@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import PageEnding from '$lib/components/PageEnding.svelte';
 	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <Seo
-	title="Mon parcours — Cécile Vathonne, psychologue clinicienne à Paris"
+	title="À propos - Cécile Vathonne"
+	metaTitle="Mon parcours — Cécile Vathonne, psychologue clinicienne à Paris"
 	description="Psychologue clinicienne diplômée de l'Université Paris V Descartes (RPPS 10009020818), psychothérapeute, membre du RPH — École de psychanalyse. Découvrez son parcours."
 	path="/about-me"
 />
@@ -19,7 +20,7 @@
 		<div class="about-visual" use:reveal>
 			<div class="portrait-wrapper">
 				<div class="photo-veil portrait">
-					<img src="/images/cecile-vathonne-portrait.png" alt="portrait de Cécile Vathonne" />
+					<img src="/images/cecile-vathonne-portrait.webp" alt="portrait de Cécile Vathonne" />
 				</div>
 			</div>
 		</div>
@@ -58,12 +59,7 @@
 		</div>
 	</section>
 
-	<div class="ending-container" use:reveal>
-		<hr class="hairline" />
-		<div class="doctolib-container">
-			<DoctolibButton />
-		</div>
-	</div>
+	<PageEnding />
 </main>
 
 <style>
@@ -103,16 +99,6 @@
 	.about-me-text p {
 		line-height: 1.9;
 		font-size: 1.02rem;
-	}
-
-	.ending-container {
-		padding-bottom: clamp(1rem, 3vw, 2rem);
-	}
-
-	.doctolib-container {
-		display: flex;
-		justify-content: center;
-		margin-top: clamp(2.5rem, 6vw, 4rem);
 	}
 
 	/* Tablettes et plus */

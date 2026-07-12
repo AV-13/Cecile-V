@@ -1,10 +1,15 @@
-<svelte:head>
-	<title>Mentions légales — Cécile Vathonne, psychothérapeute à Paris 9e</title>
-	<meta name="description" content="Mentions légales du site de Cécile Vathonne, psychothérapeute et psychologue clinicienne à Paris 9e." />
-	<link rel="canonical" href="https://www.cecilevathonne.fr/legal-information" />
-</svelte:head>
+<script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
+	import '$lib/styles/legal.css';
+</script>
 
-<main>
+<Seo
+	title="Mentions légales - Cécile Vathonne"
+	description="Mentions légales du site de Cécile Vathonne, psychothérapeute et psychologue clinicienne à Paris 9e."
+	path="/legal-information"
+/>
+
+<main class="legal-page">
 	<div class="container">
 		<h1>Mentions légales</h1>
 
@@ -66,57 +71,6 @@
 </main>
 
 <style>
-	main {
-		min-height: 60vh;
-		padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) 0 var(--gutter);
-	}
-
-	.container {
-		max-width: 44rem;
-		margin: 0 auto;
-	}
-
-	h1 {
-		text-align: center;
-		font-size: clamp(2rem, 4.5vw, 3rem);
-		font-weight: 500;
-		margin-bottom: clamp(2.5rem, 6vw, 4rem);
-	}
-
-	h1::before {
-		content: '';
-		display: block;
-		width: 44px;
-		height: 1.5px;
-		background-color: var(--sage);
-		margin: 0 auto 1.6rem auto;
-	}
-
-	section {
-		border-top: 1px solid var(--line);
-		padding: 1.9rem 0;
-	}
-
-	section:last-of-type {
-		border-bottom: 1px solid var(--line);
-	}
-
-	h2 {
-		font-size: 1.4rem;
-		font-weight: 550;
-		margin-bottom: 0.9rem;
-	}
-
-	p {
-		line-height: 1.9;
-		margin-bottom: 1rem;
-		color: var(--ink-soft);
-	}
-
-	p:last-child {
-		margin-bottom: 0;
-	}
-
 	a {
 		color: var(--ink);
 		text-decoration: underline;

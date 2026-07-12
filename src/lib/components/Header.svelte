@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { DOCTOLIB_URL, PHONE_DISPLAY, PHONE_HREF } from '$lib/constants';
 	import './header.css';
 
 	let showMenu = false;
@@ -41,11 +42,11 @@
 <header class="header-container">
 	<div class="header-top">
 		<div class="header-side header-side-left">
-			<a href="tel:07 62 80 25 77" class="phone-button">
+			<a href={PHONE_HREF} class="phone-button">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
 				</svg>
-				<span class="phone-number">07 62 80 25 77</span>
+				<span class="phone-number">{PHONE_DISPLAY}</span>
 			</a>
 		</div>
 
@@ -57,7 +58,7 @@
 		<div class="header-side header-side-right">
 			<a
 				class="header-doctolib"
-				href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
+				href={DOCTOLIB_URL}
 				target="_blank"
 				rel="noopener"
 			>
@@ -94,7 +95,7 @@
 	</nav>
 
 	{#if showMenu}
-		<div class="dropdown-menu active">
+		<div class="dropdown-menu">
 			<nav class="dropdown-nav" aria-label="Navigation">
 				<ul>
 					{#each links as link}
@@ -104,11 +105,11 @@
 			</nav>
 			<div class="dropdown-menu-background">
 				<div class="dropdown-buttons-container">
-					<a href="tel:07 62 80 25 77" class="dropdown-phone">
+					<a href={PHONE_HREF} class="dropdown-phone">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
 						</svg>
-						07 62 80 25 77
+						{PHONE_DISPLAY}
 					</a>
 				</div>
 				<div class="burger-menu-doctolib-button">

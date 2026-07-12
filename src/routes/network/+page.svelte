@@ -150,7 +150,7 @@
 		}
 	];
 
-	const ileDeFramceContacts = {
+	const ileDeFranceContacts = {
 		'Seine et Marne (77)': [
 			{
 				name: 'Laure BAUDIMENT',
@@ -221,10 +221,23 @@
 			website: 'https://www.psychotherapiemorbihan.fr/'
 		}
 	];
+
+	// Filtres calculés une seule fois par saisie, réutilisés dans tout le template
+	$: filteredParis = filterPsychologists(parisContacts, searchQuery);
+	$: filteredIdf = Object.entries(ileDeFranceContacts).map(([region, contacts]) => ({
+		region,
+		contacts: filterPsychologists(contacts, searchQuery)
+	}));
+	$: filteredHors = filterPsychologists(horsIleDeFrance, searchQuery);
+	$: totalCount =
+		filteredParis.length +
+		filteredIdf.reduce((count, group) => count + group.contacts.length, 0) +
+		filteredHors.length;
 </script>
 
 <Seo
-	title="Annuaire de psychologues et psychanalystes de confiance — Paris et IDF"
+	title="Annuaire - Cécile Vathonne"
+	metaTitle="Annuaire de psychologues et psychanalystes de confiance — Paris et IDF"
 	description="Psychothérapeutes et psychanalystes de confiance à Paris, en Île-de-France et au-delà, pratiquant tous la Consultation Publique de Psychanalyse (CPP)."
 	path="/network"
 />
@@ -232,7 +245,7 @@
 <main class="network-container">
 	<h1 class="sr-only">Annuaire des psychothérapeutes et psychanalystes partenaires</h1>
 	<!-- L'annuaire s'ouvre sur une bande immersive : l'intro et la recherche -->
-	<CurveDivider fill="var(--forest)" />
+	<CurveDivider />
 	<section class="directory-hero">
 		<p class="directory-intro">
 			Voici la liste des psychothérapeutes et psychanalystes de ma confiance, qui exercent à Paris, en Ile-de-France ou au-delà. Tous ces collègues pratiquent la Consultation Publique de Psychanalyse (CPP).
@@ -259,20 +272,20 @@
 			</div>
 			{#if searchQuery}
 				<div class="search-results-count" aria-live="polite">
-					{filterPsychologists([...parisContacts, ...Object.values(ileDeFramceContacts).flat(), ...horsIleDeFrance], searchQuery).length} résultat(s) trouvé(s)
+					{totalCount} résultat(s) trouvé(s)
 				</div>
 			{/if}
 		</div>
 	</section>
-	<CurveDivider fill="var(--forest)" flip />
+	<CurveDivider flip />
 
 	<section class="directory">
 		<!-- Paris -->
-		{#if filterPsychologists(parisContacts, searchQuery).length > 0}
+		{#if filteredParis.length > 0}
 			<div class="section">
 				<h2 class="section-title"><span>Consultations à Paris (75)</span></h2>
 				<ul class="psychologist-list">
-					{#each filterPsychologists(parisContacts, searchQuery) as psychologist, i}
+					{#each filteredParis as psychologist, i}
 						<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 					{/each}
 				</ul>
@@ -280,15 +293,14 @@
 		{/if}
 
 		<!-- Île-de-France -->
-		{#if Object.entries(ileDeFramceContacts).some(([_, contacts]) => filterPsychologists(contacts, searchQuery).length > 0)}
+		{#if filteredIdf.some(({ contacts }) => contacts.length > 0)}
 			<div class="section">
 				<h2 class="section-title"><span>Consultations en Île-de-France</span></h2>
-				{#each Object.entries(ileDeFramceContacts) as [region, contacts]}
-					{@const filteredContacts = filterPsychologists(contacts, searchQuery)}
-					{#if filteredContacts.length > 0}
+				{#each filteredIdf as { region, contacts }}
+					{#if contacts.length > 0}
 						<h3 class="region-title">{region}</h3>
 						<ul class="psychologist-list">
-							{#each filteredContacts as psychologist, i}
+							{#each contacts as psychologist, i}
 								<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 							{/each}
 						</ul>
@@ -298,11 +310,11 @@
 		{/if}
 
 		<!-- Hors Île-de-France -->
-		{#if filterPsychologists(horsIleDeFrance, searchQuery).length > 0}
+		{#if filteredHors.length > 0}
 			<div class="section">
 				<h2 class="section-title"><span>Consultations hors d'Île-de-France</span></h2>
 				<ul class="psychologist-list">
-					{#each filterPsychologists(horsIleDeFrance, searchQuery) as psychologist, i}
+					{#each filteredHors as psychologist, i}
 						<PsychologistCard {...psychologist} delay={Math.min(i, 6) * 0.05} />
 					{/each}
 				</ul>
@@ -310,7 +322,7 @@
 		{/if}
 
 		<!-- Message si aucun résultat -->
-		{#if searchQuery && filterPsychologists([...parisContacts, ...Object.values(ileDeFramceContacts).flat(), ...horsIleDeFrance], searchQuery).length === 0}
+		{#if searchQuery && totalCount === 0}
 			<div class="no-results">
 				<p>Aucun psychologue ne correspond à votre recherche.</p>
 				<button class="btn" on:click={() => searchQuery = ''}>
