@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { DOCTOLIB_URL } from '$lib/constants';
+
 	/** Bouton Doctolib unifié, au style apaisé du site. */
 	export let label = 'Prendre rendez-vous';
 	/** 'solid' sur fond clair, 'outline-light' sur fond sombre ou image */
@@ -6,8 +8,9 @@
 </script>
 
 <a
-	class="doctolib-btn {variant}"
-	href="https://www.doctolib.fr/psychologue/paris/cecile-vathonne/booking?bookingFunnelSource=external_referral&utm_campaign=website-button&utm_source=cecile-vathonne-website-button&utm_medium=referral&utm_content=withoutpreview-blue-floating-bottom-right&utm_term=cecile-vathonne"
+	class="btn doctolib-btn"
+	class:btn-light={variant === 'outline-light'}
+	href={DOCTOLIB_URL}
 	target="_blank"
 	rel="noopener"
 >
@@ -19,18 +22,12 @@
 </a>
 
 <style>
+	/* Le style commun vient de .btn / .btn-light (global.css) ;
+	   ne restent ici que les écarts propres au bouton Doctolib. */
 	.doctolib-btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.7rem;
-		padding: 0.85rem 1.9rem;
-		min-height: 48px;
-		border-radius: 999px;
-		font-size: 0.8rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
+		gap: 0.7rem; /* .btn : 0.65rem */
+		/* Redéclarée localement (sélecteur scopé, spécificité supérieure) pour
+		   que « .footer-container a { transition: color … } » ne l'écrase pas */
 		transition:
 			background-color 0.35s var(--ease-out-soft),
 			border-color 0.35s var(--ease-out-soft),
@@ -38,36 +35,13 @@
 			box-shadow 0.35s var(--ease-out-soft);
 	}
 
-	.solid {
-		background-color: var(--ink);
-		color: var(--paper);
-	}
-
-	.solid:hover {
-		background-color: var(--sage-deep);
-		transform: translateY(-2px);
-		box-shadow: 0 12px 28px -14px rgba(47, 64, 71, 0.45);
-	}
-
-	.outline-light {
-		background-color: rgba(245, 242, 236, 0.08);
-		border: 1px solid rgba(245, 242, 236, 0.75);
-		color: var(--paper);
-		backdrop-filter: blur(2px);
-	}
-
-	.outline-light:hover {
-		background-color: rgba(245, 242, 236, 0.22);
-		border-color: var(--paper);
-		transform: translateY(-2px);
-	}
-
 	.label {
 		white-space: nowrap;
 	}
 
+	/* Le logo Doctolib garde son ratio naturel (.btn img force 16 × 16) */
 	.doctolib-btn img {
-		height: 16px;
 		width: auto;
+		height: 16px;
 	}
 </style>

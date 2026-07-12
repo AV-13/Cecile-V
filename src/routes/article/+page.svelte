@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import PageEnding from '$lib/components/PageEnding.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const articleUrl =
@@ -8,7 +8,8 @@
 </script>
 
 <Seo
-	title="Articles — Cécile Vathonne, psychothérapeute à Paris"
+	title="Articles - Cécile Vathonne"
+	metaTitle="Articles — Cécile Vathonne, psychothérapeute à Paris"
 	description="Articles de vulgarisation scientifique co-écrits par Cécile Vathonne, psychothérapeute à Paris : la cibophobie, ou comment vaincre la peur de manger (Santé Magazine)."
 	path="/article"
 />
@@ -52,12 +53,7 @@
 		</a>
 	</div>
 
-	<div class="ending-container" use:reveal>
-		<hr class="hairline" />
-		<div class="doctolib-container">
-			<DoctolibButton />
-		</div>
-	</div>
+	<PageEnding />
 </main>
 
 <style>
@@ -152,16 +148,6 @@
 		background-color: var(--sage-deep);
 		transform: translateY(-2px);
 		box-shadow: 0 12px 28px -14px rgba(47, 64, 71, 0.45);
-	}
-
-	.ending-container {
-		padding-bottom: clamp(1rem, 3vw, 2rem);
-	}
-
-	.doctolib-container {
-		display: flex;
-		justify-content: center;
-		margin-top: clamp(2.5rem, 6vw, 4rem);
 	}
 
 	/* Tablettes et plus : l'image à gauche, le texte à droite */

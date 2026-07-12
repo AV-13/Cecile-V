@@ -4,6 +4,8 @@
 	import AtmosphereCarousel from '$lib/components/AtmosphereCarousel.svelte';
 	import CurveDivider from '$lib/components/CurveDivider.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { EMAIL, PHONE_DISPLAY, PHONE_HREF } from '$lib/constants';
+	import { EPIGRAPH_HTML } from '$lib/content';
 
 	// Les paysages du chemin thérapeutique : contemplation, lumière
 	// qui perce, ciel qui se dégage, traversée de la nuit.
@@ -19,8 +21,9 @@
 </script>
 
 <Seo
-	title="Psychologue clinicienne à Paris 9e — Cécile Vathonne, psychothérapeute"
-	description="Psychologue clinicienne et psychothérapeute à Paris 9e (Pigalle). Séances au tarif adapté à vos moyens (Consultation Publique de Psychanalyse). Tél : 07 62 80 25 77."
+	title="Cécile Vathonne - Psychothérapeute"
+	metaTitle="Psychologue clinicienne à Paris 9e — Cécile Vathonne, psychothérapeute"
+	description={`Psychologue clinicienne et psychothérapeute à Paris 9e (Pigalle). Séances au tarif adapté à vos moyens (Consultation Publique de Psychanalyse). Tél : ${PHONE_DISPLAY}.`}
 	path="/"
 />
 
@@ -31,13 +34,7 @@
 		<div class="hero-scrim"></div>
 
 		<div class="hero-content">
-			<p class="hero-epigraph">
-				Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>,
-				voire de <strong>souffrance</strong>. Laisser cette souffrance s'installer, ce n'est
-				<strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une
-				<strong>écoute sérieuse</strong>. Prendre <strong>rendez-vous</strong>, c'est facile et
-				rapide.
-			</p>
+			<p class="hero-epigraph">{@html EPIGRAPH_HTML}</p>
 			<DoctolibButton variant="outline-light" />
 		</div>
 
@@ -63,7 +60,7 @@
 				Au cours de sa vie, il est courant de rencontrer un moment difficile, un accident, de sentir en soi une
 				tristesse ou un blocage depuis longtemps. Toute souffrance est légitime et mérite d'être écoutée.
 				Si vous avez le désir d'en parler pour avancer, faites le premier pas et appelez au <a
-					class="quiet-link" href="tel:07 62 80 25 77">07 62 80 25 77</a>.
+					class="quiet-link" href={PHONE_HREF}>{PHONE_DISPLAY}</a>.
 			</p>
 		</div>
 		<div class="presentation-visual" use:reveal={{ delay: 0.2 }}>
@@ -76,35 +73,35 @@
 	</section>
 
 	<!-- Prendre rendez-vous — bande immersive -->
-	<CurveDivider fill="var(--forest)" />
+	<CurveDivider />
 	<section id="takeAppointment" class="take-appointment">
 		<div class="appointment-inner">
 			<div class="appointment-visual" use:reveal>
 				<div class="photo-veil bridge-frame">
-					<img src="/images/anthr_photoblog-bridge-4336404_1920.jpg" alt="Pont dans un jardin paisible" />
+					<img src="/images/sadnos-paris-4038003_1920.jpg" alt="La tour Eiffel au-dessus des toits de Paris au crépuscule" />
 				</div>
 			</div>
 
 			<div class="appointment-content" use:reveal={{ delay: 0.15 }}>
 				<h2 class="section-heading">Prendre rendez-vous</h2>
 				<p>
-					Les prises de rendez-vous se font <b>par téléphone</b> au <b>07 62 80 25 77</b>, par <b>mail</b> à
-					l'adresse <b>cecile.vathonne@gmail.com</b> ou via Doctolib.
+					Les prises de rendez-vous se font <b>par téléphone</b> au <b>{PHONE_DISPLAY}</b>, par <b>mail</b> à
+					l'adresse <b>{EMAIL}</b> ou via Doctolib.
 				</p>
 
 				<div class="appointment-actions">
-					<a class="btn btn-light" href="tel:762802577">
+					<a class="btn btn-light" href={PHONE_HREF}>
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
 						</svg>
-						07 62 80 25 77
+						{PHONE_DISPLAY}
 					</a>
 					<DoctolibButton variant="outline-light" />
 				</div>
 			</div>
 		</div>
 	</section>
-	<CurveDivider fill="var(--forest)" flip />
+	<CurveDivider flip />
 
 	<!-- Tarifs -->
 	<section id="price" class="price-section">
@@ -182,7 +179,8 @@
 		text-shadow: 0 1px 22px rgba(31, 42, 46, 0.45);
 	}
 
-	.hero-epigraph strong {
+	/* :global — le contenu injecté par {@html} n'est pas couvert par le scoping Svelte */
+	.hero-epigraph :global(strong) {
 		color: #ffffff;
 		font-weight: 600;
 	}
@@ -402,12 +400,6 @@
 
 		.bridge-frame {
 			width: min(26vw, 320px);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.hero-content {
-			animation: none;
 		}
 	}
 </style>

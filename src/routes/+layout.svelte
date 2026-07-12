@@ -13,14 +13,14 @@
 {#if $page.url.pathname !== '/'}
 	<Epigraph />
 {/if}
-<main>
+<div class="page-content">
 	<slot />
-</main>
+</div>
 <PhoneBubbles />
 <Footer />
 
 <style>
-	main {
+	.page-content {
 		position: relative;
 		z-index: 1;
 	}

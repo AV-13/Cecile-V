@@ -1,0 +1,57 @@
+/* ============================================================
+   Pages légales — mise en page commune
+   (data-protection, legal-information)
+   Feuille importée globalement : tous les sélecteurs sont
+   préfixés par .legal-page pour rester confinés à ces pages.
+   ============================================================ */
+
+.legal-page {
+	min-height: 60vh;
+	padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) 0 var(--gutter);
+}
+
+.legal-page .container {
+	max-width: 44rem;
+	margin: 0 auto;
+}
+
+.legal-page h1 {
+	text-align: center;
+	font-size: clamp(2rem, 4.5vw, 3rem);
+	font-weight: 500;
+	margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.legal-page h1::before {
+	content: '';
+	display: block;
+	width: 44px;
+	height: 1.5px;
+	background-color: var(--sage);
+	margin: 0 auto 1.6rem auto;
+}
+
+.legal-page section {
+	border-top: 1px solid var(--line);
+	padding: 1.9rem 0;
+}
+
+.legal-page section:last-of-type {
+	border-bottom: 1px solid var(--line);
+}
+
+.legal-page h2 {
+	font-size: 1.4rem;
+	font-weight: 550;
+	margin-bottom: 0.9rem;
+}
+
+.legal-page p {
+	line-height: 1.9;
+	margin-bottom: 1rem;
+	color: var(--ink-soft);
+}
+
+.legal-page p:last-child {
+	margin-bottom: 0;
+}

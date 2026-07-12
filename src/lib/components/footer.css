@@ -2,10 +2,6 @@
    Pied de page — encre profonde, texte lin, rythme aéré
    ============================================================ */
 
-.disable-bold {
-	font-weight: normal;
-}
-
 .footer-container {
 	position: relative;
 	z-index: 1;
@@ -65,17 +61,6 @@
 
 .footer-doctolib {
 	margin-top: 1.75rem;
-}
-
-/* Le bouton Doctolib, posé sur fond encre, passe en version claire */
-.footer-doctolib :global(.doctolib-btn) {
-	background-color: rgba(245, 242, 236, 0.12);
-	border: 1px solid rgba(245, 242, 236, 0.35);
-}
-
-.footer-doctolib :global(.doctolib-btn:hover) {
-	background-color: var(--sage-deep);
-	border-color: var(--sage-deep);
 }
 
 .footer-icon {

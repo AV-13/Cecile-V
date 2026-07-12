@@ -30,8 +30,9 @@ export function reveal(node: HTMLElement, options: RevealOptions = {}) {
 				node,
 				{ opacity: 1, transform: 'translateY(0px)' },
 				{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }
-			);
-			return () => {};
+			).finished.then(() => {
+				node.style.willChange = 'auto';
+			});
 		},
 		{ amount: 0.15 }
 	);

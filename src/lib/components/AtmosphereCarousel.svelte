@@ -9,17 +9,32 @@
 	export let paused = false;
 
 	let current = 0;
+	let mounted = false;
+	let timer: ReturnType<typeof setInterval> | undefined;
+
+	// Chargement paresseux : seules l'image courante et la suivante reçoivent
+	// leur `src` ; les <img> restent tous montés pour préserver le fondu croisé.
+	let loaded = new Set<number>([0, 1]);
+
+	function advance() {
+		current = (current + 1) % images.length;
+		loaded.add((current + 1) % images.length);
+		loaded = loaded; // déclenche la réactivité (mutation de Set)
+	}
+
+	function syncTimer(active: boolean) {
+		clearInterval(timer);
+		timer = active ? setInterval(advance, interval) : undefined;
+	}
+
+	// L'intervalle ne tourne que lorsque le carrousel défile réellement
+	$: if (mounted) syncTimer(!paused && images.length > 1);
 
 	onMount(() => {
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			paused = true;
-			return;
 		}
-		const timer = setInterval(() => {
-			if (!paused) {
-				current = (current + 1) % images.length;
-			}
-		}, interval);
+		mounted = true;
 		return () => clearInterval(timer);
 	});
 </script>
@@ -27,7 +42,7 @@
 <div class="atmosphere" class:paused>
 	{#each images as img, i}
 		<img
-			src={img.src}
+			src={loaded.has(i) ? img.src : undefined}
 			alt={img.alt}
 			class:active={i === current}
 			loading={i === 0 ? 'eager' : 'lazy'}

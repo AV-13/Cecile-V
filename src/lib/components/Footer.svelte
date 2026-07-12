@@ -1,6 +1,41 @@
 <script lang="ts">
 	import DoctolibButton from '$lib/components/DoctolibButton.svelte';
+	import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_HREF } from '$lib/constants';
 	import './footer.css';
+
+	const accessGroups = [
+		{
+			title: 'En métro',
+			stops: [
+				{ label: 'Pigalle', icons: [{ src: '/images/metro/two.svg', alt: 'Ligne 2' }] },
+				{ label: 'Saint‑Georges', icons: [{ src: '/images/metro/twelve.svg', alt: 'Ligne 12' }] },
+				{ label: 'Place de Clichy', icons: [{ src: '/images/metro/thirteen.svg', alt: 'Ligne 13' }] },
+				{
+					label: 'Saint‑Lazare',
+					icons: [
+						{ src: '/images/metro/three.svg', alt: 'Ligne 3' },
+						{ src: '/images/metro/nine.svg', alt: 'Ligne 9' },
+						{ src: '/images/metro/twelve.svg', alt: 'Ligne 12' },
+						{ src: '/images/metro/fourteen.svg', alt: 'Ligne 14' }
+					]
+				}
+			]
+		},
+		{
+			title: 'En bus',
+			stops: [
+				{
+					label: 'Pigalle',
+					icons: [
+						{ src: '/images/bus/forty.svg', alt: 'Bus 40' },
+						{ src: '/images/bus/sixty-eight.svg', alt: 'Bus 68' },
+						{ src: '/images/bus/seventy-four.svg', alt: 'Bus 74' }
+					]
+				},
+				{ label: 'Gare du Nord', icons: [{ src: '/images/bus/sixty-two.svg', alt: 'Bus 62' }] }
+			]
+		}
+	];
 </script>
 
 <footer class="footer-container">
@@ -13,7 +48,7 @@
 			</span>
 			<span class="information">
 				<img class="footer-icon" src="/images/icons/localisation.svg" alt="Localisation : " />
-				<span>33 rue Jean‑Baptiste Pigalle – 75009 Paris</span>
+				<span>{ADDRESS}</span>
 			</span>
 			<span class="information">
 				<img
@@ -21,11 +56,11 @@
 					src="/images/icons/telephone-empty.svg"
 					alt="Numéro de téléphone : "
 				/>
-				<span class="disable-bold"><a href="tel:07 62 80 25 77">07 62 80 25 77</a></span>
+				<span><a href={PHONE_HREF}>{PHONE_DISPLAY}</a></span>
 			</span>
 			<span class="information">
 				<img class="footer-icon" src="/images/icons/enveloppe-empty.svg" alt="Mail : " />
-				<span class="disable-bold">cecile.vathonne@gmail.com</span>
+				<span>{EMAIL}</span>
 			</span>
 			<span class="information footer-doctolib">
 				<DoctolibButton />
@@ -35,46 +70,21 @@
 		<div class="access">
 			<h3 class="footer-title">Accès en transports</h3>
 			<div class="access__container">
-				<div class="access__group">
-					<h3 class="access__title">En métro</h3>
-					<ul class="access__list access__list--metro">
-						<li class="access__item">
-							<span class="access__label">Pigalle</span>
-							<img class="access__icon" src="/images/metro/two.svg" alt="Ligne 2" />
-						</li>
-						<li class="access__item">
-							<span class="access__label">Saint‑Georges</span>
-							<img class="access__icon" src="/images/metro/twelve.svg" alt="Ligne 12" />
-						</li>
-						<li class="access__item">
-							<span class="access__label">Place de Clichy</span>
-							<img class="access__icon" src="/images/metro/thirteen.svg" alt="Ligne 13" />
-						</li>
-						<li class="access__item">
-							<span class="access__label">Saint‑Lazare</span>
-							<img class="access__icon" src="/images/metro/three.svg" alt="Ligne 3" />
-							<img class="access__icon" src="/images/metro/nine.svg" alt="Ligne 9" />
-							<img class="access__icon" src="/images/metro/twelve.svg" alt="Ligne 12" />
-							<img class="access__icon" src="/images/metro/fourteen.svg" alt="Ligne 14" />
-						</li>
-					</ul>
-				</div>
-
-				<div class="access__group">
-					<h3 class="access__title">En bus</h3>
-					<ul class="access__list access__list--bus">
-						<li class="access__item">
-							<span class="access__label">Pigalle</span>
-							<img class="access__icon" src="/images/bus/forty.svg" alt="Bus 40" />
-							<img class="access__icon" src="/images/bus/sixty-eight.svg" alt="Bus 68" />
-							<img class="access__icon" src="/images/bus/seventy-four.svg" alt="Bus 74" />
-						</li>
-						<li class="access__item">
-							<span class="access__label">Gare du Nord</span>
-							<img class="access__icon" src="/images/bus/sixty-two.svg" alt="Bus 62" />
-						</li>
-					</ul>
-				</div>
+				{#each accessGroups as group}
+					<div class="access__group">
+						<h3 class="access__title">{group.title}</h3>
+						<ul class="access__list">
+							{#each group.stops as stop}
+								<li class="access__item">
+									<span class="access__label">{stop.label}</span>
+									{#each stop.icons as icon}
+										<img class="access__icon" src={icon.src} alt={icon.alt} />
+									{/each}
+								</li>
+							{/each}
+						</ul>
+					</div>
+				{/each}
 			</div>
 		</div>
 
