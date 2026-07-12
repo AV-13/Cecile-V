@@ -1,0 +1,1 @@
+const e="Chaque être traverse des périodes de <strong>doute</strong>, de <strong>chagrin</strong>, voire de <strong>souffrance</strong>. Laisser cette souffrance s'installer, ce n'est <strong>pas obligé !</strong> Tout le monde <strong>mérite</strong> une <strong>écoute sérieuse</strong>. Prendre <strong>rendez-vous</strong>, c'est facile et rapide.";export{e as E};
