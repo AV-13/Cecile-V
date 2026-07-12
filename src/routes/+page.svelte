@@ -19,8 +19,8 @@
 </script>
 
 <Seo
-	title="Psychothérapeute à Paris 9e — Cécile Vathonne, psychologue clinicienne"
-	description="Psychothérapeute et psychologue clinicienne à Paris 9e (Pigalle). Consultations adultes et enfants, séances réglées selon vos moyens (CPP). Tél : 07 62 80 25 77."
+	title="Psychologue clinicienne à Paris 9e — Cécile Vathonne, psychothérapeute"
+	description="Psychologue clinicienne et psychothérapeute à Paris 9e (Pigalle). Séances au tarif adapté à vos moyens (Consultation Publique de Psychanalyse). Tél : 07 62 80 25 77."
 	path="/"
 />
 

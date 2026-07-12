@@ -224,7 +224,7 @@
 </script>
 
 <Seo
-	title="Annuaire des psychothérapeutes partenaires — Cécile Vathonne"
+	title="Annuaire de psychologues et psychanalystes de confiance — Paris et IDF"
 	description="Psychothérapeutes et psychanalystes de confiance à Paris, en Île-de-France et au-delà, pratiquant tous la Consultation Publique de Psychanalyse (CPP)."
 	path="/network"
 />

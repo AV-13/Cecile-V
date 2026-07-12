@@ -33,7 +33,7 @@
 </script>
 
 <Seo
-	title="Pourquoi consulter un psychothérapeute ? — Cécile Vathonne, Paris 9e"
+	title="Pourquoi consulter un psychologue ? — Cécile Vathonne, Paris 9e"
 	description="Anxiété, dépression, deuil, burn out, troubles du sommeil ou de l'alimentation… Les raisons de consulter un psychothérapeute sont diverses et toutes légitimes."
 	path="/why-consult"
 />
